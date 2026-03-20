@@ -1,0 +1,45 @@
+@import url(../global.css);
+
+/* ===================================
+   Threshold-Miku Light - Supernavs
+   =================================== */
+
+.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI,
+._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI {
+    color: var(--nav-text-color) !important;
+}
+
+/* Hide divider lines */
+._3pofGqV0buiKAfMPEs3_82 hr {
+    display: none;
+}
+
+/* Dropdown items */
+._3pofGqV0buiKAfMPEs3_82 ._1n7Wloe5jZ6fSuvV18NNWI {
+    color: var(--text-color-dark) !important;
+}
+
+/* Hover effect */
+._3pofGqV0buiKAfMPEs3_82 ._1n7Wloe5jZ6fSuvV18NNWI:hover {
+    background: var(--miku-accent) !important;
+    color: #fff !important;
+}
+
+/* Rounded corners */
+body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt {
+    background: transparent !important;
+}
+
+body.ContextMenuPopupBody ._2EstNjFIIZm_WUSKm5Wt7n {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Dropdown background */
+body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt.visible ._2EstNjFIIZm_WUSKm5Wt7n {
+    opacity: 1;
+    background: rgba(241, 241, 241, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(0);
+}

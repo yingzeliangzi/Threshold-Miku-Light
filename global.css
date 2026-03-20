@@ -1,0 +1,57 @@
+:root {
+    /* === Threshold-Miku Light Color Palette === */
+
+    /* Accent - Cobalt Blue (original default) */
+    --miku-accent: #0078FF;
+    --miku-accent-hover: #005A9E;
+    --miku-accent-selected: #196AAF;
+    --miku-accent-light: rgba(0, 120, 255, 0.15);
+    --miku-teal: #39C5BB;
+
+    /* Friend status colors (from original legacycolors.styles) */
+    --user-online-color: rgb(24, 105, 136);
+    --user-ingame-color: rgb(84, 126, 0);
+    --user-offline-color: rgb(67, 67, 67);
+
+    /* Icon and navigation */
+    --icon-color: #373737;
+    --nav-text-color: rgb(55, 55, 55);
+
+    /* Main backgrounds (light theme) */
+    --main-bg-color: #E8F4F8;
+    --bg-color-light-gray: #E0E0E0;
+    --bg-color-dark-blue: rgb(0, 120, 255);
+
+    /* Text colors */
+    --text-color-dark: #000000;
+    --text-color-secondary: #373737;
+    --text-color-disabled: #666666;
+
+    /* Friend list backgrounds */
+    --friend-list-bg-color: rgba(241, 241, 241, 0.92);
+    --friend-list-accent: rgba(0, 120, 255, 0.12);
+
+    /* Input */
+    --text-input-bg-color: #F5F5F5;
+
+    /* Voice controls */
+    --voice-btn-color-star: rgb(17, 162, 36);
+    --voice-btn-color-end: rgb(16, 205, 78);
+
+    /* Frosted glass overlays (from original JackMyth translucency) */
+    --glass-overlay: rgba(255, 255, 255, 0.78);
+    --glass-light: rgba(255, 255, 255, 0.60);
+    --glass-medium: rgba(255, 255, 255, 0.40);
+}
+
+/* Global font - PingFang SC */
+@font-face {
+    font-family: "PingFang SC";
+    src: url(fonts/PingFang\ SC.ttc) format('truetype');
+    font-weight: 100 900;
+}
+
+* {
+    font-family: "PingFang SC", "Segoe UI", "Microsoft YaHei", sans-serif !important;
+    cursor: url('imgs/cursor.png') 0 0, auto !important;
+}

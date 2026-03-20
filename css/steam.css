@@ -1,0 +1,687 @@
+@import url(../global.css);
+
+/* ===================================
+   Threshold-Miku Light - Main Client
+   ===================================  */
+
+/* --- Dropdown text --- */
+.DialogDropDown_CurrentDisplay {
+    color: var(--text-color-dark);
+}
+
+/* Don't modify SFP/Millennium settings page */
+.MillenniumSettings .DialogDropDown_CurrentDisplay {
+    color: #fff;
+}
+
+._2hfibYuzyMOQ0sj2egsHh0 {
+    color: var(--text-color-dark);
+}
+
+/* --- News block (What's New) - hidden --- */
+._17uEBe5Ri8TMsnfELvs8-N {
+    display: none !important;
+}
+
+/* --- Library sidebar navigation --- */
+._3SkuN_ykQuWGF94fclHdhJ._3dQDoCmoAJqOiOK7oAJIKM ._2aw5aUUo3lrK6wxJb4_ms5 {
+    color: var(--text-color-dark);
+}
+
+._1YdRdM9TZ_3Xolwv9aVEv- ._DialogInputContainer .DialogDropDown_Arrow svg {
+    fill: var(--text-color-dark);
+}
+
+._1ANYFgwMyPpwJjIndAdGSr ._1kdinbVqPuXSbJRQa_pAuw ._1ljKTq3H58WbDZGNPfM0TY {
+    color: var(--icon-color);
+}
+
+._2qm05e8tWSAb-_fAHytQCP {
+    color: var(--icon-color);
+}
+
+._3SkuN_ykQuWGF94fclHdhJ {
+    color: var(--icon-color);
+}
+
+._3Sb2o_mQ30IDRh0C72QUUu {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Library sidebar background --- */
+._2gSXCB6PbOlMxslr8hm6dm {
+    background: transparent;
+}
+
+._1esfEVxhqNfh8fzr_kEGKa ._1ANYFgwMyPpwJjIndAdGSr {
+    color: var(--text-color-dark);
+}
+
+._1kdinbVqPuXSbJRQa_pAuw {
+    color: var(--text-color-dark);
+}
+
+/* --- Add game button --- */
+._23SnllqT_AqZ1C_QHcNQ4Z ._1OGfHXv6ksR1Ub-OuLN8NB {
+    stroke: rgba(0, 0, 0, 0.5);
+    fill: rgba(0, 0, 0, 0.5);
+}
+
+._23SnllqT_AqZ1C_QHcNQ4Z ._1PhK8scyztOxjJwWUpkiLJ {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.SVGIcon_Button.SVGIcon_PlusCircle circle {
+    stroke: var(--text-color-dark);
+}
+
+.SVGIcon_Button.SVGIcon_PlusCircle .horizontalLine {
+    stroke: var(--text-color-dark);
+}
+
+.SVGIcon_Button.SVGIcon_PlusCircle .verticalLine {
+    stroke: var(--text-color-dark);
+}
+
+._1YdRdM9TZ_3Xolwv9aVEv- ._2qm05e8tWSAb-_fAHytQCP {
+    color: var(--text-color-dark);
+}
+
+._1tBzypb5E2AwNuBuVns9Hl ._1ljKTq3H58WbDZGNPfM0TY {
+    color: var(--icon-color);
+}
+
+.SVGIcon_Button.SVGIcon_DoubleArrow .Arrow1 {
+    stroke: var(--text-color-dark);
+}
+
+/* --- Secondary content area --- */
+._3x1HklzyDs4TEjACrRO2tB {
+    background: rgba(240, 248, 252, 0.7);
+}
+
+/* --- Library category labels (Segoe UI Semilight) --- */
+/* ._2-O4ZG0KrnSrzISHBKctFQ._5YTBr7WwIfzVU_3nUtAph {
+    color: #7e7e7e;
+    font-family: "PingFang SC", "Segoe UI", sans-serif !important;
+    font-size: 14px;
+} */
+
+/* ._2-O4ZG0KrnSrzISHBKctFQ._2ws8DONH9fxQjPXEmRpujE, */
+._3cV3O8FnPQqpJO5kIMUlLX._2mZ8LlvoUiyeEUtIWuTri {
+    color: #000000 !important;
+    font-family: "PingFang SC", "Segoe UI", sans-serif !important;
+    font-size: 14px;
+}
+
+/* Additional selectors for collection names */
+/* ._2-O4ZG0KrnSrzISHBKctFQ._2ws8DONH9fxQjPXEmRpujE *{
+    color: #000000 !important;
+}
+
+._2sYIghGVXJr6tsQVvcryy8._2ws8DONH9fxQjPXEmRpujE {
+    color: #000000 !important;
+} */
+
+/* --- Recent activity / collection --- */
+.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
+    background-color: rgba(57, 197, 187, 0.12);
+}
+
+/* Top header bar */
+._3Z7VQ1IMk4E3HsHvrkLNgo {
+    background-color: rgba(232, 248, 252, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Sidebar background */
+._3x1HklzyDs4TEjACrRO2tB {
+    background: rgba(232, 248, 252, 0.75) !important;
+}
+
+/* Sidebar selected/active item */
+._2TKEazUUS3TlniZfpc8OOe {
+    background: rgba(57, 197, 187, 0.25) !important;
+    border-left: 3px solid #39C5BB;
+}
+
+/* Sidebar category labels */
+._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3 {
+    background: rgba(57, 197, 187, 0.15) !important;
+    color: #1a3a4a !important;
+    border-radius: 6px;
+}
+
+/* Sidebar Home/Steam button */
+._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK {
+    background: rgba(57, 197, 187, 0.2) !important;
+    border-radius: 8px;
+}
+
+/* Sidebar search / input fields */
+._2PF_m-I5yte3WnQhpcz8RC,
+._20QAC4WMXm8qFE8waUT5oo {
+    background: rgba(255, 255, 255, 0.6) !important;
+    color: #1a3a4a !important;
+    border-radius: 6px;
+}
+
+/* Sidebar divider line */
+._276E6ijBpjMA2_iTxNhhjc._2g5K_hJWc7jVo81zuejhk2 {
+    background: rgba(57, 197, 187, 0.4) !important;
+}
+
+/* --- User status badges --- */
+.RtSv39ZoBOySnb8XQ5hJf._9YK5IY219Pm_F53DAxyYp,
+.RtSv39ZoBOySnb8XQ5hJf._3qhGkQ5qLVNQQ-J2-uPoHt {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+._3yD46y5pd3zOGR7CzKs0mC.online {
+    color: var(--user-online-color) !important;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+._3yD46y5pd3zOGR7CzKs0mC.ingame {
+    color: var(--user-ingame-color) !important;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+._3yD46y5pd3zOGR7CzKs0mC.offline {
+    color: var(--bg-color-light-gray) !important;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+._3vCzSrrXZzZjVJFZNg9SGu {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Various text elements --- */
+.ip-YZhijAMZcuRoXBGiye ._3wJnTtcTLEp0R7eQj_mK8Y {
+    color: var(--text-color-dark);
+}
+
+._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
+._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k {
+    color: var(--text-color-dark);
+}
+
+._2UyOBeiSdBayaFdRa39N2O {
+    color: var(--text-color-dark);
+}
+
+._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+    color: var(--text-color-dark);
+}
+
+._2foCkpRXhqq0UGVE50BWqj ._1KrJ3sFAqPBN9mfpaNTU5F,
+._1TdaAqMFadi0UTqilrkelR ._1KrJ3sFAqPBN9mfpaNTU5F {
+    color: var(--text-color-dark);
+}
+
+._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
+._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* --- Top bar accent --- */
+._2TKEazUUS3TlniZfpc8OOe {
+    background-color: rgba(0, 120, 255, 0.25);
+}
+
+._1ugNiylO2vKXhirsGocAxa {
+    background: none;
+}
+
+/* --- Downloads page background --- */
+._1l0LmmqDUXH19SjfELddn7 {
+    background: url(../imgs/downloadBG.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Download speed chart panel - translucent so background shows through */
+/* ._20JlDJD9-uoCjNLGp_8mY6.kGTS55N3oEbxE7HAgE9ZX,
+._3KDkLoCR8OM8xfdQysKn9t._1ashwbbBZrppDqaals3644 {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 8px;
+} */
+
+._1VNuYHM6BPBOJspC6zPf5r.IbePLaw-vSvhG1GTenYFg {
+    background: none;
+}
+
+._1VNuYHM6BPBOJspC6zPf5r ._35eOQ6EeVHNV5HGBrJ1-Vu {
+    color: var(--text-color-dark);
+}
+
+/* --- Download info bar --- */
+.sv3ZHPWbrD7yjwx5Mi3u5 ._1dHjjSl-57o1KQsQ1m1HSA._3WavcSX0NkHlBh5fICWKyB {
+    color: var(--text-color-dark);
+}
+
+.sv3ZHPWbrD7yjwx5Mi3u5 ._1dHjjSl-57o1KQsQ1m1HSA {
+    color: var(--icon-color);
+}
+
+body,
+body._2LxgdMcpWJRjkxZKbmeEEb {
+    color: var(--nav-text-color);
+}
+
+.qq2xItSXjpCsNrcxyPJtO .ROxNrcM6LrA4aUyH8IpFp .TK9wvF55dyA6RcOclozC8,
+.mw7VZNUZJWOhSrh3-kiym .ROxNrcM6LrA4aUyH8IpFp .TK9wvF55dyA6RcOclozC8 {
+    color: var(--text-color-dark);
+}
+
+.qq2xItSXjpCsNrcxyPJtO ._1CGnw50aAma6AYKF51Qzsm {
+    color: var(--icon-color);
+}
+
+._1SyggnJY6qbRSmbZpkK3-H {
+    color: var(--icon-color);
+}
+
+._3KDkLoCR8OM8xfdQysKn9t {
+    background: rgba(0, 120, 255, 0.2);
+}
+
+/* Download info section */
+._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 {
+    background: rgba(241, 241, 241, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 .eXF8xL2LUtzeWMbK-FSRz {
+    color: var(--text-color-dark);
+}
+
+._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 ._1iulCOMUxV6sBbqoKo_yXw {
+    color: var(--text-color-secondary);
+}
+
+/* Download icon */
+._373v1eWNyaPKhgnea9FZSt:has(._22WcrscaQSqK56PQKgf5YG) ._22WcrscaQSqK56PQKgf5YG .-OgRzXqfwOvAWFZS3Rk_N {
+    color: #000;
+}
+
+/* Download speed text */
+._373v1eWNyaPKhgnea9FZSt ._3a973VY2X3US_cZqA9ZgNF {
+    color: #000;
+}
+
+._373v1eWNyaPKhgnea9FZSt ._35T9nZ2RsVs8kf7OMPlaxe {
+    color: var(--text-color-dark);
+}
+
+._1SyggnJY6qbRSmbZpkK3-H .FuJLsEk_Umr68UjGanMno {
+    color: var(--text-color-dark);
+}
+
+._3mdnpmV9S9u27eB5JFwFNk .eXF8xL2LUtzeWMbK-FSRz {
+    color: var(--text-color-dark);
+}
+
+._3mdnpmV9S9u27eB5JFwFNk ._5TdA4FjU9OYsTIaHzloD {
+    color: var(--icon-color);
+}
+
+.hGZq446tJ_aWpDLU9rRSM ._1iulCOMUxV6sBbqoKo_yXw {
+    color: var(--text-color-dark);
+}
+
+._1SyggnJY6qbRSmbZpkK3-H ._2ns4wnmgr4XBzARpwn2NZ1 ._3WavcSX0NkHlBh5fICWKyB {
+    color: var(--icon-color);
+}
+
+._117rQTHH1RIewY7sSlvg3Z {
+    color: var(--icon-color);
+}
+
+._1SyggnJY6qbRSmbZpkK3-H ._3tEPpl-d9-fiCX5AdJiXJL {
+    color: var(--text-color-dark);
+}
+
+._3mdnpmV9S9u27eB5JFwFNk ._3BdWqJYvZfTohY-twD2i6Q {
+    color: var(--text-color-dark);
+}
+
+/* Sidebar dialog dropdowns and buttons */
+._3x1HklzyDs4TEjACrRO2tB .DialogDropDown._DialogInputContainer {
+    background: rgba(255, 255, 255, 0.7) !important;
+    color: #1a3a4a !important;
+    border-radius: 6px;
+}
+
+._3x1HklzyDs4TEjACrRO2tB ._3TbvbA43LhIlIEKsH7eqhI.DialogButton._DialogLayout.Secondary {
+    background: rgba(57, 197, 187, 0.2) !important;
+    color: #1a3a4a !important;
+    border-radius: 6px;
+}
+
+._3x1HklzyDs4TEjACrRO2tB ._1bqGAcZx1C71VYj14hz0po.DialogButton._DialogLayout.Primary {
+    background: rgba(0, 120, 255, 0.35) !important;
+    color: #fff !important;
+    border-radius: 6px;
+}
+
+/* Sidebar expand/resize trigger - hide visual artifact */
+.expand-trigger,
+.contract-trigger {
+    background: transparent !important;
+}
+
+/* Selected game in library list */
+._2iJsgdTIX9Tj23rWnB7Q-c {
+    background: rgba(57, 197, 187, 0.3) !important;
+}
+
+/* Game hover in library list */
+._1VNuYHM6BPBOJspC6zPf5r:hover,
+._1VNuYHM6BPBOJspC6zPf5r._3-SbBb63lDnu6LzKV-q3Cg {
+    background-color: rgba(57, 197, 187, 0.15) !important;
+}
+
+._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
+    background: rgba(0, 120, 255, 0.08);
+}
+
+/* --- Game detail page --- */
+._1_cYNJSvS6IXs9vLTEYjy5 {
+    background: transparent;
+}
+
+/* Game detail dark overlay - make transparent to show mainBG */
+._3lDczhulqraStjCitLYJ1K._2l416KfEtI4CL0mCUEmOBw._3FmxxjyWNHU1PrBGnBe6tm {
+    background: transparent !important;
+}
+
+/* Collections page background - remove black background */
+._3lDczhulqraStjCitLYJ1K.u1xD3KJEgksF_J_5TLZzO {
+    background: transparent !important;
+}
+
+/* --- Game detail right sidebar cards (friends/achievements/reviews etc.) --- */
+/* ._1_cYNJSvS6IXs9vLTEYjy5 */._2r4TK4BAuU-J4FuF_O7v_5
+.vzLedtsu3TtTlKLEKzIhH {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+/* Card header row */
+/* ._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG {
+    background: rgba(57, 197, 187, 0.22) !important;
+    border-bottom: 1px solid rgba(57, 197, 187, 0.3);
+} */
+
+/* Right sidebar outer column */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2aor4XVOYzN1PBSREk0UbO {
+    padding: 0 6px;
+}
+
+/* --- Scrollbar track --- */
+._1LJqx_qFOC8199RBQO5kU8 {
+    background: rgba(57, 197, 187, 0.18);
+    border-radius: 4px;
+}
+
+/* --- Scrollbar thumb (slider) --- */
+._3OSZu24hLN7YKjqGi7I2Xp {
+    background: #0078FF;
+    border-radius: 4px;
+}
+
+/* --- Global webkit scrollbar override --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 120, 255, 0.55) !important;
+    background-clip: padding-box !important;
+    border-radius: 999px;
+    border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(57, 197, 187, 0.8) !important;
+    background-clip: padding-box !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(57, 197, 187, 0.08);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* --- Main client background (Miku artwork) --- */
+._1ENHEsrSLcTRtPQFl1F-wL {
+    background: url(../imgs/mainBG.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Library right panel - must be transparent to show mainBG */
+._2Dd4T78PcCTUVgOtDGFY5j {
+    background: transparent !important;
+}
+
+._1KrJ3sFAqPBN9mfpaNTU5F {
+    color: var(--text-color-dark) !important;
+}
+
+/* --- Friends button in sidebar (Miku teal accent) --- */
+._1TdaAqMFadi0UTqilrkelR {
+    padding: 4px;
+    background: var(--miku-teal);
+    border-radius: 10px;
+}
+
+._2foCkpRXhqq0UGVE50BWqj {
+    width: 210px !important;
+}
+
+/* ===================================
+   Game Detail Page Overrides
+   =================================== */
+
+/* All text in game detail - Miku teal for readability */
+._1_cYNJSvS6IXs9vLTEYjy5 {
+    color: #39C5BB;
+}
+
+/* Card header titles */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG {
+    color: #39C5BB !important;
+}
+
+/* General text inside cards */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5 span,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5 div {
+    color: #39C5BB;
+}
+
+/* Page links */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2sNDjgK9EWiPLdNGkjun-w {
+    color: #39C5BB !important;
+}
+
+/* Timestamps & dates */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2TYVGoD27ZMfjRirKQNLfk,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1tIg-QIrwMNtCm7NcYADyi,
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ljAdVsP0faRHBhKgvOybK,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2gLHbXukQBdrIKhqEYVvOe {
+    color: rgba(57, 197, 187, 0.75) !important;
+}
+
+/* Activity / friend event text */
+._1_cYNJSvS6IXs9vLTEYjy5 ._34lrt5-Fc3usZU6trA1P0-,
+._1_cYNJSvS6IXs9vLTEYjy5 ._33cnXIqTRgRr49_FNXIHj6,
+._1_cYNJSvS6IXs9vLTEYjy5 .izVv8jajo7mehdAkZozAK,
+._1_cYNJSvS6IXs9vLTEYjy5 ._39Y01uSRcLiDg5DneTTR0m {
+    color: #39C5BB !important;
+}
+
+/* Friend activity container - fill parent width */
+._3cntzF30xAuwn1ARWJjvCb._1uS70KI6ZbUE94jUB27ioB {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+}
+
+/* Secondary text */
+._1_cYNJSvS6IXs9vLTEYjy5 ._19LfMT7PFWg2xHOqNjR99q,
+._1_cYNJSvS6IXs9vLTEYjy5 .QCKBqF2k_sRLcXJ5qQIEl,
+._1_cYNJSvS6IXs9vLTEYjy5 .Gy1Y7lb4Y47vK8odzSru2,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1ujzuoxGhLunHZQqHAqRgg,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2EyEa4GxazAthx5c83AUGO {
+    color: #cdcdcd !important;
+}
+
+/* Mid-gray text */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F,
+._1_cYNJSvS6IXs9vLTEYjy5 ._39ZurKJQex6v69aXzvc_nj,
+._1_cYNJSvS6IXs9vLTEYjy5 .uoFNFZ7Hs5cF1IjP2fvPw,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2H1MiFt6wMYuJDB8kZElFs,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2_TE0KLOU7kWWxa9LS7iXA div,
+._1_cYNJSvS6IXs9vLTEYjy5 .BDa6lbTAdR4RwtqgRNUnO {
+    color: #e3e3e3 !important;
+}
+
+/* Popup buttons */
+._1_cYNJSvS6IXs9vLTEYjy5 button.DialogButton._3Cdin80d-hVsakHUZboheb {
+    color: #cfcfcf !important;
+}
+
+/* SVG icon strokes */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1GZdosVXnfrf69yU8DWASl svg polyline,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1GZdosVXnfrf69yU8DWASl svg path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1UXbBdCvbg9tyZhc4owO4W svg polyline,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1UXbBdCvbg9tyZhc4owO4W svg path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .MbTRimZpGCATmn39ae8RT,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .k-QNT9kzOEOvG0U_kGmwr {
+    stroke: rgba(255, 255, 255, .8);
+}
+
+/* Like/comment/share icons */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1OhPtd0sU2yzZwckCTGRNC svg,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1OhPtd0sU2yzZwckCTGRNC path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1R6Oubrk1mRaGQf56EQwd4 svg,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1R6Oubrk1mRaGQf56EQwd4 path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ .QL3AayCY6oJkK95jwGibN svg,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ .QL3AayCY6oJkK95jwGibN path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._3grvnr9zzkvx6NoBOdmTnf,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._2RkIcXHXACX4EdBluR3nAH,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1S3Q9rK5wn6PAIXII0mBz4,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2Z3ghRCL5qh2cqXrrd9l8Z ._17u7kJzj4gno8unUOzRaz- svg {
+    fill: #cdcdcd !important;
+    color: #cdcdcd !important;
+}
+
+/* ===================================
+   Dialog / Modal - Miku Light Theme
+   =================================== */
+
+/* Dim overlay - lighten from full black */
+.ModalOverlayBackground {
+    background: rgba(100, 180, 200, 0.35) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+}
+
+/* Main dialog box - light blue background */
+.DialogContent,
+.DialogContent._DialogLayout {
+    background: rgba(232, 248, 252, 0.97) !important;
+    color: #000000 !important;
+    border: 1px solid rgba(57, 197, 187, 0.4) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(57, 197, 187, 0.2) !important;
+}
+
+/* All text inside dialog - black */
+.DialogContent *,
+.DialogContent._DialogLayout * {
+    color: #000000 !important;
+}
+
+/* Dialog header/title */
+.DialogContent .DialogHeader,
+.DialogContent .DialogTitle {
+    color: #000000 !important;
+    border-bottom: 1px solid rgba(57, 197, 187, 0.3) !important;
+}
+
+/* Dialog body text */
+.DialogContent .DialogBody,
+.DialogContent .DialogBodyText {
+    color: #1a3a4a !important;
+}
+
+/* Primary button - Miku teal */
+.DialogButton._DialogLayout.Primary {
+    background: linear-gradient(135deg, #39C5BB, #2ba8a0) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.DialogButton._DialogLayout.Primary:hover {
+    background: linear-gradient(135deg, #2ba8a0, #1e8a84) !important;
+}
+
+/* Secondary button - light */
+.DialogButton._DialogLayout.Secondary {
+    background: rgba(57, 197, 187, 0.12) !important;
+    color: #000000 !important;
+    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
+    border-radius: 8px !important;
+}
+
+.DialogButton._DialogLayout.Secondary:hover {
+    background: rgba(57, 197, 187, 0.25) !important;
+}
+
+/* Checkbox - light style */
+.DialogCheckbox {
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
+    border-radius: 4px !important;
+    color: #000000 !important;
+}
+
+.DialogCheckbox.Active {
+    background: rgba(57, 197, 187, 0.25) !important;
+    border-color: #39C5BB !important;
+}
+
+/* Input fields inside dialogs */
+.DialogContent input,
+.DialogContent textarea,
+.DialogContent ._DialogInputContainer {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: #000000 !important;
+    border: 1px solid rgba(57, 197, 187, 0.4) !important;
+    border-radius: 6px !important;
+}
+
+/* Exclude Millennium settings from dialog overrides */
+.MillenniumSettings .DialogContent,
+.MillenniumSettings .DialogContent * {
+    background: revert !important;
+    color: revert !important;
+}

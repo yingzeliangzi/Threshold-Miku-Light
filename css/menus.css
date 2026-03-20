@@ -1,0 +1,111 @@
+@import url(../global.css);
+
+/* ===================================
+   Threshold-Miku Light - Context Menus
+   =================================== */
+
+.DialogInput_Wrapper>input.DialogInput {
+    background: rgb(0 0 0 / 62%);
+}
+
+.zhaKeChn9HPNSMtk0ami_ ._1e6tjguQEHdYIehM9aRmO5 {
+    background: #464d60;
+}
+
+._3B8wRA4H7e_oSksYNqpSPv._1B1XTNsfuwOaDPAkkr8M42 {
+    color: #f3f7f8;
+}
+
+._26v9mHAi56x63OwY-jxett {
+    color: #666;
+}
+
+.contextMenuItem {
+    color: var(--nav-text-color) !important;
+}
+
+/* Hide divider lines */
+._2EstNjFIIZm_WUSKm5Wt7n:has(hr) hr {
+    display: none;
+}
+
+/* Remove padding */
+body.ContextMenuPopupBody ._2EstNjFIIZm_WUSKm5Wt7n {
+    padding: 0;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI {
+    border: none;
+    padding: 8px 22px 8px 22px;
+}
+
+/* First item */
+.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:first-of-type {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Last item */
+.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:last-of-type {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Menu item text */
+._2EstNjFIIZm_WUSKm5Wt7n ._2jXHP0742MyApMUVUM8IFn {
+    color: var(--text-color-dark) !important;
+}
+
+/* Hover effect (Miku accent blue) */
+._2EstNjFIIZm_WUSKm5Wt7n ._2jXHP0742MyApMUVUM8IFn:hover {
+    background: var(--miku-accent) !important;
+    color: #fff !important;
+}
+
+/* Rounded corners */
+body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt {
+    background: transparent !important;
+}
+
+body.ContextMenuPopupBody ._2EstNjFIIZm_WUSKm5Wt7n {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Menu background (frosted glass) */
+body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt.visible ._2EstNjFIIZm_WUSKm5Wt7n {
+    background: rgba(241, 241, 241, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* System tray / minimized Steam menus */
+.DesktopUI .PP7LM0Ow1K5qkR8WElLpt,
+._3qIuY9S_vXm3IQS-uE9SRS .PP7LM0Ow1K5qkR8WElLpt {
+    background: rgba(241, 241, 241, 0.95) !important;
+}
+
+/* Notification menu */
+.GreenEnvelopeMenu,
+.PP7LM0Ow1K5qkR8WElLpt {
+    background: rgba(241, 241, 241, 0.95) !important;
+}
+
+/* Menu items text */
+.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI,
+._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI {
+    color: var(--text-color-dark) !important;
+}
+
+/* Hover on tray menus */
+.DesktopUI:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:hover {
+    background: var(--miku-accent) !important;
+    color: #fff !important;
+}
+
+/* Hide separator in tray menus */
+.DesktopUI:has(._1n7Wloe5jZ6fSuvV18NNWI) .PP7LM0Ow1K5qkR8WElLpt hr {
+    display: none;
+}
