@@ -1,0 +1,172 @@
+/* =====================================================================
+   Sign-in window (Steamにサインイン / Sign in to Steam): account picker
+   Loaded through libraryroot.custom.css. Readable names in comments come
+   from Steam's own class table (tools/steamclass.py).
+   ===================================================================== */
+
+/* LoginStaticBackground: dark gradient behind everything */
+._3NH9aXAeVjt_j6_vKppevN {
+    background: rgb(var(--miku-mist-rgb)) !important;
+}
+
+/* LoginAnimatedBackground: Steam pans a grid of game capsules here (60s).
+   Same pan, but over the library artwork under a light mist. */
+._3MJTdOkAxu5hiJ565avrpz {
+    background-image:
+        linear-gradient(rgba(var(--miku-mist-rgb), 0.55), rgba(var(--miku-mist-rgb), 0.55)),
+        url(../imgs/mainBG.jpg) !important;
+    filter: blur(2px) saturate(1.1);
+}
+
+/* Login: base text colour of the whole window. Steam's light grey is made
+   for its dark design; anything without its own colour (the signing-in
+   status line, for one) inherits it and vanishes on the light background. */
+.VZ6x_grhNkIYJG__jEEyp {
+    color: var(--miku-text-2) !important;
+}
+
+/* --- Signing in (after picking an account): avatar, name, status --- */
+
+/* UserAvatar / UserAccountName / StatusThrobber (same module as the picker) */
+.VZ6x_grhNkIYJG__jEEyp ._2NV3-IwT0p3REl8xKd6Iqk {
+    border: 2px solid #fff !important;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(var(--miku-deep-rgb), 0.22) !important;
+}
+
+.VZ6x_grhNkIYJG__jEEyp ._1xMYO5Rk-ghmixXaxecuo- {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+    text-shadow: var(--miku-halo);
+}
+
+/* LoginStatusContainer > LoginStatus (サインインしています… / Signing in…)
+   and UserContainer > Avatar + PersonaName: Steam sets the name near-white */
+._1TR3CCCdSmI-0MXucYBuP2,
+._1TR3CCCdSmI-0MXucYBuP2 ._234vZnlQxRbmkpJ5Qq82Mc {
+    color: var(--miku-text) !important;
+    text-shadow: var(--miku-halo);
+}
+
+._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(var(--miku-deep-rgb), 0.12);
+}
+
+._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W ._2tyxJwWA7FRwarLgRU2dWa /* PersonaName */ {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W ._3YzgVE15q0lUY1uAwRQm1U /* Avatar */ {
+    border-radius: 8px;
+}
+
+/* LoginError: Steam's red, a shade darker for the light background */
+.uRCcu_Z4VjNgLhrUthswE {
+    color: #c0392b !important;
+}
+
+/* Title bar highlight (Steam blue gradient) and close button */
+.VZ6x_grhNkIYJG__jEEyp .title-area-highlight {
+    background: linear-gradient(to right, rgba(var(--miku-teal-rgb), 0.30), rgba(var(--miku-teal-rgb), 0)) !important;
+}
+
+.VZ6x_grhNkIYJG__jEEyp .title-area-icon {
+    color: var(--miku-text-2) !important;
+}
+
+/* HeaderLogo (STEAM wordmark, white) */
+._2E_ejdBSC79L4iDC4FAMHY,
+._2E_ejdBSC79L4iDC4FAMHY * {
+    fill: var(--miku-text) !important;
+}
+
+/* WhosPlaying (プレイヤーを選択) */
+._2OLQBEFErC3eaxHeD7--LU {
+    color: var(--miku-text) !important;
+    text-shadow: var(--miku-halo);
+}
+
+/* --- CachedUsers > UserList > User (.Existing account / .New "+") --- */
+
+/* Icon of an existing account: Steam draws a dark frame and a heavy shadow */
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6.szwarX82VO26tR6sfO_XV ._1q5iGs9FEBhJcXc2mY3HPG {
+    background-color: #fff !important;
+    border: 2px solid #fff !important;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(var(--miku-deep-rgb), 0.22) !important;
+}
+
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6.szwarX82VO26tR6sfO_XV ._1q5iGs9FEBhJcXc2mY3HPG img {
+    border-radius: 8px;
+}
+
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6:is(:hover, :focus-within) ._1q5iGs9FEBhJcXc2mY3HPG {
+    border-color: var(--miku-teal) !important;
+    box-shadow: 0 0 0 3px rgba(var(--miku-teal-rgb), 0.25), 0 4px 12px rgba(var(--miku-deep-rgb), 0.22) !important;
+}
+
+/* MoreMenuButton (… on hover). Steam makes it a 30x30 square in the avatar's
+   bottom-right corner; with many accounts the avatars shrink to ~37px and the
+   square covers most of the avatar, so clicks hit the menu instead of the
+   account. Here it is a small round badge sitting on the top-right corner. */
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6.szwarX82VO26tR6sfO_XV ._1q5iGs9FEBhJcXc2mY3HPG ._3bvVUTxEPL3cm065bRRLEg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    inset: -7px -7px auto auto !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--glass-line) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 1px 4px rgba(var(--miku-deep-rgb), 0.25) !important;
+    color: var(--miku-text-2) !important;
+}
+
+._1cpxSyGwDz13Qlo95Kbo5H ._3bvVUTxEPL3cm065bRRLEg:hover {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+}
+
+/* MoreMenuIcon: Steam fills it white */
+._1cpxSyGwDz13Qlo95Kbo5H ._3bvVUTxEPL3cm065bRRLEg ._1ytPahj2hONDeZYLCN7eEu svg * {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* Name: Persona (display name) / Account (login name), shown on hover */
+._1cpxSyGwDz13Qlo95Kbo5H ._3ywfzCGY59FNeDwi9wBXUv._1TlEvP30mzqbqbKluifFEN {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+    text-shadow: var(--miku-halo);
+}
+
+._1cpxSyGwDz13Qlo95Kbo5H ._3ywfzCGY59FNeDwi9wBXUv.cG5NAvF5GI4xApThQ-oON {
+    color: var(--miku-text-2) !important;
+    text-shadow: var(--miku-halo);
+}
+
+/* .New ("+" add another account): black square in Steam */
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6._1vFy9XM83l2YQ2QjmWl1CK ._1q5iGs9FEBhJcXc2mY3HPG {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 50%;
+    color: var(--miku-teal-ink) !important;
+    box-shadow: 0 2px 8px rgba(var(--miku-deep-rgb), 0.15);
+}
+
+._1cpxSyGwDz13Qlo95Kbo5H .hPf0QcicQJpY6-6E43gi6._1vFy9XM83l2YQ2QjmWl1CK ._1q5iGs9FEBhJcXc2mY3HPG svg * {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* "Ask which account to use every time Steam starts" toggle row */
+._1cpxSyGwDz13Qlo95Kbo5H ._2tALpM7z8naXJ35Pp5fNAG /* FieldLeftColumn */ {
+    color: var(--miku-text-2) !important;
+    text-shadow: var(--miku-halo);
+}

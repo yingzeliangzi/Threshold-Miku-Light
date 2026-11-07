@@ -44,22 +44,20 @@ body.ModalDialogBody {
     color: var(--miku-text-2) !important;
 }
 
-._1-vlriAtKYDViAEunue4VO {
-    border-right: 4px solid transparent;
-}
-
 ._1-vlriAtKYDViAEunue4VO:hover:not(._2DpXjzK3WWsOtUWUrcuOG7) {
     background: rgba(var(--miku-teal-rgb), 0.12);
+    border-radius: 8px;
 }
 
 ._1-vlriAtKYDViAEunue4VO:hover:not(._2DpXjzK3WWsOtUWUrcuOG7) ._2PPbMrzl8PKBwpkjYs9b0i {
     color: var(--miku-text) !important;
 }
 
-/* .Active page */
+/* .Active page: soft rounded aqua fill, like the selected game in the
+   library sidebar (no coloured side bar) */
 ._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 {
-    background: var(--miku-teal-wash-strong);
-    border-right: 4px solid var(--miku-teal);
+    background: rgba(var(--miku-aqua-rgb), 0.8);
+    border-radius: 8px;
 }
 
 ._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 ._1rD8X96FdnksZLvRRlEiCR,

@@ -1,6 +1,20 @@
 # Threshold-Miku Light
 
-> 一款以初音未来为主题的 Steam 亮色皮肤，基于 [SFP](https://github.com/PhantomGamers/SFP)。
+> 一款以初音未来为主题的 Steam 亮色皮肤，支持 [SFP](https://github.com/PhantomGamers/SFP) 和 [Millennium](https://steambrew.app/)。
+
+### English
+
+A light Hatsune Miku skin for the Steam client: Miku teal (`#39C5BB`) accents and light frosted glass over anime artwork, with readable text on every page — library, game pages, collections, downloads, friends list & chat, settings, dialogs and menus. Pure CSS; no JavaScript injection needed.
+
+**Install**
+
+1. Download `Miku.zip` from [Releases](https://github.com/yingzeliangzi/Threshold-Miku-Light/releases/latest), extract it and put the `Miku` folder in `Steam\steamui\skins\`.
+2. **SFP**: Settings → Steam Skin → choose **Miku** and enable *Inject CSS*.
+   **Millennium**: choose **Threshold-Miku-Light** in Millennium's theme settings.
+3. Fully quit Steam and start it again.
+
+The screenshots below use the Japanese client; the skin works with any Steam language.
+Credits: inspired by [Threshold-Miku by Jack-Myth](https://github.com/Jack-Myth/Threshold-Miku), based on [blueArchiveSteamSkin by EugeneXXXie](https://github.com/EugeneXXXie/blueArchiveSteamSkin).
 
 ---
 
@@ -36,7 +50,7 @@ Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，�
 ### 前置要求
 
 - [SFP](https://github.com/PhantomGamers/SFP) — Steam 皮肤加载器（支持 CSS/JS 注入）
-- [Millennium](https://steambrew.app/) — 你要是想用这个也可以，但是我不太懂，我本人一直在用的是SFP
+- [Millennium](https://steambrew.app/) — 也可以用：`skin.json` 按 Millennium 的格式写了明确的加载规则，两边通用（我本人一直在用的是 SFP）
 
 ### 安装步骤
 
@@ -52,13 +66,14 @@ Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，�
 
 ```
 Miku/
-├── skin.json               # Millennium 皮肤配置（CSS/JS 注入规则）
+├── skin.json               # SFP / Millennium 共用：每个窗口加载哪个 CSS，以及主题库展示信息
 ├── global.css              # 配色变量、字体、鼠标指针、滚动条
 ├── libraryroot.custom.css  # 设置窗口和各种弹出对话框的入口（引用 settings.css）
 ├── css/
 │   ├── steam.css           # 主界面：顶栏、游戏库、游戏详情、收藏夹、下载、底栏
 │   ├── dialogs.css         # 对话框、设置行、开关、按钮（steam.css 和 settings.css 共用）
 │   ├── settings.css        # 设置窗口及其它弹出对话框
+│   ├── login.css           # 登录窗口：选择账户、正在登录
 │   ├── friends.custom.css  # 好友列表 & 聊天窗口
 │   ├── menus.css           # 所有弹出菜单（Steam/表示/右键菜单/通知/托盘）
 │   ├── supernavs.css       # 顶部导航悬停菜单（引用 menus.css）
@@ -167,6 +182,13 @@ Miku/
 | 对话框 | 浅蓝背景 + 深色字体 + 青绿按钮，遮罩层改为半透明毛玻璃 |
 | 安装对话框 | 安装位置列表为白色卡片，选中的磁盘为浅青底 + 青色边框 |
 
+### 登录窗口
+| 项目 | 说明 |
+|------|------|
+| 背景 | 与游戏库相同的背景图 + 浅色薄纱（原版为深色游戏封面墙） |
+| 选择账户 | 白色圆角头像框，悬停时青色描边；「…」更多按钮改为头像右上角的小圆点，不再挡住头像 |
+| 正在登录 | 状态文字、头像旁的昵称改为深色，在浅色背景上看得清 |
+
 ### 菜单
 | 项目 | 说明 |
 |------|------|
@@ -192,12 +214,14 @@ Miku/
 - 安装对话框 安装位置列表未选中的磁盘为深灰底 + 深色字，选中的为 Steam 蓝
 - 收藏夹 点进单个收藏夹后整页为深蓝底，排序下拉框看不清
 - 聊天窗口 对方的名字和时间直接压在背景图上看不清；标签栏发灰；日期分隔线文字看不清
+- 登录窗口 选择账户时「…」更多按钮盖住整个头像，点不到账户；「正在登录」和昵称为白字配浅色背景
+- 设置 / 游戏属性 左侧选中项的青色竖条改为圆角浅青底
 - 好友列表 点开搜索后的输入框为深灰外框 + 黑色内阴影，清空文字后依旧保持这个样子；之后「フレンド」标签会被挤成两行
 - 设置-所有页面 设置项为深灰卡片配黑色文字，完全看不清
 - 好友列表 每行叠加白色底块，杂乱
 - 菜单 灰底 + 亮蓝悬停，与主题不搭
 
-所有选择器都已对照当前 Steam 版本核对（328 个乱码 class 全部有效），并在 CSS 注释里标注了 Steam 源码中的可读名称。
+所有选择器都已对照当前 Steam 版本核对（352 个乱码 class 全部有效），并在 CSS 注释里标注了 Steam 源码中的可读名称。
 
 ---
 

@@ -1,5 +1,23 @@
 {
+    "name": "Threshold-Miku-Light",
+    "author": "nasakura",
+    "description": "A light, glassy Hatsune Miku theme for the Steam client: Miku teal accents, anime artwork backgrounds and readable text everywhere (library, game pages, downloads, friends & chat, settings, dialogs and menus).",
+    "version": "2.0.0",
+    "tags": [
+        "Miku",
+        "Light",
+        "Anime",
+        "Vocaloid",
+        "Glass"
+    ],
+    "header_image": "https://raw.githubusercontent.com/yingzeliangzi/Threshold-Miku-Light/main/screenshots/preview-header.jpg",
+    "splash_image": "https://raw.githubusercontent.com/yingzeliangzi/Threshold-Miku-Light/main/screenshots/preview-splash.jpg",
+    "github": {
+        "owner": "yingzeliangzi",
+        "repo_name": "Threshold-Miku-Light"
+    },
     "Steam-WebKit": "./css/webkit.css",
+    "UseDefaultPatches": false,
     "Patches": [
         {
             "MatchRegexString": ".*http.*steam.*",
@@ -22,17 +40,30 @@
         {
             "MatchRegexString": "Supernav$",
             "TargetCss": "./css/supernavs.css"
+        },
+        {
+            "MatchRegexString": ".ModalDialogPopup",
+            "TargetCss": "./libraryroot.custom.css"
+        },
+        {
+            "MatchRegexString": ".FullModalOverlay",
+            "TargetCss": "./libraryroot.custom.css"
+        },
+        {
+            "MatchRegexString": "^OverlayBrowser_Browser$",
+            "TargetCss": "./libraryroot.custom.css"
+        },
+        {
+            "MatchRegexString": "^SP Overlay:",
+            "TargetCss": "./libraryroot.custom.css"
+        },
+        {
+            "MatchRegexString": "^SteamBrowser_Find$",
+            "TargetCss": "./libraryroot.custom.css"
+        },
+        {
+            "MatchRegexString": "^OverlayTab\\d+_Find$",
+            "TargetCss": "./libraryroot.custom.css"
         }
-    ],
-    "UseDefaultPatches": true,
-    "author": "nasakura",
-    "description": "Hatsune Miku light theme for Steam",
-    "name": "Threshold-Miku-Light",
-    "version": "2.0.0",
-    "tags": [
-        "Miku",
-        "Light",
-        "Anime",
-        "Vocaloid"
     ]
 }
