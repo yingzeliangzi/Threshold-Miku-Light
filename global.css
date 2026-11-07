@@ -1,44 +1,85 @@
 :root {
-    /* === Threshold-Miku Light Color Palette === */
+    /* === Threshold-Miku Light Color Palette ===
+       Teal: the official Miku colour #39C5BB, with tints from the
+       "Vibrant Miku Blues and Teal Harmony" palette
+       (colorany.com/color-palettes/miku-color-palettes): #A2EFE8 aqua washes.
+       Pink: sakura #FFB2C8 from the same site's pastel palettes, used only
+       as small accents (new-item badges, text selection). No side bars:
+       headings use --miku-hairline instead.
+       Text and glass stay neutral so the artwork keeps its own colours.
 
-    /* Accent - Cobalt Blue (original default) */
+       Contrast notes (WCAG, on white glass):
+       --miku-text 14.7 / --miku-text-2 8.2 / --miku-text-3 5.2 / --miku-teal-ink 5.2
+       White on --miku-teal-fill: 2.8 (light end) to 4.5 (dark end), with a
+       text shadow; used for bold button labels.
+       --miku-teal (#39C5BB) is only 2.1 on white and the pinks are 1.7-2.2:
+       use them for fills, bars and icons, never for text. */
+
+    /* Palette as r, g, b triplets, for rgba(var(--x), alpha) */
+    --miku-mist-rgb: 242, 251, 250;   /* #F2FBFA near-white glass tint */
+    --miku-aqua-rgb: 162, 239, 232;   /* #A2EFE8 */
+    --miku-teal-rgb: 57, 197, 187;    /* #39C5BB */
+    --miku-ink-rgb: 15, 122, 115;     /* #0f7a73 */
+    --miku-deep-rgb: 20, 50, 60;      /* shadows */
+    --miku-pink-rgb: 255, 178, 200;   /* #FFB2C8 */
+
+    /* Text */
+    --miku-text: #1b2a33;
+    --miku-text-2: #3d5260;
+    --miku-text-3: #5b6f7b;
+    --miku-text-on-accent: #ffffff;
+
+    /* Accents */
+    --miku-teal: #39C5BB;
+    --miku-teal-ink: #0f7a73;
+    --miku-teal-deep: #14877f;
+    --miku-teal-fill: linear-gradient(135deg, #26ada2 0%, #12857c 100%);
+    --miku-teal-fill-hover: linear-gradient(135deg, #2ab3a8 0%, #138a80 100%);
+    --miku-text-shadow-on-accent: 0 1px 2px rgba(0, 50, 45, 0.45);
+    --miku-teal-wash: rgba(var(--miku-aqua-rgb), 0.42);
+    --miku-teal-wash-strong: rgba(var(--miku-aqua-rgb), 0.65);
+    --miku-blue-ink: #0060cc;
+    --miku-pink: #e2457f;
+    --miku-pink-soft: #FFB2C8;
+
+    /* Glass surfaces (sit on top of the artwork backgrounds) */
+    --glass-strong: rgba(255, 255, 255, 0.86);
+    --glass: rgba(255, 255, 255, 0.68);
+    --glass-soft: rgba(255, 255, 255, 0.46);
+    --glass-tint: rgba(var(--miku-mist-rgb), 0.74);
+    --glass-border: rgba(255, 255, 255, 0.72);
+    --glass-line: rgba(var(--miku-ink-rgb), 0.20);
+    --glass-blur: blur(14px) saturate(1.25);
+
+    /* Section headings: text plus a thin teal line fading out to the right
+       (Steam's own shelf headers work this way). No coloured side bars. */
+    --miku-hairline: linear-gradient(to right, rgba(var(--miku-ink-rgb), 0.35), rgba(var(--miku-ink-rgb), 0));
+    --miku-halo: 0 0 6px rgba(var(--miku-mist-rgb), 0.95), 0 0 2px rgba(var(--miku-mist-rgb), 0.9);
+    --glass-shadow: 0 4px 18px rgba(var(--miku-deep-rgb), 0.12);
+
+    /* Friend status (ink versions readable on light glass) */
+    --user-online-color: #18697f;
+    --user-ingame-color: #4c7a00;
+    --user-offline-color: #5b6f7b;
+
+    /* --- Legacy names kept for older rules --- */
     --miku-accent: #0078FF;
     --miku-accent-hover: #005A9E;
     --miku-accent-selected: #196AAF;
     --miku-accent-light: rgba(0, 120, 255, 0.15);
-    --miku-teal: #39C5BB;
-
-    /* Friend status colors (from original legacycolors.styles) */
-    --user-online-color: rgb(24, 105, 136);
-    --user-ingame-color: rgb(84, 126, 0);
-    --user-offline-color: rgb(67, 67, 67);
-
-    /* Icon and navigation */
-    --icon-color: #373737;
-    --nav-text-color: rgb(55, 55, 55);
-
-    /* Main backgrounds (light theme) */
-    --main-bg-color: #E8F4F8;
+    --icon-color: #3d5260;
+    --nav-text-color: #3d5260;
+    --main-bg-color: #F2FBFA;
     --bg-color-light-gray: #E0E0E0;
     --bg-color-dark-blue: rgb(0, 120, 255);
-
-    /* Text colors */
-    --text-color-dark: #000000;
-    --text-color-secondary: #373737;
-    --text-color-disabled: #666666;
-
-    /* Friend list backgrounds */
+    --text-color-dark: #1b2a33;
+    --text-color-secondary: #3d5260;
+    --text-color-disabled: #5b6f7b;
     --friend-list-bg-color: rgba(241, 241, 241, 0.92);
-    --friend-list-accent: rgba(0, 120, 255, 0.12);
-
-    /* Input */
+    --friend-list-accent: rgba(57, 197, 187, 0.16);
     --text-input-bg-color: #F5F5F5;
-
-    /* Voice controls */
     --voice-btn-color-star: rgb(17, 162, 36);
     --voice-btn-color-end: rgb(16, 205, 78);
-
-    /* Frosted glass overlays (from original JackMyth translucency) */
     --glass-overlay: rgba(255, 255, 255, 0.78);
     --glass-light: rgba(255, 255, 255, 0.60);
     --glass-medium: rgba(255, 255, 255, 0.40);
@@ -54,4 +95,36 @@
 * {
     font-family: "PingFang SC", "Segoe UI", "Microsoft YaHei", sans-serif !important;
     cursor: url('imgs/cursor.png') 0 0, auto !important;
+}
+
+/* Sakura-pink text selection */
+::selection {
+    background: rgba(var(--miku-pink-rgb), 0.65);
+    color: var(--miku-text);
+}
+
+/* Thin rounded scrollbars everywhere */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--miku-ink-rgb), 0.45) !important;
+    background-clip: padding-box !important;
+    border-radius: 999px;
+    border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--miku-teal-rgb), 0.85) !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(var(--miku-teal-rgb), 0.08);
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }

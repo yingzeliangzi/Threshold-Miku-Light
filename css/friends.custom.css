@@ -1,351 +1,362 @@
 @import url(../global.css);
 
-/* ===================================
-   Threshold-Miku Light - Friends/Chat
-   =================================== */
+/* =====================================================================
+   Threshold-Miku Light - Friends list & chat windows
+   Most class names here are Steam's plain (unhashed) names; hashed ones
+   are labelled with their readable name.
+   ===================================================================== */
 
-/* --- Friend list header --- */
+body.fullheight {
+    background: #eef8fa;
+}
+
+/* ---------------------------------------------------------------------
+   1. Header: current user, quick access, tabs and search
+   --------------------------------------------------------------------- */
+
 .friendListHeaderContainer {
-    background-color: rgba(232, 244, 248, 0.95);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: linear-gradient(to bottom, rgba(250, 254, 255, 0.95), rgba(232, 246, 249, 0.92)) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--glass-line);
 }
 
-/* --- User status name colors --- */
-.offline .nOdcT-MoOaXGePXLyPe0H {
-    color: var(--text-color-dark);
+/* Soft glow behind the avatar - Miku teal instead of Steam blue */
+.statusHeaderGlow {
+    opacity: 0.25;
+    filter: hue-rotate(-30deg);
 }
 
-.online .nOdcT-MoOaXGePXLyPe0H {
-    color: var(--user-online-color);
+/* Current user name / status */
+.currentUserContainer .nOdcT-MoOaXGePXLyPe0H /* playerName */ {
+    font-weight: 600;
 }
 
-.ingame .nOdcT-MoOaXGePXLyPe0H {
-    color: var(--user-ingame-color);
+.currentUserContainer .ContextMenuButton svg,
+.currentUserContainer .SVGIcon_DoNotDisturb {
+    fill: var(--miku-text-3) !important;
+    color: var(--miku-text-3) !important;
 }
 
-/* --- Online rich presence --- */
-.online ._2Ri005Wg_uXDTa71kdRbcN,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited {
-    color: #5a9eb5;
+/* Quick access drop hint */
+.quickAccessFriendsMessage {
+    color: var(--miku-text-3) !important;
 }
 
-:not(.friendInviteContainer) .online .ContextMenuButton .SVGIcon_DownArrowContextMenu {
-    fill: var(--user-online-color);
+/* Tab row (フレンド + search + buttons) */
+.socialTabContainer .friendTab,
+.socialTabContainer .friendTab.activeTab {
+    background: transparent !important;
 }
 
-/* --- Offline rich presence --- */
-.offline ._2Ri005Wg_uXDTa71kdRbcN,
-.offline ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
-.offline ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.offline ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
-.offline ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited {
-    color: var(--nav-text-color);
+.socialTabContainer .tabLabel {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
 }
 
-/* --- Friend list container --- */
+.socialTabContainer svg,
+.friendListButton svg {
+    color: var(--miku-text-2) !important;
+    fill: var(--miku-text-2);
+}
+
+.socialTabContainer .friendRequestButton .redCircle {
+    fill: var(--miku-pink);
+}
+
+/* Tab label (フレンド): after the search closes, Steam leaves the empty search
+   area stretched, which squeezes the label onto two lines */
+.socialTabContainer .tabLabel {
+    white-space: nowrap;
+    flex-shrink: 0 !important;
+}
+
+/* Search field. Clicking the search icon swaps the tab row for
+   TabSearchButton > socialSearchContainer > form.SearchActive > input, and that
+   stays mounted after the text is cleared (until Esc / clicking away).
+   Steam paints the container dark grey and the input with a heavy black
+   inset shadow, so both get the header's light look here. */
+.TabSearchButton .socialSearchContainer,
+.TabSearchButton .socialInputContainer,
+.TabSearchButton .inputContainer {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.socialTabContainer input,
+.friendsListSearch input,
+.TabSearchButton input {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 999px;
+    box-shadow: none !important;
+    padding-left: 12px !important;
+    outline: none;
+}
+
+/* the open search row is 27px tall; Steam's 28px input gets clipped at the bottom */
+.TabSearchButton input {
+    box-sizing: border-box;
+    height: 25px !important;
+    margin-top: 1px;
+}
+
+.socialTabContainer input:focus,
+.friendsListSearch input:focus,
+.TabSearchButton input:focus {
+    border-color: var(--miku-teal) !important;
+    box-shadow: 0 0 0 3px rgba(var(--miku-teal-rgb), 0.18) !important;
+}
+
+.socialTabContainer input::placeholder,
+.TabSearchButton input::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+/* friendSearchClear (x inside the field) */
+.TabSearchButton .friendSearchClear svg {
+    color: var(--miku-text-3) !important;
+    fill: var(--miku-text-3) !important;
+}
+
+.TabSearchButton .friendSearchClear:hover svg {
+    color: var(--miku-teal-ink) !important;
+    fill: var(--miku-teal-ink) !important;
+}
+
+/* ---------------------------------------------------------------------
+   2. Friend list body
+   --------------------------------------------------------------------- */
+
+/* Artwork with a light veil, so rows don't need their own white boxes */
 .friendlistListContainer {
-    color: #6a9fc2;
+    background:
+        linear-gradient(rgba(var(--miku-mist-rgb), 0.62), rgba(var(--miku-mist-rgb), 0.62)),
+        url(../imgs/friendsBG.jpg) no-repeat center top / cover !important;
+    color: var(--miku-text-2);
 }
 
-.recentChatsGroup .friendGroup .groupName,
-.friendGroup.taggedGroup .groupName,
-.friendGroup.gameGroup .groupName {
-    color: var(--icon-color);
+/* FriendListInsetShadowTop / Bottom */
+._1osHa9KHOmdCDNrA232z4N,
+._2OoTJwlWvzvAysWOOEQaXS {
+    background: none !important;
 }
 
-.friendsui-container .SVGIcon_PlusCircle {
-    stroke: var(--text-color-dark);
+/* Groups and rows: transparent, highlight on hover */
+.friendGroup,
+.friendGroup.gameGroup,
+.friendsContainer,
+.friend {
+    background: transparent !important;
+    backdrop-filter: none !important;
 }
 
-/* --- Friends list vertical panel background (Miku artwork) --- */
-.friendlistListContainer {
-    background: url(../imgs/friendsBG.jpg) no-repeat center top / cover;
+.friend {
+    border-radius: 8px;
+    margin: 0 4px;
+    transition: background-color 0.12s;
 }
 
-/* Ensure friend entries are readable over image background */
-.FriendsListContent .friendlistListContainer .friend {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+.friend:hover,
+.friend.ContextMenuOpen {
+    background: rgba(var(--miku-aqua-rgb), 0.55) !important;
 }
 
-.FriendsListContent .friendlistListContainer .friend:hover {
-    background: rgba(57, 197, 187, 0.18);
-}
-
-.FriendsListContent .friendlistListContainer .friendGroup .groupHeader,
-.FriendsListContent .friendlistListContainer .friendGroup .groupHeaderContainer,
-.friendlistListContainer .groupHeaderContainer,
+/* Group header (Counter-Strike 2 / オンライン / オフライン / categories):
+   plain teal text with Steam's own line (hr) running to the right */
+.friendGroup .groupName,
 .groupHeaderContainer {
-    background: rgba(57, 197, 187, 0.18) !important;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 6px;
-    color: #1a3a4a !important;
+    background: transparent !important;
+    margin: 4px 4px 2px;
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+    text-shadow: var(--miku-halo);
 }
 
-/* Online/Offline/In-Game group name text */
-.FriendsListContent .friendlistListContainer .friendGroup .groupName,
-.friendlistListContainer .groupName,
-.groupName {
-    color: #1a3a4a !important;
+.groupHeaderContainer .groupName {
+    background: transparent !important;
+    margin: 0;
 }
 
-/* Game group entries also need white overlay */
-.FriendsListContent .friendlistListContainer .friendGroup.gameGroup .friend,
-.FriendsListContent .friendlistListContainer .friendGroup.gameGroup {
-    background: rgba(255, 255, 255, 0.55);
+.friendGroup .groupName hr,
+.groupHeaderContainer hr {
+    border-color: rgba(var(--miku-ink-rgb), 0.25) !important;
+    background: rgba(var(--miku-ink-rgb), 0.25) !important;
 }
 
-/* --- In-game rich presence --- */
-.ingame.awayOrSnooze ._2Ri005Wg_uXDTa71kdRbcN,
+.groupName .groupCount,
+.groupHeaderContainer .groupCount {
+    color: var(--miku-text-3) !important;
+    font-weight: 400;
+}
+
+.groupName .ExpandPlusMinus {
+    color: var(--miku-teal-ink) !important;
+    fill: var(--miku-teal-ink);
+}
+
+/* "+1 他 1 人とプレイ中" (party footer) */
+.SteamPlayerGroupFooterLabel,
+.SteamPlayerGroupFooterCount .count {
+    color: #3f6600 !important;
+    opacity: 1 !important;
+}
+
+.SteamPlayerGroupLines {
+    border-color: rgba(76, 122, 0, 0.45) !important;
+}
+
+/* --- Names & rich presence (playerName / richPresenceLabel / gameName) --- */
+.online .nOdcT-MoOaXGePXLyPe0H,
+.friend.online {
+    color: var(--user-online-color) !important;
+}
+
+.ingame .nOdcT-MoOaXGePXLyPe0H,
+.friend.ingame {
+    color: var(--user-ingame-color) !important;
+}
+
+.offline .nOdcT-MoOaXGePXLyPe0H {
+    color: var(--miku-text-2) !important;
+}
+
+.online ._2Ri005Wg_uXDTa71kdRbcN,
+.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a {
+    color: #2b7f99 !important;
+}
+
 .ingame ._2Ri005Wg_uXDTa71kdRbcN,
 .ingame ._2Ri005Wg_uXDTa71kdRbcN a,
-.ingame ._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.ingame ._2Ri005Wg_uXDTa71kdRbcN a:active,
-.ingame ._2Ri005Wg_uXDTa71kdRbcN a:visited {
-    color: #6b8f3a;
-}
-
 .ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited,
-.ingame._1BbOegz8bYL7iPzgYpOgQI ._2Ri005Wg_uXDTa71kdRbcN {
-    color: #4a6b24;
+.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a {
+    color: #3f6600 !important;
 }
 
-/* --- Friend list footer (Miku teal accent) --- */
-.friendListFooter {
-    background: var(--miku-teal);
+.offline ._2Ri005Wg_uXDTa71kdRbcN,
+.offline ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a {
+    color: var(--miku-text-3) !important;
 }
 
-/* --- Chat room list --- */
+/* Away / snooze friends a little faded */
+.friend.awayOrSnooze .labelHolder {
+    opacity: 0.8;
+}
+
+/* Nickname "*" (playerNicknameBracket) */
+._3XEmWmfQy7gbYJ4KJ1N9tp,
+.playerNicknameBracket {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Context menu arrow next to names */
+.friend .ContextMenuButton svg {
+    fill: var(--miku-text-3) !important;
+}
+
+/* ---------------------------------------------------------------------
+   3. Group chats section + footer
+   --------------------------------------------------------------------- */
+
+.friendsListSectionTitle,
+.friendsListSectionTitle.chatSectionTitle {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-shadow: var(--miku-text-shadow-on-accent);
+}
+
+.friendsListSectionTitle svg {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
 .chatRoomListContainer {
-    background: var(--friend-list-bg-color);
+    background: rgba(var(--miku-mist-rgb), 0.94) !important;
 }
 
-.ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName {
-    color: var(--text-color-dark);
+.ChatRoomListGroupItem .groupNameStatusContainer .chatRoomName,
+.chatRoomGroupHeaderName {
+    color: var(--miku-text) !important;
 }
 
-/* --- Active tab --- */
-.activeTab {
-    background: var(--friend-list-accent);
+.friendListFooter {
+    background: var(--miku-teal-fill) !important;
 }
 
-/* --- Section titles --- */
-.friendsListSectionTitle {
-    background: var(--friend-list-accent);
-}
-
-/* --- Chat tabs bar (Miku accent) --- */
-.titleBarContainer.ChatTabs {
-    background: var(--miku-teal);
-}
-
-._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ {
-    background: rgba(57, 197, 187, 0.2);
-}
-
-/* --- Chat window base (override Steam black) --- */
-/* .fullheight.WindowFocus removed - was hiding chat background */
+/* ---------------------------------------------------------------------
+   4. Chat window
+   --------------------------------------------------------------------- */
 
 /* Override Steam's dark radial-gradient on chat dialogs */
 .chatDialogs {
     background: none !important;
 }
 
+.chatWindow,
 .DropTarget.chatWindow {
     background: url(../imgs/chatBG.jpg) no-repeat center center / cover !important;
 }
 
-/* Blur entire chat window background */
 .DropTarget.multiChatDialog {
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
-.chatWindow .chatHistory {
-    background: transparent;
-}
-
-/* Chat window base black override */
-.friendsListSectionTitle.chatSectionTitle {
-    background: #056e88;
-}
-
-/* --- Chat tab bar - selected tab and divider --- */
-._2XZq-_f6npaQdAgeRzKIkz.no-drag.Yd-DsWkYiFiYwpci--Yk_.Panel {
-    background: rgba(57, 197, 187, 0.35) !important;
-    border-bottom: 3px solid #39C5BB !important;
-    border-radius: 6px 6px 0 0;
-}
-
-._2XZq-_f6npaQdAgeRzKIkz.no-drag.Panel.Focusable:not(.Yd-DsWkYiFiYwpci--Yk_) {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-bottom: 3px solid transparent !important;
-    border-radius: 6px 6px 0 0;
-}
-
-._2XZq-_f6npaQdAgeRzKIkz.no-drag.Panel.Focusable:not(.Yd-DsWkYiFiYwpci--Yk_):hover {
-    background: rgba(57, 197, 187, 0.15) !important;
-}
-
-/* Divider below tab bar */
-.chatTabSetContainer.inclient {
-    border-bottom: 1px solid rgba(57, 197, 187, 0.4);
-}
-
-/* --- Chat input toolbar buttons (emoji, attachment, voice) --- */
-._2WfNoLBdfKwyutA6ho4aSH {
-    background: rgba(255, 255, 255, 0.75) !important;
-    border-radius: 8px;
-    box-shadow: none !important;
-}
-
-.ChatMessageEntryVoice {
-    background: rgba(255, 255, 255, 0.75) !important;
-    border-radius: 50%;
-    box-shadow: none !important;
-}
-
-.ChatMessageEntryVoice.Inactive {
-    background: rgba(255, 255, 255, 0.75) !important;
-    box-shadow: none !important;
-}
-
-/* Voice toggle button - Miku teal style */
-.VoiceToggle.Inactive {
-    background: linear-gradient(135deg, rgba(57,197,187,0.25), rgba(0,120,255,0.15)) !important;
-    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
-    border-radius: 50%;
-}
-
-.VoiceToggle.Inactive:hover {
-    background: linear-gradient(135deg, rgba(57,197,187,0.4), rgba(0,120,255,0.25)) !important;
-}
-
-.VoiceToggleIconCtn svg,
-.VoiceToggleIconCtn path {
-    fill: #39C5BB;
-    stroke: #39C5BB;
-}
-
-/* Toolbar button icons - teal colored */
-._2WfNoLBdfKwyutA6ho4aSH svg,
-._2WfNoLBdfKwyutA6ho4aSH path,
-.ChatMessageEntryVoice svg,
-.ChatMessageEntryVoice path {
-    fill: #39C5BB;
-    stroke: #39C5BB;
-}
-
-/* Chat input send/action buttons */
-.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i {
-    background: rgba(57, 197, 187, 0.15) !important;
-    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
-}
-
-.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i svg,
-.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i path {
-    fill: #39C5BB;
-}
-
-.chatWindow {
-    background: url(../imgs/chatBG.jpg) no-repeat center center / cover;
-}
-
-/* Translucent overlay so text stays readable over background image */
-.chatWindow .chatHistory {
-    background: transparent;
-}
-
-.inviteAnotherFriendButton {
-    background: rgba(57, 197, 187, 0.12);
-}
-
-/* Chat entry area (message list) */
+.chatWindow .chatHistory,
 .chatWindow .chatEntry {
     background: transparent;
 }
 
-/* --- Chat input box --- */
-._3Ule3rolhZJiBN4yNNtk1s {
-    box-shadow: none;
-    background: rgba(255, 255, 255, 0.85);
-    border-top: 1px solid rgba(57, 197, 187, 0.3);
+.chatWindow .chatHeader {
+    background: rgba(255, 255, 255, 0.78) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--glass-line);
 }
 
-._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc {
-    background: none !important;
-    border: none;
+/* Chat tabs bar (the window behind it is dark, so translucent glass turns grey) */
+.titleBarContainer.ChatTabs {
+    background: rgba(var(--miku-mist-rgb), 0.96) !important;
+    border-bottom: 1px solid var(--glass-line);
 }
 
-.RVIs84dAE6wHcjH9tkinc {
-    border: 1.5px solid rgba(57, 197, 187, 0.5);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.9) !important;
-    transition: border-color 0.2s, box-shadow 0.2s;
+.chatTabSetContainer.inclient {
+    border-bottom: 1px solid rgba(var(--miku-teal-rgb), 0.4);
 }
 
-.RVIs84dAE6wHcjH9tkinc:hover {
-    background: #fff !important;
-    border-color: #39C5BB;
-    box-shadow: 0 0 0 2px rgba(57, 197, 187, 0.18);
+/* ChatTab (+ .Active) */
+._2XZq-_f6npaQdAgeRzKIkz {
+    background: rgba(255, 255, 255, 0.45) !important;
+    border-bottom: 3px solid transparent !important;
+    border-radius: 6px 6px 0 0;
+    color: var(--miku-text-2) !important;
 }
 
-/* --- Nickname brackets --- */
-.playerNameQuickAccessContainer .playerNicknameBracket {
-    color: var(--user-online-color);
+._2XZq-_f6npaQdAgeRzKIkz:hover {
+    background: rgba(255, 255, 255, 0.75) !important;
 }
 
-.playerNicknameBracket {
-    color: var(--nav-text-color);
+._2XZq-_f6npaQdAgeRzKIkz.Yd-DsWkYiFiYwpci--Yk_ {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-bottom-color: var(--miku-teal) !important;
+    color: var(--miku-text) !important;
 }
 
-._3XEmWmfQy7gbYJ4KJ1N9tp {
-    color: var(--user-online-color);
+/* ChatTabContent_ChatRoomName */
+._1HNpQBKKKQ1tG2OZH3CSsh {
+    color: var(--miku-text) !important;
 }
 
-.quickAccessFriend .clanName {
-    color: var(--miku-accent);
-}
-
-.friend.online {
-    color: var(--user-online-color);
-}
-
-._1DsumfIa3MlkzUV9EXY5W9.in-game ._2n0EiKMGRP-r_BI5tDtttu {
-    color: var(--user-ingame-color);
-}
-
-/* --- Friend group names --- */
-.FriendsListContent .friendlistListContainer .friendGroup.onlineFriends .groupName,
-.FriendsListContent .friendlistListContainer .friendGroup.offlineFriends .groupName {
-    color: var(--icon-color);
-}
-
-/* ===================================
-   Chat Message Styling - Miku Theme
-   =================================== */
-
-/* All message bubbles - soft white/teal */
+/* --- Message bubbles --- */
 .msgText {
-    color: #1a3a4a !important;
+    color: var(--miku-text) !important;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(57, 197, 187, 0.35);
+    background: rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.35);
     padding: 6px 12px;
     border-radius: 16px 16px 16px 4px;
     line-height: 1.4;
     font-size: 14px;
-    box-shadow: 0 1px 3px rgba(57, 197, 187, 0.15);
+    box-shadow: 0 1px 3px rgba(var(--miku-deep-rgb), 0.12);
 }
 
 /* Hide own speaker name */
@@ -357,293 +368,302 @@
     margin-top: 10px;
 }
 
-/* Own messages right-aligned */
+/* Own messages: right-aligned teal bubble */
 .MultiUserChat .isCurrentUser {
     text-align: right;
+}
+
+.MultiUserChat .isCurrentUser .msgText {
+    background: var(--miku-teal-fill);
+    color: #ffffff !important;
+    border-color: transparent;
+    border-radius: 16px 16px 4px 16px;
+    box-shadow: 0 1px 4px rgba(var(--miku-ink-rgb), 0.35);
+}
+
+.MultiUserChat .isCurrentUser .msgText a {
+    color: #e8fffd !important;
+    text-decoration: underline;
 }
 
 .MultiUserChat .isCurrentUser img {
     max-width: 100%;
     height: auto;
-    display: block;
+    display: inline-block;
     margin-left: auto;
-}
-
-/* Own message bubble - Miku teal */
-.MultiUserChat .isCurrentUser .msgText {
-    background: linear-gradient(135deg, #39C5BB 0%, #2ba8a0 100%);
-    color: #fff !important;
-    border-color: transparent;
-    border-radius: 16px 16px 4px 16px;
-    box-shadow: 0 1px 4px rgba(57, 197, 187, 0.35);
-}
-
-._113iuw_HlE_qSgt9cGWCSv {
-    color: #0a3d6b;
-}
-
-/* --- Voice controls --- */
-.OneOnOneVoiceRoomControls {
-    background: #d1ffc4;
-}
-
-._1G1ACDfp4yn4cUO1xY7_d3 {
-    color: var(--nav-text-color);
-}
-
-._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG {
-    background: var(--main-bg-color);
-}
-
-._3qYm9oxf8MdyvQDJgbfCrF:hover {
-    background-color: #d1ffc4;
-}
-
-._2m5YDddCyVhilOuWH-bTC1 {
-    color: var(--user-online-color);
-}
-
-.isCurrentUser ._2m5YDddCyVhilOuWH-bTC1 {
-    color: #08ff14;
-}
-
-._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG ._2ovvDFSsxzUoYuqzJsxecQ:hover {
-    color: #b3f5d1;
-}
-
-._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG ._2ovvDFSsxzUoYuqzJsxecQ {
-    color: #fff;
-}
-
-._1KPraihJAKiBwLJWmOlju2 {
-    color: var(--user-ingame-color);
-}
-
-.VoiceToggle {
-    background: linear-gradient(to bottom right, var(--voice-btn-color-star), var(--voice-btn-color-end)) !important;
-}
-
-.VoiceToggle.Inactive:hover {
-    background: linear-gradient(to bottom right, var(--voice-btn-color-star), var(--voice-btn-color-end)) !important;
-}
-
-/* ===================================
-   Context Menus (in friends frame)
-   =================================== */
-
-/* Rounded corners */
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) .PP7LM0Ow1K5qkR8WElLpt {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._2EstNjFIIZm_WUSKm5Wt7n {
-    border-radius: 10px !important;
-    overflow: hidden !important;
-}
-
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) .PP7LM0Ow1K5qkR8WElLpt.visible ._2EstNjFIIZm_WUSKm5Wt7n {
-    background: rgba(241, 241, 241, 0.95) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Menu item colors */
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._1n7Wloe5jZ6fSuvV18NNWI {
-    color: var(--text-color-dark);
-}
-
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._18z-3vkWndCBO5WJgFldRK {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
-}
-
-/* Hover effect */
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._1n7Wloe5jZ6fSuvV18NNWI:hover {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
-}
-
-/* Remove padding */
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._2EstNjFIIZm_WUSKm5Wt7n {
-    padding: 0;
-}
-
-.popup_chat_frame:has(.PP7LM0Ow1K5qkR8WElLpt) ._1n7Wloe5jZ6fSuvV18NNWI {
-    border: none;
-    padding: 8px 22px 8px 22px;
-}
-
-/* First/last items */
-.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:first-of-type {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Emoji/sticker panel */
-.EuFePPYFGrcf99uLXmBYN ._2l4z-U60lABvd9XWArGjAf {
-    background: var(--bg-color-light-gray) !important;
-    color: var(--text-color-dark) !important;
-}
-
-.EuFePPYFGrcf99uLXmBYN ._2l4z-U60lABvd9XWArGjAf:hover,
-.EuFePPYFGrcf99uLXmBYN ._2l4z-U60lABvd9XWArGjAf:focus {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
-}
-
-body.ContextMenuPopupBody ._1n7Wloe5jZ6fSuvV18NNWI {
-    color: var(--text-color-dark);
-}
-
-body.ContextMenuPopupBody ._1n7Wloe5jZ6fSuvV18NNWI:hover {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
-}
-
-/* Input icons */
-.RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW SVG,
-.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i SVG {
-    color: var(--bg-color-light-gray);
-}
-
-.friendsui-container .SVGIcon_TextRoom,
-.friendsui-container .SVGIcon_Button.SVGIcon_TextRoom,
-.friendsui-container .SVGIcon_VoiceRoom,
-.friendsui-container .SVGIcon_Button.SVGIcon_VoiceRoom {
-    color: var(--bg-color-light-gray);
-}
-
-/* --- Chat header/shadows --- */
-.chatWindow .chatHeader {
-    background: var(--friend-list-accent) !important;
-}
-
-/* Hide shadows for flat look */
-._1osHa9KHOmdCDNrA232z4N {
-    background: none;
-}
-
-._2OoTJwlWvzvAysWOOEQaXS {
-    background: none;
-}
-
-/* Submit button */
-.RVIs84dAE6wHcjH9tkinc:not(.jaQN2IyN4P8LZXJ6P11qy):focus .SVGIcon_Button.SVGIcon_Submit path,
-.RVIs84dAE6wHcjH9tkinc:not(.jaQN2IyN4P8LZXJ6P11qy):hover .SVGIcon_Button.SVGIcon_Submit path,
-.RVIs84dAE6wHcjH9tkinc:not(.jaQN2IyN4P8LZXJ6P11qy) .SVGIcon_Button.SVGIcon_Submit path {
-    fill: var(--miku-accent);
-}
-
-/* Chat scroll padding */
-.chatHistoryScroll {
-    padding-top: 40px;
 }
 
 .msg.isCurrentUser.ChatMessageErrorSending {
     background: none;
 }
 
-/* Scroll to bottom */
-.ScrollToBottomButton>span {
-    background: rgba(0, 120, 255, 0.15) !important;
+/* Speaker line above messages (name, time) sits straight on the chat
+   artwork: a 1px white outline (like subtitles) plus a soft glow keeps it
+   readable on dark and light spots without boxing it in */
+.ChatSpeaker .speakerName,
+.ChatSpeaker .speakerTimeStamp {
+    text-shadow:
+        1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+        1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.ChatSpeaker .speakerName {
+    font-weight: 600;
+}
+
+.ChatSpeaker,
+.speakerName {
+    color: var(--user-online-color) !important;
+}
+
+.speaker.ingame .speakerName,
+.speaker.ingame .speakerName .playerNicknameBracket {
+    color: var(--user-ingame-color) !important;
+}
+
+.speaker.offline .speakerName {
+    color: var(--user-offline-color) !important;
+}
+
+.speakerTimeStamp,
+.ChatSpeaker .speakerTimeStamp {
+    color: var(--miku-text-3) !important;
+}
+
+/* Date dividers between days (msg.timeDivision: 2026年11月7日土曜日 with a
+   line on each side). They sit on the chat artwork, so the text gets the
+   same white outline as the speaker line and the lines turn teal. */
+.ChatMessageBlock .chatHistoryDayDivider,
+.ChatHistoryDivider,
+.msg.timeDivision {
+    color: var(--miku-text-2) !important;
+}
+
+.msg.timeDivision {
+    font-size: 11px !important;
+    font-weight: 600;
+    text-shadow:
+        1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+        1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.msg.timeDivision :is(.preHorizDivider, .horizDivider) {
+    background: rgba(var(--miku-ink-rgb), 0.35) !important;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+/* --- Message entry box --- */
+/* chatEntryControls */
+._3Ule3rolhZJiBN4yNNtk1s {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid rgba(var(--miku-teal-rgb), 0.3);
+}
+
+/* chatTextarea */
+._113iuw_HlE_qSgt9cGWCSv {
+    color: var(--miku-text) !important;
+}
+
+._113iuw_HlE_qSgt9cGWCSv::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+/* chatSubmitButton (send) */
+.RVIs84dAE6wHcjH9tkinc {
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.5);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9) !important;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.RVIs84dAE6wHcjH9tkinc:hover {
+    background: #fff !important;
+    border-color: var(--miku-teal);
+    box-shadow: 0 0 0 2px rgba(var(--miku-teal-rgb), 0.18);
+}
+
+._3Ule3rolhZJiBN4yNNtk1s .RVIs84dAE6wHcjH9tkinc {
+    background: none !important;
+    border: none;
+}
+
+.RVIs84dAE6wHcjH9tkinc:not(.jaQN2IyN4P8LZXJ6P11qy) .SVGIcon_Button.SVGIcon_Submit path {
+    fill: var(--miku-teal-ink);
+}
+
+/* chatEntryActionsGroup (emoji / attachment buttons) */
+._2WfNoLBdfKwyutA6ho4aSH {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-radius: 8px;
+    box-shadow: none !important;
+}
+
+._2WfNoLBdfKwyutA6ho4aSH svg,
+._2WfNoLBdfKwyutA6ho4aSH path,
+.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i svg,
+.RVIs84dAE6wHcjH9tkinc._3zOBeq5W4cNK3lRz_7aroW svg /* EmbedButton */ {
+    fill: var(--miku-teal-ink);
+    color: var(--miku-teal-ink);
+}
+
+/* EmoticonPickerButton */
+.RVIs84dAE6wHcjH9tkinc.Aupswi7-c-w3XwNO5cp2i {
+    background: rgba(var(--miku-teal-rgb), 0.15) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.5) !important;
+}
+
+/* Voice button */
+.ChatMessageEntryVoice,
+.ChatMessageEntryVoice.Inactive {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-radius: 50%;
+    box-shadow: none !important;
+}
+
+.ChatMessageEntryVoice svg,
+.ChatMessageEntryVoice path {
+    fill: var(--miku-teal-ink);
+}
+
+.VoiceToggle {
+    background: linear-gradient(to bottom right, var(--voice-btn-color-star), var(--voice-btn-color-end)) !important;
+}
+
+.VoiceToggle.Inactive {
+    background: linear-gradient(135deg, rgba(var(--miku-teal-rgb), 0.25), rgba(0, 120, 255, 0.15)) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.5) !important;
+    border-radius: 50%;
+}
+
+.VoiceToggle.Inactive:hover {
+    background: linear-gradient(135deg, rgba(var(--miku-teal-rgb), 0.4), rgba(0, 120, 255, 0.25)) !important;
+}
+
+.VoiceToggleIconCtn svg,
+.VoiceToggleIconCtn path {
+    fill: var(--miku-teal-ink);
+}
+
+/* Misc chat bits */
+.chatHistoryScroll {
+    padding-top: 40px;
+}
+
+.ScrollToBottomButton > span {
+    background: rgba(var(--miku-teal-rgb), 0.25) !important;
+    color: var(--miku-text) !important;
 }
 
 .chatImageContainer.parentSelector {
     background: none;
 }
 
-.chatFileUploadPreviewContainer {
-    background: var(--friend-list-bg-color);
-}
-
+.chatFileUploadPreviewContainer,
 .chatFileUploadProgressContainer {
-    background: var(--friend-list-bg-color);
+    background: rgba(var(--miku-mist-rgb), 0.95);
 }
 
-/* Hover on avatar */
-.quickAccessFriends .favoriteElement:hover .friend .playerName {
-    color: #000;
+.inviteAnotherFriendButton {
+    background: rgba(var(--miku-teal-rgb), 0.12);
 }
 
-.quickAccessFriends .friend.ingame {
-    color: var(--user-ingame-color);
-}
-
-/* Chat image positioning */
-.chatImageContainer img {
-    position: relative;
-    transform: translateY(-100%);
-}
-
-.MultiUserChat .isCurrentUser img {
-    display: inline-block;
-}
-
-/* Emoji reaction */
+/* MessageReaction (emoji reactions under a message) */
 .UA15KlVbtDSJkqSpIAMIN {
-    background: rgba(57, 197, 187, 0.3);
+    background: rgba(var(--miku-teal-rgb), 0.25);
 }
 
-/* Group chat names */
-._1HNpQBKKKQ1tG2OZH3CSsh {
-    color: var(--user-online-color);
-}
-
-.chatRoomGroupHeaderName {
-    color: var(--user-online-color);
-}
-
-/* Group hover */
+/* Group chat channel list */
 .chatRoomTextChannel:hover,
-.chatRoomVoiceChannel:hover .chatRoomVoiceChannelName,
-.chatRoomTextChannel:hover .chatRoomTextChannel {
-    color: #000;
+.chatRoomVoiceChannel:hover .chatRoomVoiceChannelName {
+    color: var(--miku-text);
 }
 
-.chatRoomTextChannel:hover .SVGIcon_TextRoom .TextLines {
-    stroke: #000;
+.OneOnOneVoiceRoomControls {
+    background: #d6f5ec;
 }
 
-.ContextMenuButton:has(svg) .SVGIcon_Button {
-    fill: #000 !important;
+/* ---------------------------------------------------------------------
+   5. Emoji / sticker picker
+   --------------------------------------------------------------------- */
+
+/* FilterInputContainer > FilterInput */
+.EuFePPYFGrcf99uLXmBYN ._2l4z-U60lABvd9XWArGjAf {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid var(--glass-line);
 }
 
-/* Invite panel */
-.dUQIH8Qg80N6kjB8UQO0P:has(._1SFqyFzFrpPOEAKCrq2kKZ) ._1SFqyFzFrpPOEAKCrq2kKZ {
-    background: rgba(0, 120, 255, 0.1);
-    border: 1px solid rgba(0, 120, 255, 0.3);
-    padding: 2px;
+/* Tab / TabContent / Tab.Active */
+.popup_chat_frame ._2CJ0LpiSgVs2JuTlwbzBM ._1mROo5bpUJSg8D8ILx7qpw {
+    color: var(--miku-text-2);
 }
 
-.dUQIH8Qg80N6kjB8UQO0P:has(._1SFqyFzFrpPOEAKCrq2kKZ) ._1SFqyFzFrpPOEAKCrq2kKZ:hover {
-    background: rgba(0, 120, 255, 0.05);
+.popup_chat_frame ._2CJ0LpiSgVs2JuTlwbzBM._1ddEQAfz6GuVRSEqk-d0r svg {
+    fill: var(--miku-teal-ink);
 }
 
-/* Emoji panel icons */
-.popup_chat_frame:has(._1mROo5bpUJSg8D8ILx7qpw) .SVGIcon_Button {
-    fill: var(--icon-color);
+.popup_chat_frame ._2CJ0LpiSgVs2JuTlwbzBM._1ddEQAfz6GuVRSEqk-d0r div {
+    color: var(--miku-teal-ink);
 }
 
-.popup_chat_frame:has(._2CJ0LpiSgVs2JuTlwbzBM) ._2CJ0LpiSgVs2JuTlwbzBM ._1mROo5bpUJSg8D8ILx7qpw {
-    color: var(--icon-color);
+/* Content > Item */
+.dUQIH8Qg80N6kjB8UQO0P ._1SFqyFzFrpPOEAKCrq2kKZ:hover {
+    background: rgba(var(--miku-teal-rgb), 0.15);
 }
 
-.popup_chat_frame:has(._2CJ0LpiSgVs2JuTlwbzBM) ._2CJ0LpiSgVs2JuTlwbzBM._1ddEQAfz6GuVRSEqk-d0r svg {
-    fill: var(--miku-accent);
+/* ---------------------------------------------------------------------
+   6. Context menus opened inside the friends window
+   --------------------------------------------------------------------- */
+
+/* contextMenu */
+.popup_chat_frame .PP7LM0Ow1K5qkR8WElLpt {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-.popup_chat_frame:has(._2CJ0LpiSgVs2JuTlwbzBM) ._2CJ0LpiSgVs2JuTlwbzBM._1ddEQAfz6GuVRSEqk-d0r div {
-    color: var(--miku-accent);
+/* contextMenuContents */
+.popup_chat_frame ._2EstNjFIIZm_WUSKm5Wt7n {
+    background: rgba(248, 252, 253, 0.97) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-line);
+    border-radius: 10px !important;
+    box-shadow: 0 6px 24px rgba(var(--miku-deep-rgb), 0.18);
+    overflow: hidden !important;
+    padding: 4px 0;
 }
 
-/* --- Window controls --- */
-body:has(#popup_target) .title-area-icon div {
-    color: black;
+/* contextMenuItem */
+.popup_chat_frame ._1n7Wloe5jZ6fSuvV18NNWI {
+    color: var(--miku-text) !important;
+    border: none;
+    padding: 7px 22px;
 }
 
-body:has(#popup_target) .title-area-icon .SVGIcon_X_Line line {
-    stroke: black;
+.popup_chat_frame ._1n7Wloe5jZ6fSuvV18NNWI:hover,
+.popup_chat_frame ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK /* .active */ {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
+}
+
+.popup_chat_frame ._2EstNjFIIZm_WUSKm5Wt7n hr {
+    border-color: var(--glass-line);
+}
+
+/* ---------------------------------------------------------------------
+   7. Window controls
+   --------------------------------------------------------------------- */
+
+.title-bar-actions .title-area-icon {
+    color: var(--miku-text-2);
+}
+
+.title-area-icon .SVGIcon_X_Line line {
+    stroke: var(--miku-text-2);
+}
+
+.title-area-highlight {
+    opacity: 0;
 }

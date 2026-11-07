@@ -1,168 +1,119 @@
 @import url(../global.css);
+@import url(./dialogs.css);
 
-/* ===================================
-   Threshold-Miku Light - Settings
-   =================================== */
+/* =====================================================================
+   Threshold-Miku Light - Settings window and other modal popups
+   (loaded through libraryroot.custom.css)
+   ===================================================================== */
 
-/* Title color */
-body:has(._2rjVTGz8aLvqOdz5v2gq5C) ._2rjVTGz8aLvqOdz5v2gq5C {
-    color: #000;
-}
-
-/* Settings outer transition container - must show background image beneath */
-.DialogContentTransition {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* Settings content background - Miku artwork */
-.DialogContent._DialogLayout.CFTLX2wIKOK3hNV-fS7_V {
-    background: url(../imgs/settingsBG.jpg) no-repeat center center / cover !important;
-    background-color: transparent !important;
-}
-
-/* Settings window body - white base so no black bleed-through */
+/* Window body - light base so nothing dark bleeds through */
 body.ModalDialogBody {
     background-color: #f0f8fb !important;
 }
 
+/* Outer transition container - let the artwork through */
+.DialogContentTransition {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* PagedSettingsDialog_PageContent - Miku artwork, no dialog frame */
+.DialogContent._DialogLayout.CFTLX2wIKOK3hNV-fS7_V {
+    background: url(../imgs/settingsBG.jpg) no-repeat center center / cover !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* PagedSettingsDialog_PageListColumn (left page list) */
 ._2kwFFHckg8jvnwJfg9-la8 {
-    background: rgba(240, 248, 251, 0.88);
+    background: rgba(240, 248, 251, 0.88) !important;
     backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    border-right: 1px solid var(--glass-line);
 }
 
-/* Online status in settings */
-.online ._2Ri005Wg_uXDTa71kdRbcN,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
-.online ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited {
-    color: var(--user-online-color) !important;
+/* PagedSettingsDialog_Title (STEAM設定) */
+._2rjVTGz8aLvqOdz5v2gq5C {
+    color: var(--miku-text) !important;
 }
 
-/* Headers */
-.DialogHeader,
-.SettingsDialogSubHeader,
-.DesktopUI ._3fPiC9QRyT5oJ6xePCVYz8._3fPiC9QRyT5oJ6xePCVYz8 {
-    color: #000;
-}
-
-/* Sidebar icons */
+/* PagedSettingsDialog_PageListItem (+ PageListItem_Icon / _Title) */
 ._1-vlriAtKYDViAEunue4VO,
-._1-vlriAtKYDViAEunue4VO ._1rD8X96FdnksZLvRRlEiCR.DesktopUI,
-.DesktopUI ._1-vlriAtKYDViAEunue4VO ._1rD8X96FdnksZLvRRlEiCR,
-button.TEWmsM70ZLEOxLAjDMpcv svg {
-    color: var(--icon-color);
+._1-vlriAtKYDViAEunue4VO ._1rD8X96FdnksZLvRRlEiCR,
+._1-vlriAtKYDViAEunue4VO ._2PPbMrzl8PKBwpkjYs9b0i {
+    color: var(--miku-text-2) !important;
 }
 
-/* In-game status in settings */
-.ingame .nOdcT-MoOaXGePXLyPe0H {
-    color: var(--user-ingame-color);
+._1-vlriAtKYDViAEunue4VO {
+    border-right: 4px solid transparent;
 }
 
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:hover,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:active,
-.ingame ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a:visited,
-.ingame._1BbOegz8bYL7iPzgYpOgQI ._2Ri005Wg_uXDTa71kdRbcN {
-    color: #3d6b16;
+._1-vlriAtKYDViAEunue4VO:hover:not(._2DpXjzK3WWsOtUWUrcuOG7) {
+    background: rgba(var(--miku-teal-rgb), 0.12);
 }
 
-/* Offline status */
-.offline .nOdcT-MoOaXGePXLyPe0H {
-    color: #444;
+._1-vlriAtKYDViAEunue4VO:hover:not(._2DpXjzK3WWsOtUWUrcuOG7) ._2PPbMrzl8PKBwpkjYs9b0i {
+    color: var(--miku-text) !important;
 }
 
-/* Settings text */
-._2kbiwbjuXdmtPSK_YaZCMU,
-._3jMlJm4PQCA8SfNlUR99Fo {
-    color: var(--text-color-dark);
+/* .Active page */
+._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 {
+    background: var(--miku-teal-wash-strong);
+    border-right: 4px solid var(--miku-teal);
 }
 
-._3epr8QYWw_FqFgMx38YEEm {
-    color: #fff;
+._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 ._1rD8X96FdnksZLvRRlEiCR,
+._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 ._2PPbMrzl8PKBwpkjYs9b0i {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
 }
 
-._1W1to_azoBRG95oNAFpf9Q {
-    color: #004fa9;
+/* Page headers */
+.DialogHeader {
+    color: var(--miku-text);
 }
 
-/* Toggle/slider background */
-._1ml4SNc3LIyBDHIf8ekVSw {
-    background-color: var(--bg-color-light-gray);
-    box-shadow: inset 0 1px 1px 0px var(--bg-color-light-gray);
-}
-
-.HijmccPB1BKyhOwhX1EVl {
-    background-color: var(--miku-accent);
-}
-
-._2LyGIHuQ8SFKb5T262YUvg {
-    background: var(--main-bg-color);
-}
-
-._1W1to_azoBRG95oNAFpf9Q {
-    color: #000 !important;
-}
-
-._1ifM6luJEQ5H2O1Y3S6F_R {
-    color: #303030 !important;
-}
-
-/* Sub-headers (Miku accent) */
-.DialogSubHeader {
-    color: var(--miku-accent) !important;
-}
-
-/* Content background - override generic DialogContent for non-settings dialogs */
-.DialogContent {
-    background: linear-gradient(to bottom right, var(--main-bg-color), #d6eef5);
-}
-
-/* Body text */
-.DialogBodyText {
-    color: #474a4d !important;
-}
-
-/* Sidebar active item (accent border) */
-body:has(._1-vlriAtKYDViAEunue4VO) ._1-vlriAtKYDViAEunue4VO {
-    border-right: 4px solid rgba(0, 120, 255, 0);
-}
-
-body:has(._1-vlriAtKYDViAEunue4VO) ._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 {
-    color: var(--miku-accent);
-    background: rgba(57, 197, 187, 0.12);
-    border-right: 4px solid var(--miku-accent);
-}
-
-body:has(._1-vlriAtKYDViAEunue4VO) ._1-vlriAtKYDViAEunue4VO._2DpXjzK3WWsOtUWUrcuOG7 ._1rD8X96FdnksZLvRRlEiCR {
-    color: var(--miku-accent);
-}
-
-/* Online status color override */
-.online .nOdcT-MoOaXGePXLyPe0H {
+/* --- Account page: avatar + status --- */
+.online .nOdcT-MoOaXGePXLyPe0H /* playerName */,
+.online ._2Ri005Wg_uXDTa71kdRbcN /* richPresenceLabel */ {
     color: var(--user-online-color) !important;
 }
 
-/* Links */
-.DialogBody a {
-    color: var(--miku-accent);
+.ingame .nOdcT-MoOaXGePXLyPe0H,
+.ingame ._2Ri005Wg_uXDTa71kdRbcN {
+    color: var(--user-ingame-color) !important;
 }
 
-/* Sidebar hover */
-._1-vlriAtKYDViAEunue4VO:hover:not(._2DpXjzK3WWsOtUWUrcuOG7) {
-    background: rgba(255, 255, 255, .15);
-    color: #000;
+.offline .nOdcT-MoOaXGePXLyPe0H,
+.offline ._2Ri005Wg_uXDTa71kdRbcN {
+    color: var(--user-offline-color) !important;
 }
 
-/* Window controls */
-body:has(.ModalPosition) .title-area-icon div {
-    color: black;
+/* --- Family page --- */
+.bMHOg1F_hCL_s5erx4pWC ._3C9nRrwzQk9qHlJx6NaXDI /* FamilyMemberStatus > RoleName */ {
+    color: var(--miku-text-2) !important;
 }
 
-body:has(.ModalPosition) .title-area-icon .SVGIcon_X_Line line {
-    stroke: black;
+._2LyGIHuQ8SFKb5T262YUvg /* FamilyMemberRow */ {
+    background: rgba(255, 255, 255, 0.80) !important;
+    border-radius: 8px;
+}
+
+/* --- Notifications page --- */
+._2zGUtyw-lRSsEUPY1qaqf7 ._27r3CjIYhU20TsukVgm25C /* NotificationSectionHeader > Toggles */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* --- Storage page: drive picker --- */
+._3YelWui4gQvucX_bHwvl15 /* InstallDropdownOption */ {
+    background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* --- Window controls (minimize / maximize / close) --- */
+.title-bar-actions .title-area-icon {
+    color: var(--miku-text-2);
+}
+
+.title-area-icon .SVGIcon_X_Line line {
+    stroke: var(--miku-text-2);
 }

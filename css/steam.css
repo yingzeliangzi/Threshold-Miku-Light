@@ -1,540 +1,1179 @@
 @import url(../global.css);
+@import url(./dialogs.css);
 
-/* ===================================
-   Threshold-Miku Light - Main Client
-   ===================================  */
+/* =====================================================================
+   Threshold-Miku Light - Main Client (Steam window)
 
-/* --- Dropdown text --- */
-.DialogDropDown_CurrentDisplay {
-    color: var(--text-color-dark);
+   Steam hashes its class names. Each hashed selector below is labelled
+   with the readable name Steam uses for it in its source, e.g.
+   "._3x1HklzyDs4TEjACrRO2tB  /* Container (library sidebar) * /".
+   When Steam updates and rules stop working, see "Steam 更新后" in the
+   README: tools/steamclass.py can find and apply the new hashes.
+   ===================================================================== */
+
+
+/* =====================================================================
+   1. Window background
+   ===================================================================== */
+
+/* Wrapper (whole main window) - Miku artwork */
+._1ENHEsrSLcTRtPQFl1F-wL {
+    background: url(../imgs/mainBG.jpg) no-repeat center center / cover;
 }
 
-/* Don't modify SFP/Millennium settings page */
-.MillenniumSettings .DialogDropDown_CurrentDisplay {
-    color: #fff;
+body,
+body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
+    color: var(--miku-text-2);
 }
 
-._2hfibYuzyMOQ0sj2egsHh0 {
-    color: var(--text-color-dark);
-}
-
-/* --- News block (What's New) - hidden --- */
-._17uEBe5Ri8TMsnfELvs8-N {
-    display: none !important;
-}
-
-/* --- Library sidebar navigation --- */
-._3SkuN_ykQuWGF94fclHdhJ._3dQDoCmoAJqOiOK7oAJIKM ._2aw5aUUo3lrK6wxJb4_ms5 {
-    color: var(--text-color-dark);
-}
-
-._1YdRdM9TZ_3Xolwv9aVEv- ._DialogInputContainer .DialogDropDown_Arrow svg {
-    fill: var(--text-color-dark);
-}
-
-._1ANYFgwMyPpwJjIndAdGSr ._1kdinbVqPuXSbJRQa_pAuw ._1ljKTq3H58WbDZGNPfM0TY {
-    color: var(--icon-color);
-}
-
-._2qm05e8tWSAb-_fAHytQCP {
-    color: var(--icon-color);
-}
-
-._3SkuN_ykQuWGF94fclHdhJ {
-    color: var(--icon-color);
-}
-
-._3Sb2o_mQ30IDRh0C72QUUu {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* --- Library sidebar background --- */
+/* Container (library content area: home / game page / collections) -
+   Steam paints a dark gradient here, keep it see-through */
 ._2gSXCB6PbOlMxslr8hm6dm {
-    background: transparent;
+    background: transparent !important;
 }
 
-._1esfEVxhqNfh8fzr_kEGKa ._1ANYFgwMyPpwJjIndAdGSr {
-    color: var(--text-color-dark);
+/* URLBarReplacement (12px strip under the top bar) */
+.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2,
+._2CmrnGY-Amtd83ScJkFvx2 {
+    background: var(--glass-tint) !important;
 }
 
-._1kdinbVqPuXSbJRQa_pAuw {
-    color: var(--text-color-dark);
+/* URLBar (address bar above store / community pages): Steam's near-black
+   strip with grey-blue text and icons */
+.UkR3sY319PuaUNuUWks2K {
+    background: var(--glass-tint) !important;
+    border-bottom: 1px solid var(--glass-line);
+    color: var(--miku-text-2) !important;
 }
 
-/* --- Add game button --- */
-._23SnllqT_AqZ1C_QHcNQ4Z ._1OGfHXv6ksR1Ub-OuLN8NB {
-    stroke: rgba(0, 0, 0, 0.5);
-    fill: rgba(0, 0, 0, 0.5);
+.UkR3sY319PuaUNuUWks2K .MZPxEZcxAGtPDf1NYtouS /* URL */ {
+    color: var(--miku-text-2) !important;
 }
 
-._23SnllqT_AqZ1C_QHcNQ4Z ._1PhK8scyztOxjJwWUpkiLJ {
-    background-color: rgba(0, 0, 0, 0.15);
+/* StatusIcon (ReloadButton / LockIcon): shapes are filled directly */
+.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf {
+    color: var(--miku-text-3) !important;
 }
 
-.SVGIcon_Button.SVGIcon_PlusCircle circle {
-    stroke: var(--text-color-dark);
+.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf svg :is(path, polygon, circle, rect):not([fill="none"]) {
+    fill: currentColor !important;
 }
 
-.SVGIcon_Button.SVGIcon_PlusCircle .horizontalLine {
-    stroke: var(--text-color-dark);
+.UkR3sY319PuaUNuUWks2K ._3izqEKa-zuPIrUDSm1bRvf._3KaB94Jl4r0hFkthDPJy09:hover /* ReloadButton */ {
+    color: var(--miku-teal-ink) !important;
 }
 
-.SVGIcon_Button.SVGIcon_PlusCircle .verticalLine {
-    stroke: var(--text-color-dark);
-}
 
-._1YdRdM9TZ_3Xolwv9aVEv- ._2qm05e8tWSAb-_fAHytQCP {
-    color: var(--text-color-dark);
-}
+/* =====================================================================
+   2. Title bar, menus and top navigation
+   ===================================================================== */
 
-._1tBzypb5E2AwNuBuVns9Hl ._1ljKTq3H58WbDZGNPfM0TY {
-    color: var(--icon-color);
-}
-
-.SVGIcon_Button.SVGIcon_DoubleArrow .Arrow1 {
-    stroke: var(--text-color-dark);
-}
-
-/* --- Secondary content area --- */
-._3x1HklzyDs4TEjACrRO2tB {
-    background: rgba(240, 248, 252, 0.7);
-}
-
-/* --- Library category labels (Segoe UI Semilight) --- */
-/* ._2-O4ZG0KrnSrzISHBKctFQ._5YTBr7WwIfzVU_3nUtAph {
-    color: #7e7e7e;
-    font-family: "PingFang SC", "Segoe UI", sans-serif !important;
-    font-size: 14px;
-} */
-
-/* ._2-O4ZG0KrnSrzISHBKctFQ._2ws8DONH9fxQjPXEmRpujE, */
-._3cV3O8FnPQqpJO5kIMUlLX._2mZ8LlvoUiyeEUtIWuTri {
-    color: #000000 !important;
-    font-family: "PingFang SC", "Segoe UI", sans-serif !important;
-    font-size: 14px;
-}
-
-/* Additional selectors for collection names */
-/* ._2-O4ZG0KrnSrzISHBKctFQ._2ws8DONH9fxQjPXEmRpujE *{
-    color: #000000 !important;
-}
-
-._2sYIghGVXJr6tsQVvcryy8._2ws8DONH9fxQjPXEmRpujE {
-    color: #000000 !important;
-} */
-
-/* --- Recent activity / collection --- */
-.RGNMWtyj73_-WdhflrmuY ._2CmrnGY-Amtd83ScJkFvx2 {
-    background-color: rgba(57, 197, 187, 0.12);
-}
-
-/* Top header bar */
+/* TopBar */
 ._3Z7VQ1IMk4E3HsHvrkLNgo {
-    background-color: rgba(232, 248, 252, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: linear-gradient(to bottom, rgba(250, 254, 255, 0.86), rgba(var(--miku-mist-rgb), 0.70));
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-line);
 }
 
-/* Sidebar background */
-._3x1HklzyDs4TEjACrRO2tB {
-    background: rgba(232, 248, 252, 0.75) !important;
+/* RootMenuButton (Steam / 表示 / フレンド ...) */
+._2UyOBeiSdBayaFdRa39N2O,
+._2UyOBeiSdBayaFdRa39N2O .bSKGlAJG2UVWTsntEJY2v /* SteamButton */ {
+    color: var(--miku-text-2) !important;
 }
 
-/* Sidebar selected/active item */
-._2TKEazUUS3TlniZfpc8OOe {
-    background: rgba(57, 197, 187, 0.25) !important;
-    border-left: 3px solid #39C5BB;
+._2UyOBeiSdBayaFdRa39N2O:hover,
+._2UyOBeiSdBayaFdRa39N2O:hover .bSKGlAJG2UVWTsntEJY2v {
+    color: var(--miku-teal-ink) !important;
 }
 
-/* Sidebar category labels */
-._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3 {
-    background: rgba(57, 197, 187, 0.15) !important;
-    color: #1a3a4a !important;
+/* SuperNavMenu > MenuButton (ストア / ライブラリ / コミュニティ / profile) */
+._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
+    color: var(--miku-text-2) !important;
+}
+
+._7AlhCx3XGzBeIrQaCneUD:hover ._19axKcqYRuaJ8vdYKYmtTQ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* SuperNavMenu.Selected */
+._7AlhCx3XGzBeIrQaCneUD._1gqEjB5QsKT_NftD1dEsdZ ._19axKcqYRuaJ8vdYKYmtTQ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+    border-bottom: 3px solid var(--miku-teal);
+}
+
+/* SuperNav back / forward arrows */
+._25lBLzuVeYAUG279up4xP8._1LYTHQzcI1u6tcxbbcc5V3 /* Arrow.Enabled */ {
+    color: var(--miku-text-2);
+}
+
+._25lBLzuVeYAUG279up4xP8._2cO0HdvLEGAdhosLekWsmo /* Arrow.Disabled */ {
+    color: rgba(61, 82, 96, 0.30);
+}
+
+/* TitleBarControls > Button (announcements / notifications / big picture) */
+._3cykd-VfN_xBxf3Qxriccm ._2Szzh5sKyGgnLUR870zbDE {
+    background: var(--glass) !important;
+    border: 1px solid var(--glass-border);
+    color: var(--miku-text-2) !important;
     border-radius: 6px;
 }
 
-/* Sidebar Home/Steam button */
-._3pSPluBgf0NeR1kkCLWMhR._30KGSfPjPskFlnrSxBfkiK {
-    background: rgba(57, 197, 187, 0.2) !important;
-    border-radius: 8px;
+._3cykd-VfN_xBxf3Qxriccm ._2Szzh5sKyGgnLUR870zbDE:hover {
+    background: var(--miku-teal-wash-strong) !important;
+    color: var(--miku-teal-ink) !important;
 }
 
-/* Sidebar search / input fields */
-._2PF_m-I5yte3WnQhpcz8RC,
-._20QAC4WMXm8qFE8waUT5oo {
-    background: rgba(255, 255, 255, 0.6) !important;
-    color: #1a3a4a !important;
+._3cykd-VfN_xBxf3Qxriccm ._2Szzh5sKyGgnLUR870zbDE ._34bQcTHo5QKzuujoEyU1tm /* Icon */ {
+    color: inherit;
+}
+
+/* AccountMenu (avatar + name + wallet) */
+._3yD46y5pd3zOGR7CzKs0mC {
+    background: var(--glass) !important;
+    border: 1px solid var(--glass-border);
     border-radius: 6px;
+    color: var(--miku-text) !important;
 }
 
-/* Sidebar divider line */
-._276E6ijBpjMA2_iTxNhhjc._2g5K_hJWc7jVo81zuejhk2 {
-    background: rgba(57, 197, 187, 0.4) !important;
-}
-
-/* --- User status badges --- */
-.RtSv39ZoBOySnb8XQ5hJf._9YK5IY219Pm_F53DAxyYp,
-.RtSv39ZoBOySnb8XQ5hJf._3qhGkQ5qLVNQQ-J2-uPoHt {
-    background-color: rgba(0, 0, 0, 0.5);
+._3yD46y5pd3zOGR7CzKs0mC:hover {
+    background: var(--glass-strong) !important;
 }
 
 ._3yD46y5pd3zOGR7CzKs0mC.online {
     color: var(--user-online-color) !important;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 ._3yD46y5pd3zOGR7CzKs0mC.ingame {
     color: var(--user-ingame-color) !important;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 ._3yD46y5pd3zOGR7CzKs0mC.offline {
-    color: var(--bg-color-light-gray) !important;
-    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--user-offline-color) !important;
 }
 
-._3vCzSrrXZzZjVJFZNg9SGu {
-    background: rgba(255, 255, 255, 0.25);
+/* WalletBalance */
+._3yD46y5pd3zOGR7CzKs0mC ._2jphjrSifC6orDT4g_7Wd {
+    color: var(--miku-text-3) !important;
 }
 
-/* --- Various text elements --- */
-.ip-YZhijAMZcuRoXBGiye ._3wJnTtcTLEp0R7eQj_mK8Y {
-    color: var(--text-color-dark);
+/* Window controls (minimize / maximize / close) */
+.title-bar-actions .title-area-icon {
+    color: var(--miku-text-2);
 }
 
-._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
-._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k {
-    color: var(--text-color-dark);
+.title-bar-actions .title-area-icon:not(.closeButton):hover {
+    background: var(--miku-teal-wash-strong);
 }
 
-._2UyOBeiSdBayaFdRa39N2O {
-    color: var(--text-color-dark);
+
+/* =====================================================================
+   3. Library sidebar (game list)
+   ===================================================================== */
+
+/* Container (sidebar) */
+._3x1HklzyDs4TEjACrRO2tB {
+    background: var(--glass-tint) !important;
+    backdrop-filter: var(--glass-blur);
+    border-right: 1px solid var(--glass-line);
 }
 
-._7AlhCx3XGzBeIrQaCneUD ._19axKcqYRuaJ8vdYKYmtTQ {
-    color: var(--text-color-dark);
+/* GameListHomeAndSearch (row with the Home button) */
+._2TKEazUUS3TlniZfpc8OOe {
+    background: transparent !important;
 }
 
-._2foCkpRXhqq0UGVE50BWqj ._1KrJ3sFAqPBN9mfpaNTU5F,
-._1TdaAqMFadi0UTqilrkelR ._1KrJ3sFAqPBN9mfpaNTU5F {
-    color: var(--text-color-dark);
+/* Bar (Home button / collections button) */
+._3pSPluBgf0NeR1kkCLWMhR {
+    background: var(--glass) !important;
+    color: var(--miku-text-2) !important;
+    border-radius: 8px;
 }
 
-._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
-._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k {
-    font-size: 16px;
+._3pSPluBgf0NeR1kkCLWMhR:hover {
+    background: var(--miku-teal-wash-strong) !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Bar.Selected */
+._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3 {
+    background: var(--miku-teal-fill) !important;
+    color: var(--miku-text-on-accent) !important;
+}
+
+._3pSPluBgf0NeR1kkCLWMhR ._3O48LaKWcabKx07xdrt1TH /* Label */,
+._3pSPluBgf0NeR1kkCLWMhR ._1ooROmAgkhoBH_o65yl9dJ /* Icon */ {
+    color: inherit !important;
+}
+
+._3pSPluBgf0NeR1kkCLWMhR.eNLOx4LVceeMwRvTVWh3 ._3O48LaKWcabKx07xdrt1TH {
+    font-weight: 600;
+    text-shadow: var(--miku-text-shadow-on-accent);
+}
+
+/* CollectionIconBox (4 squares in the collections button) */
+._2tyaVs9BpqcW068aaOrO56 {
+    background: var(--miku-teal-ink) !important;
+}
+
+.eNLOx4LVceeMwRvTVWh3 ._2tyaVs9BpqcW068aaOrO56 {
+    background: #ffffff !important;
+}
+
+/* MenuHeader (game type dropdown) */
+._2PF_m-I5yte3WnQhpcz8RC {
+    background: var(--glass-strong) !important;
+    color: var(--miku-text) !important;
+    border-radius: 6px;
+}
+
+/* ScrollToTop arrow */
+.uE7Pj4tb2n3_Bx4vjEX0a svg {
+    background: var(--glass) !important;
+    color: var(--miku-text-2);
+}
+
+/* ViewFiltersBar icons (recent / ready to play) */
+._36r2az6roul_Oej7D4BMI6 ._3mzKdQXht__YHo6PX1LmB6 /* CheckboxWithImage */ {
+    color: var(--miku-text-3);
+}
+
+._36r2az6roul_Oej7D4BMI6 ._3mzKdQXht__YHo6PX1LmB6._1QFFkxM5hw-43miIiylbwq /* .Active */ {
+    color: var(--miku-teal-ink);
+}
+
+/* Search box: Container > SearchInput */
+._20QAC4WMXm8qFE8waUT5oo {
+    background: var(--glass-strong) !important;
+    border-radius: 6px;
+}
+
+._20QAC4WMXm8qFE8waUT5oo input.DialogInput {
+    color: var(--miku-text) !important;
+}
+
+._20QAC4WMXm8qFE8waUT5oo input.DialogInput::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+/* AdvancedSearchButton (filter icon next to search) */
+._1TxHdzOt3OD9ikR3xIseKe {
+    color: var(--miku-text-2) !important;
+}
+
+/* --- Section header (collection name rows, e.g. お気に入り) ---
+   Container.CollapseIconParent */
+._2sYIghGVXJr6tsQVvcryy8 {
+    background: var(--miku-hairline) left bottom / 100% 1px no-repeat !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+._2sYIghGVXJr6tsQVvcryy8:hover,
+._2sYIghGVXJr6tsQVvcryy8.sXMOsx8OIRalBMxO9yFY5 /* .Selected */ {
+    background: var(--miku-hairline) left bottom / 100% 1px no-repeat, var(--miku-teal-wash) !important;
+}
+
+/* SectionName */
+._2sYIghGVXJr6tsQVvcryy8 ._2mZ8LlvoUiyeEUtIWuTri {
+    color: var(--miku-teal-ink) !important;
     font-weight: 600;
 }
 
-/* --- Top bar accent --- */
-._2TKEazUUS3TlniZfpc8OOe {
-    background-color: rgba(0, 120, 255, 0.25);
+/* SectionCount (25/164) */
+._2sYIghGVXJr6tsQVvcryy8 ._29uten9Yy8q-n7woDEOXVF {
+    color: var(--miku-text-3) !important;
 }
 
-._1ugNiylO2vKXhirsGocAxa {
-    background: none;
+/* Collapse icon (+/- circle); Steam strokes it in pale blue directly */
+._2sYIghGVXJr6tsQVvcryy8 ._3SFRZYIb9Y2q7YsVtB3YKb {
+    color: var(--miku-teal-ink) !important;
+    opacity: .7;
 }
 
-/* --- Downloads page background --- */
-._1l0LmmqDUXH19SjfELddn7 {
-    background: url(../imgs/downloadBG.jpg) no-repeat;
-    background-position: center center;
-    background-size: cover;
+._2sYIghGVXJr6tsQVvcryy8:hover ._3SFRZYIb9Y2q7YsVtB3YKb {
+    opacity: 1;
 }
 
-/* Download speed chart panel - translucent so background shows through */
-/* ._20JlDJD9-uoCjNLGp_8mY6.kGTS55N3oEbxE7HAgE9ZX,
-._3KDkLoCR8OM8xfdQysKn9t._1ashwbbBZrppDqaals3644 {
-    background: rgba(255, 255, 255, 0.35) !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+._2sYIghGVXJr6tsQVvcryy8 ._3SFRZYIb9Y2q7YsVtB3YKb svg * {
+    stroke: currentColor !important;
+}
+
+/* --- Game rows: Container (+ Installed / Uninstalled / Selected ...) --- */
+._2-O4ZG0KrnSrzISHBKctFQ {
+    color: var(--miku-text) !important;
+    background: transparent !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ._5YTBr7WwIfzVU_3nUtAph /* .Uninstalled */ {
+    color: var(--miku-text-3) !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ._10GdoB3tQXXGFToQ3yY_SK /* .Running */ {
+    color: var(--user-ingame-color) !important;
+    font-weight: 600;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ._1LVQp3h_vGOZ8TuDUEge0k /* .Updating */ {
+    color: var(--miku-blue-ink) !important;
+}
+
+._2-O4ZG0KrnSrzISHBKctFQ:hover,
+._2-O4ZG0KrnSrzISHBKctFQ ._3cMVyOc-9F9Jvp3uKF7_xj /* HoverOverlay */ {
+    background: rgba(var(--miku-teal-rgb), 0.14) !important;
     border-radius: 8px;
-} */
-
-._1VNuYHM6BPBOJspC6zPf5r.IbePLaw-vSvhG1GTenYFg {
-    background: none;
 }
 
-._1VNuYHM6BPBOJspC6zPf5r ._35eOQ6EeVHNV5HGBrJ1-Vu {
-    color: var(--text-color-dark);
+/* Selected game: a soft rounded aqua fill, no side bar */
+._2-O4ZG0KrnSrzISHBKctFQ._1UBpAXP408Ez_L_mXhW5Q9 /* .Selected */ {
+    background: rgba(var(--miku-aqua-rgb), 0.8) !important;
+    border-radius: 8px;
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
 }
 
-/* --- Download info bar --- */
-.sv3ZHPWbrD7yjwx5Mi3u5 ._1dHjjSl-57o1KQsQ1m1HSA._3WavcSX0NkHlBh5fICWKyB {
-    color: var(--text-color-dark);
-}
-
-.sv3ZHPWbrD7yjwx5Mi3u5 ._1dHjjSl-57o1KQsQ1m1HSA {
-    color: var(--icon-color);
-}
-
-body,
-body._2LxgdMcpWJRjkxZKbmeEEb {
-    color: var(--nav-text-color);
-}
-
-.qq2xItSXjpCsNrcxyPJtO .ROxNrcM6LrA4aUyH8IpFp .TK9wvF55dyA6RcOclozC8,
-.mw7VZNUZJWOhSrh3-kiym .ROxNrcM6LrA4aUyH8IpFp .TK9wvF55dyA6RcOclozC8 {
-    color: var(--text-color-dark);
-}
-
-.qq2xItSXjpCsNrcxyPJtO ._1CGnw50aAma6AYKF51Qzsm {
-    color: var(--icon-color);
-}
-
-._1SyggnJY6qbRSmbZpkK3-H {
-    color: var(--icon-color);
-}
-
-._3KDkLoCR8OM8xfdQysKn9t {
-    background: rgba(0, 120, 255, 0.2);
-}
-
-/* Download info section */
-._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 {
-    background: rgba(241, 241, 241, 0.92);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-}
-
-._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 .eXF8xL2LUtzeWMbK-FSRz {
-    color: var(--text-color-dark);
-}
-
-._373v1eWNyaPKhgnea9FZSt:has(._20JlDJD9-uoCjNLGp_8mY6) ._20JlDJD9-uoCjNLGp_8mY6 ._1iulCOMUxV6sBbqoKo_yXw {
-    color: var(--text-color-secondary);
-}
-
-/* Download icon */
-._373v1eWNyaPKhgnea9FZSt:has(._22WcrscaQSqK56PQKgf5YG) ._22WcrscaQSqK56PQKgf5YG .-OgRzXqfwOvAWFZS3Rk_N {
-    color: #000;
-}
-
-/* Download speed text */
-._373v1eWNyaPKhgnea9FZSt ._3a973VY2X3US_cZqA9ZgNF {
-    color: #000;
-}
-
-._373v1eWNyaPKhgnea9FZSt ._35T9nZ2RsVs8kf7OMPlaxe {
-    color: var(--text-color-dark);
-}
-
-._1SyggnJY6qbRSmbZpkK3-H .FuJLsEk_Umr68UjGanMno {
-    color: var(--text-color-dark);
-}
-
-._3mdnpmV9S9u27eB5JFwFNk .eXF8xL2LUtzeWMbK-FSRz {
-    color: var(--text-color-dark);
-}
-
-._3mdnpmV9S9u27eB5JFwFNk ._5TdA4FjU9OYsTIaHzloD {
-    color: var(--icon-color);
-}
-
-.hGZq446tJ_aWpDLU9rRSM ._1iulCOMUxV6sBbqoKo_yXw {
-    color: var(--text-color-dark);
-}
-
-._1SyggnJY6qbRSmbZpkK3-H ._2ns4wnmgr4XBzARpwn2NZ1 ._3WavcSX0NkHlBh5fICWKyB {
-    color: var(--icon-color);
-}
-
-._117rQTHH1RIewY7sSlvg3Z {
-    color: var(--icon-color);
-}
-
-._1SyggnJY6qbRSmbZpkK3-H ._3tEPpl-d9-fiCX5AdJiXJL {
-    color: var(--text-color-dark);
-}
-
-._3mdnpmV9S9u27eB5JFwFNk ._3BdWqJYvZfTohY-twD2i6Q {
-    color: var(--text-color-dark);
-}
-
-/* Sidebar dialog dropdowns and buttons */
+/* Sidebar dropdowns and buttons (advanced filter pane etc.) */
 ._3x1HklzyDs4TEjACrRO2tB .DialogDropDown._DialogInputContainer {
-    background: rgba(255, 255, 255, 0.7) !important;
-    color: #1a3a4a !important;
+    background: var(--glass-strong) !important;
+    color: var(--miku-text) !important;
     border-radius: 6px;
 }
 
-._3x1HklzyDs4TEjACrRO2tB ._3TbvbA43LhIlIEKsH7eqhI.DialogButton._DialogLayout.Secondary {
-    background: rgba(57, 197, 187, 0.2) !important;
-    color: #1a3a4a !important;
-    border-radius: 6px;
-}
-
-._3x1HklzyDs4TEjACrRO2tB ._1bqGAcZx1C71VYj14hz0po.DialogButton._DialogLayout.Primary {
-    background: rgba(0, 120, 255, 0.35) !important;
-    color: #fff !important;
-    border-radius: 6px;
-}
-
-/* Sidebar expand/resize trigger - hide visual artifact */
+/* Sidebar resize trigger - hide visual artifact */
 .expand-trigger,
 .contract-trigger {
     background: transparent !important;
 }
 
-/* Selected game in library list */
-._2iJsgdTIX9Tj23rWnB7Q-c {
-    background: rgba(57, 197, 187, 0.3) !important;
+
+/* =====================================================================
+   4. Library home (shelves)
+   ===================================================================== */
+
+/* UpdatesContainer (What's New) - hidden */
+._17uEBe5Ri8TMsnfELvs8-N {
+    display: none !important;
 }
 
-/* Game hover in library list */
-._1VNuYHM6BPBOJspC6zPf5r:hover,
-._1VNuYHM6BPBOJspC6zPf5r._3-SbBb63lDnu6LzKV-q3Cg {
-    background-color: rgba(57, 197, 187, 0.15) !important;
-}
-
-._1bGewp3tfzqAF6fVTFFUOz .UkR3sY319PuaUNuUWks2K {
-    background: rgba(0, 120, 255, 0.08);
-}
-
-/* --- Game detail page --- */
-._1_cYNJSvS6IXs9vLTEYjy5 {
-    background: transparent;
-}
-
-/* Game detail dark overlay - make transparent to show mainBG */
-._3lDczhulqraStjCitLYJ1K._2l416KfEtI4CL0mCUEmOBw._3FmxxjyWNHU1PrBGnBe6tm {
+/* LibraryHome */
+._3Sb2o_mQ30IDRh0C72QUUu {
     background: transparent !important;
 }
 
-/* Collections page background - remove black background */
-._3lDczhulqraStjCitLYJ1K.u1xD3KJEgksF_J_5TLZzO {
+/* AddShowcase (新しいシェルフを追加) */
+._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5 {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    color: var(--miku-text-2) !important;
+    opacity: 0.9 !important;
+}
+
+._3SkuN_ykQuWGF94fclHdhJ ._2aw5aUUo3lrK6wxJb4_ms5:hover {
+    background: var(--glass-strong);
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Rule (thin divider lines on shelves) */
+._1PhK8scyztOxjJwWUpkiLJ {
+    background: rgba(var(--miku-ink-rgb), 0.25) !important;
+}
+
+/* ShowcaseHeader (shelf title row): plain text over the art with Steam's own
+   rule line; a mist halo keeps it readable on busy spots */
+._23SnllqT_AqZ1C_QHcNQ4Z {
+    background: transparent !important;
+    color: var(--miku-text-2) !important;
+}
+
+/* the home page has no veil, so the shelf title gets a thin white outline
+   (like subtitles) instead of a soft halo: it can sit right on the red ribbon */
+._23SnllqT_AqZ1C_QHcNQ4Z,
+._23SnllqT_AqZ1C_QHcNQ4Z * {
+    text-shadow:
+        1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+        1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        0 0 8px rgba(255, 255, 255, 0.9) !important;
+}
+
+._23SnllqT_AqZ1C_QHcNQ4Z .DialogDropDown_CurrentDisplay {
+    color: var(--miku-text) !important;
+    font-weight: 600;
     background: transparent !important;
 }
 
-/* --- Game detail right sidebar cards (friends/achievements/reviews etc.) --- */
-/* ._1_cYNJSvS6IXs9vLTEYjy5 */._2r4TK4BAuU-J4FuF_O7v_5
-.vzLedtsu3TtTlKLEKzIhH {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(57, 197, 187, 0.35);
-    border-radius: 10px;
-    margin-bottom: 8px;
-    overflow: hidden;
+._23SnllqT_AqZ1C_QHcNQ4Z .DialogDropDown_Arrow,
+._23SnllqT_AqZ1C_QHcNQ4Z svg {
+    color: var(--miku-text-2) !important;
+    fill: var(--miku-text-2);
+    background: transparent !important;
 }
 
-/* Card header row */
-/* ._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG {
-    background: rgba(57, 197, 187, 0.22) !important;
-    border-bottom: 1px solid rgba(57, 197, 187, 0.3);
-} */
-
-/* Right sidebar outer column */
-._1_cYNJSvS6IXs9vLTEYjy5 ._2aor4XVOYzN1PBSREk0UbO {
-    padding: 0 6px;
+._23SnllqT_AqZ1C_QHcNQ4Z ._1ljKTq3H58WbDZGNPfM0TY /* SortingDropDownLabel */,
+._23SnllqT_AqZ1C_QHcNQ4Z ._2qm05e8tWSAb-_fAHytQCP /* CountDisplay (25/164) */ {
+    color: var(--miku-text-3) !important;
 }
 
-/* --- Scrollbar track --- */
+._23SnllqT_AqZ1C_QHcNQ4Z .SVGIcon_DoubleArrow .Arrow1 {
+    stroke: var(--miku-text-2);
+}
+
+/* RecentGame > AddedDate ("今日 / 昨日 / 今週" labels above recent games) */
+._1esfEVxhqNfh8fzr_kEGKa ._1ANYFgwMyPpwJjIndAdGSr {
+    color: var(--miku-text) !important;
+    text-shadow: 0 0 3px #fff, 0 0 6px #fff;
+    font-weight: 600;
+}
+
+/* LibraryItemBoxSubscript (playtime badge under each cover) */
 ._1LJqx_qFOC8199RBQO5kU8 {
-    background: rgba(57, 197, 187, 0.18);
-    border-radius: 4px;
-}
-
-/* --- Scrollbar thumb (slider) --- */
-._3OSZu24hLN7YKjqGi7I2Xp {
-    background: #0078FF;
-    border-radius: 4px;
-}
-
-/* --- Global webkit scrollbar override --- */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 120, 255, 0.55) !important;
-    background-clip: padding-box !important;
+    background: rgba(255, 255, 255, 0.90) !important;
+    color: var(--miku-text) !important;
     border-radius: 999px;
-    border: 1px solid transparent;
+    box-shadow: 0 1px 4px rgba(var(--miku-deep-rgb), 0.25);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(57, 197, 187, 0.8) !important;
-    background-clip: padding-box !important;
+/* NumberOfCopies (round "4" badge on tiles): light grey on 30% black, fades
+   on light covers; white pill like the play-time label next to it */
+._3zxPLsbnU5LuorR0_EPCEC {
+    background: rgba(255, 255, 255, 0.90) !important;
+    border-color: var(--glass-line) !important;
+    color: var(--miku-text) !important;
+    box-shadow: 0 1px 4px rgba(var(--miku-deep-rgb), 0.25);
 }
 
-::-webkit-scrollbar-track {
-    background: rgba(57, 197, 187, 0.08);
-    border-radius: 999px;
+/* RecentGameFooter (play time under the big first recent game): Steam puts
+   translucent white text on a blurred copy of the cover, unreadable on light
+   covers. Fade the blur under white glass and use dark text instead. */
+._2d1hSvdpY5L2-GN1EnUb9Z {
+    background: rgba(255, 255, 255, 0.82) !important;
+    color: var(--miku-text) !important;
 }
 
-::-webkit-scrollbar-corner {
-    background: transparent;
+._2d1hSvdpY5L2-GN1EnUb9Z .RhmvOTLHkomDhCTDX9hLA /* FooterBlurImageContainer */ {
+    opacity: 0.3;
 }
 
-/* --- Main client background (Miku artwork) --- */
-._1ENHEsrSLcTRtPQFl1F-wL {
-    background: url(../imgs/mainBG.jpg) no-repeat;
-    background-position: center center;
-    background-size: cover;
+._2d1hSvdpY5L2-GN1EnUb9Z ._3bkuozxKIatrWG3aeisthc._2zIRlEsAfHhI-_3bZ3X60z /* Header (プレイ時間) */ {
+    color: var(--miku-text) !important;
+    font-weight: 600;
 }
 
-/* Library right panel - must be transparent to show mainBG */
+._2d1hSvdpY5L2-GN1EnUb9Z ._3bkuozxKIatrWG3aeisthc._3JWBBEulYkYmDLJr485oex /* PlayedRecent */,
+._2d1hSvdpY5L2-GN1EnUb9Z ._3bkuozxKIatrWG3aeisthc.ma8y_VgPze1mscYhW6-oS /* PlayedTotal */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* AppPortraitBanner (ライブラリに新規追加 badge on tiles): sakura pink */
+.N8aJrSpxQ6II4CY_aFdYI {
+    background: var(--miku-pink-soft) !important;
+    color: #5e1a35 !important;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(120, 30, 60, 0.25);
+}
+
+/* LibraryItemActionButton (download / play button on library tiles) */
+._3AjoLnMNKxYmNTGTJCLfgs {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+}
+
+._3AjoLnMNKxYmNTGTJCLfgs:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+/* DoneReordering button */
+.MXh6nju1KU9_oaQCaR06e {
+    color: #fff !important;
+}
+
+
+/* =====================================================================
+   5. Game detail page
+   ===================================================================== */
+
+/* AppDetailsTransitionGroup - transparent so the artwork shows */
 ._2Dd4T78PcCTUVgOtDGFY5j {
     background: transparent !important;
 }
 
-._1KrJ3sFAqPBN9mfpaNTU5F {
-    color: var(--text-color-dark) !important;
+/* Body.ScrollContainer.Glassy / Body.ScrollContainer (collections page) */
+._3lDczhulqraStjCitLYJ1K._2l416KfEtI4CL0mCUEmOBw._3FmxxjyWNHU1PrBGnBe6tm,
+._3lDczhulqraStjCitLYJ1K.u1xD3KJEgksF_J_5TLZzO {
+    background: transparent !important;
 }
 
-/* --- Friends button in sidebar (Miku teal accent) --- */
-._1TdaAqMFadi0UTqilrkelR {
-    padding: 4px;
-    background: var(--miku-teal);
+/* AppDetailsOverviewPanel (everything below the hero image).
+   The ONE veil of the game page: a thin blurred mist so the artwork stays
+   visible while headings between cards remain readable. Cards on top add
+   one more layer; nothing inside a card adds another. */
+._1_cYNJSvS6IXs9vLTEYjy5 {
+    background: rgba(var(--miku-mist-rgb), 0.38);
+    backdrop-filter: blur(12px) saturate(1.15);
+    color: var(--miku-text);
+}
+
+/* BackdropGlass: Steam's frosted band at the top of the panel; the panel
+   veil above already does this job, so a second layer would only add white */
+.Jbe--NUNw7sxbxGsMSjVa {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+/* PlayBar.Glassy (play button row) */
+._3fLo166MlaNqP8r8tTyRz._3DeO92O5aVkcdwEBCJDjWm {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.94), rgba(var(--miku-mist-rgb), 0.90)) !important;
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-line);
+}
+
+/* StickyHeaderShadow */
+._2_86QNCjVvJTL3Qe6Xztx_ {
+    background: linear-gradient(rgba(var(--miku-deep-rgb), 0.12) 0%, rgba(var(--miku-deep-rgb), 0) 100%) !important;
+}
+
+/* PlayButtonContainer.Green (プレイ) - Miku teal instead of Steam green */
+._1FnJ6dPuknQFQ2RTpKTI16._3cI5TXsFX3bvpR-7EBOtxq ._3ydigb6zZAjJ0JCDgHwSYA /* PlayButton */ {
+    background: var(--miku-teal-fill) !important;
+}
+
+._1FnJ6dPuknQFQ2RTpKTI16._3cI5TXsFX3bvpR-7EBOtxq ._3ydigb6zZAjJ0JCDgHwSYA:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+._1FnJ6dPuknQFQ2RTpKTI16._3cI5TXsFX3bvpR-7EBOtxq ._2q-gZ3XJzlvSGHSF-GvSmi /* StreamingSelector */ {
+    background: #127180 !important;
+}
+
+/* PlayButton without .Green = install / update state (Steam blue). A bluer
+   Miku teal keeps it apart from プレイ; stop / disabled states keep their own look */
+._1FnJ6dPuknQFQ2RTpKTI16:not(._3cI5TXsFX3bvpR-7EBOtxq) ._3ydigb6zZAjJ0JCDgHwSYA:not(._1WVYDQv_srgKP95rVG1cX-):not(._3vjBUK7Fcah-oXzIxcxadz):not(._1Pb6PMh_3L5p5NzuUz0Pp9) {
+    background: linear-gradient(135deg, #2499b0 0%, #136f86 100%) !important;
+}
+
+._1FnJ6dPuknQFQ2RTpKTI16:not(._3cI5TXsFX3bvpR-7EBOtxq) ._3ydigb6zZAjJ0JCDgHwSYA:not(._1WVYDQv_srgKP95rVG1cX-):not(._3vjBUK7Fcah-oXzIxcxadz):not(._1Pb6PMh_3L5p5NzuUz0Pp9):hover {
+    background: linear-gradient(135deg, #29a5bd 0%, #157892 100%) !important;
+}
+
+/* ButtonText on every play-button state stays white */
+._1_cYNJSvS6IXs9vLTEYjy5 ._33cnXIqTRgRr49_FNXIHj6,
+._3ydigb6zZAjJ0JCDgHwSYA ._33cnXIqTRgRr49_FNXIHj6 {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* PlayBarLabel (クラウドステータス / 最後にプレイ / プレイ時間 / 実績) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._34lrt5-Fc3usZU6trA1P0- {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* Achievement progress in the play bar: DetailsProgressContainer / DetailsProgressBar */
+._25YVDTaClw6Y2COPsU0UaV {
+    background: rgba(var(--miku-ink-rgb), 0.15) !important;
+    border-radius: 999px;
+}
+
+._1FnTqlsi2_-TJf1d5apoS6 {
+    background: var(--miku-teal) !important;
+    border-radius: 999px;
+}
+
+/* PlayBarDetailLabel (values under the labels) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2TYVGoD27ZMfjRirKQNLfk {
+    color: var(--miku-text-2) !important;
+}
+
+/* PlayBarGameName (shown when the bar is sticky) */
+._3rpUkswF6xc_ste4Ros_xM {
+    color: var(--miku-text) !important;
+}
+
+/* AppDetailsButton inside the play bar (cloud status link) */
+._1_cYNJSvS6IXs9vLTEYjy5 button.DialogButton._3Cdin80d-hVsakHUZboheb {
+    background: transparent !important;
+    border: none !important;
+    color: var(--miku-text-2) !important;
+    padding: 0 !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 button.DialogButton._3Cdin80d-hVsakHUZboheb:hover {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* GameStat icons (cloud / clock / trophy) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA svg {
+    color: var(--miku-teal-ink);
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 svg polyline,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 svg path,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .MbTRimZpGCATmn39ae8RT,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .k-QNT9kzOEOvG0U_kGmwr {
+    stroke: var(--miku-teal-ink);
+}
+
+/* MenuButton (gear / info / favourite round buttons) */
+._3qDWQGB0rtwM3qpXTb11Q- {
+    background: var(--glass) !important;
+    border: 1px solid var(--glass-border);
+    color: var(--miku-text-2) !important;
+}
+
+._3qDWQGB0rtwM3qpXTb11Q-:hover {
+    background: var(--miku-teal-wash-strong) !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Steam colours these svgs directly with translucent white */
+._3qDWQGB0rtwM3qpXTb11Q- svg {
+    color: var(--miku-text-2) !important;
+}
+
+._3qDWQGB0rtwM3qpXTb11Q-:hover svg {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* the info (i) icon paints its shapes with fill/stroke directly, not currentColor */
+._3qDWQGB0rtwM3qpXTb11Q- svg :is(path, polyline, polygon, circle, ellipse, rect, line) {
+    stroke: currentColor !important;
+}
+
+._3qDWQGB0rtwM3qpXTb11Q- svg :is(path, polyline, polygon, circle, ellipse, rect):not([fill="none"]) {
+    fill: currentColor !important;
+}
+
+._3qDWQGB0rtwM3qpXTb11Q-._21hXW2oDD7zvNsoOaW7Yob._2WaHZuAetbqENmqDthu3nl /* FavoriteButton.Favorited */ svg path {
+    fill: var(--miku-pink) !important;
+    stroke: var(--miku-pink) !important;
+}
+
+/* InCollection tag on the hero (top-right) */
+._1HS4twEHtDJ_8MWgJT4VBd {
+    background: var(--glass-strong) !important;
+    color: var(--miku-text) !important;
+    border-radius: 999px;
+    padding: 0 8px;
+}
+
+/* GameInfo popup (description / developer / features) */
+._2jPMy2QZr8bWi6yrk5ZzHA {
+    background: var(--glass-strong) !important;
+    backdrop-filter: var(--glass-blur);
+    color: var(--miku-text-2) !important;
     border-radius: 10px;
 }
 
-._2foCkpRXhqq0UGVE50BWqj {
-    width: 210px !important;
+._2jPMy2QZr8bWi6yrk5ZzHA ._3GkV1NVDKuXYTLyRt2Uirz /* GameDescription */ {
+    color: var(--miku-text) !important;
 }
 
-/* ===================================
-   Game Detail Page Overrides
-   =================================== */
-
-/* All text in game detail - Miku teal for readability */
-._1_cYNJSvS6IXs9vLTEYjy5 {
-    color: #39C5BB;
+._2jPMy2QZr8bWi6yrk5ZzHA ._1vYL2q-91QLy-FBzntE7E5 /* Label */,
+._2jPMy2QZr8bWi6yrk5ZzHA ._1VoVzLPXjhlaguJLgO8htG /* feature Label */ {
+    color: var(--miku-text-3) !important;
 }
 
-/* Card header titles */
-._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG {
-    color: #39C5BB !important;
+._2jPMy2QZr8bWi6yrk5ZzHA ._2j8Xh4pPOOgF4MF6FVUI28 /* Name (developer link) */,
+._2jPMy2QZr8bWi6yrk5ZzHA .izVv8jajo7mehdAkZozAK /* Date */ {
+    color: var(--miku-teal-ink) !important;
 }
 
-/* General text inside cards */
-._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5 span,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2r4TK4BAuU-J4FuF_O7v_5 div {
-    color: #39C5BB;
+/* GameInfoShadow */
+._1FXWy2UilVZIppT-PetDWw {
+    background: transparent !important;
 }
 
-/* Page links */
-._1_cYNJSvS6IXs9vLTEYjy5 ._2sNDjgK9EWiPLdNGkjun-w {
-    color: #39C5BB !important;
+/* AppDetailsSectionContainer (every card: links bar, friends, DLC, achievements ...) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._31ptFGGMZrSQc5BCX1e5lm {
+    background: rgba(255, 255, 255, 0.62) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    box-shadow: var(--glass-shadow);
 }
 
-/* Timestamps & dates */
-._1_cYNJSvS6IXs9vLTEYjy5 ._2TYVGoD27ZMfjRirKQNLfk,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1tIg-QIrwMNtCm7NcYADyi,
-._1_cYNJSvS6IXs9vLTEYjy5 ._3ljAdVsP0faRHBhKgvOybK,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2gLHbXukQBdrIKhqEYVvOe {
-    color: rgba(57, 197, 187, 0.75) !important;
+/* ...except the activity column: it is only a list, each post and event
+   inside is its own card, so the column itself stays clear */
+._1_cYNJSvS6IXs9vLTEYjy5 ._31ptFGGMZrSQc5BCX1e5lm:has(._1JlC29Ic6L-QvL-39X_d-X, .UVeN0kaD3zv1feMj_mMw5) {
+    background: transparent !important;
+    border-color: transparent;
+    box-shadow: none;
 }
 
-/* Activity / friend event text */
-._1_cYNJSvS6IXs9vLTEYjy5 ._34lrt5-Fc3usZU6trA1P0-,
-._1_cYNJSvS6IXs9vLTEYjy5 ._33cnXIqTRgRr49_FNXIHj6,
-._1_cYNJSvS6IXs9vLTEYjy5 .izVv8jajo7mehdAkZozAK,
-._1_cYNJSvS6IXs9vLTEYjy5 ._39Y01uSRcLiDg5DneTTR0m {
-    color: #39C5BB !important;
+/* Links bar: Link > Text (ストアページ / DLC / コミュニティハブ ...) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1b6LYWVijW-9E4YV0keDWZ ._2sNDjgK9EWiPLdNGkjun-w {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1b6LYWVijW-9E4YV0keDWZ:hover ._2sNDjgK9EWiPLdNGkjun-w {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* SectionHeader > Label > LabelText (アクティビティ / プレイしたフレンド ...)
+   These sit on the thin veil, so a soft mist halo keeps them clear of
+   darker spots in the artwork */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F ._3i0kopAostOz2IDi9HqmeN {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95), 0 0 2px rgba(var(--miku-mist-rgb), 0.9);
+}
+
+/* thin line after each heading, fading out to the right (same as the shelf headers) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F {
+    display: flex !important;
+    align-items: center;
+    gap: 14px;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--miku-hairline);
+}
+
+/* Achievements card: Highlight.HighlightDiv (progress summary box) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._2xTb6N-jUUQ-mIkMB6OVMm {
+    background: var(--miku-teal-wash) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.35);
+    border-radius: 8px;
+    color: var(--miku-text) !important;
+}
+
+/* Highlight.AllAchieved: Steam's own "padding: 10px" on Highlight cancels the
+   room AllAchieved keeps for the ribbon medal, so the medal covers the text */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._2YS0EBJmY2Rvs07zZ90UIJ {
+    padding-inline-start: 54px;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._3jC8om-5Sci_dkUB-6VYiU /* summary text */ {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._14kZVEyaz7WX57N47z4Yr1 /* (100%) */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._3ns9185LizH61StaAXuAp6 /* progress track */ {
+    background: rgba(var(--miku-ink-rgb), 0.15) !important;
+}
+
+/* "+25" tile after the locked achievement icons: AdditionalItem.RemainderContainer */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2aVnDeExEHiUFX0zwr_BTO.lZ2c49vTWJ60klQOY9l2K {
+    background: rgba(var(--miku-ink-rgb), 0.12) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 6px;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .lZ2c49vTWJ60klQOY9l2K ._1-H7tKj_QcGHLUbx5wVsGg /* RemainderText */,
+._1_cYNJSvS6IXs9vLTEYjy5 .lZ2c49vTWJ60klQOY9l2K ._2gISWIeEzZ9PNuAzVuMaWd /* Remainder */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._3Rm36_oeAhvIg6ZYP9l1Jj /* progress fill */ {
+    background: var(--miku-teal) !important;
+}
+
+/* ScrollToTopButton ("トップにスクロール" tab at the bottom while scrolled) */
+._1J21tLst5SEhBPkVRT53UV div {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+    text-shadow: var(--miku-text-shadow-on-accent);
+    box-shadow: 0 -2px 10px rgba(var(--miku-ink-rgb), 0.25) !important;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: 600;
+}
+
+._1J21tLst5SEhBPkVRT53UV div:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+/* EventBody (screenshot / news body inside activity cards): already on a card */
+.NEMXhMlqXOCJwfgWlHXhT {
+    background: transparent !important;
+}
+
+/* Soundtrack details */
+._11iUUsCpGW7-08wUrrGpge ._3NeZL0dgMqGQ3V7NZz6EpF /* Artist */,
+._11iUUsCpGW7-08wUrrGpge ._3Yvj5yqGgGYMcXE-Fr_Pqf /* TracksDetails */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* SubsectionHeader (現在5人のフレンドがプレイ中) */
+._1_cYNJSvS6IXs9vLTEYjy5 .nTb1NqsRSnwl0UTOYn_JA {
+    color: var(--miku-text-2) !important;
+}
+
+/* Friend names in the right column */
+._1_cYNJSvS6IXs9vLTEYjy5 .nOdcT-MoOaXGePXLyPe0H /* playerName */ {
+    color: var(--user-online-color) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .ingame .nOdcT-MoOaXGePXLyPe0H {
+    color: var(--user-ingame-color) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .offline .nOdcT-MoOaXGePXLyPe0H {
+    color: var(--user-offline-color) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2Ri005Wg_uXDTa71kdRbcN /* richPresenceLabel */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .ingame ._2Ri005Wg_uXDTa71kdRbcN {
+    color: #3f6600 !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3XEmWmfQy7gbYJ4KJ1N9tp /* playerNicknameBracket */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Activity: post box */
+._1JlC29Ic6L-QvL-39X_d-X /* PostTextEntryArea */ {
+    background: rgba(255, 255, 255, 0.72) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 8px;
+}
+
+._1JlC29Ic6L-QvL-39X_d-X::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .bACIuqv-b_9TztCczFK19 /* EmoticonButton */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2JSyABqFEh-v_dwaTnBydR /* PostButton */ {
+    background: var(--glass-strong) !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Activity feed: event cards (the only layer on the veil in the activity column) */
+._1_cYNJSvS6IXs9vLTEYjy5 .UVeN0kaD3zv1feMj_mMw5 /* Event */ {
+    background: rgba(255, 255, 255, 0.62) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    box-shadow: var(--glass-shadow);
+    color: var(--miku-text) !important;
+}
+
+/* PartnerEventMediumImage (publisher news with a picture on the left):
+   Steam paints the container with a dark radial gradient and keeps the
+   title / summary light grey, made for its dark theme */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1HZy7BvOZuPT8feUwadL4W /* PartnerEventMediumImage_Container */ {
+    background: transparent !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1gljEIuhbsQpFCWuVhdKTJ /* PartnerEventMediumImage_Title */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .Ru7OBQzSxqIo3jIsbtV9g /* PartnerEventMediumImage_Summary */ {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .VytJzt3Z_t6332-n24Yrc /* PartnerEventMediumImage_Image */ {
+    border-radius: 6px;
+}
+
+/* PartnerEventLargeImage / PartnerEventLargeUpdate (大型アップデート: big
+   banner on the left): same dark gradient and grey text as the medium one,
+   plus a full-size blurred copy of the banner behind the text */
+._1_cYNJSvS6IXs9vLTEYjy5 .LibriMVXcLl1HB60ZUp78 /* PartnerEventLargeImage_Container */ {
+    background: transparent !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .fGDsmh9vz8h0RMEoRoAvF._3cX_vEKsN9S9EmR0O5w1Ol /* _Image.Blur */ {
+    opacity: 0.2 !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1ujzuoxGhLunHZQqHAqRgg._29bW1yCn25VTm4bFameBaV /* PartnerEventTypeUpdate */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3fsjzvni7TQ1NphLHM_5r3 /* PartnerEventLargeImage_Title */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3zwBRDW1egliiT4pKYIXap /* PartnerEventLargeImage_Summary */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* LeftSideMajorUpdateBar: Steam-blue marker left of a major update */
+._1_cYNJSvS6IXs9vLTEYjy5 ._3oMUSjOFNB0E9LWcL2sE7 {
+    background: linear-gradient(to right,
+            rgba(var(--miku-teal-rgb), 0) 0%,
+            rgba(var(--miku-teal-rgb), 0.25) 18px,
+            var(--miku-teal) 18px,
+            var(--miku-teal) 100%) !important;
+}
+
+/* --- Opened news article (click on any news / event in the activity feed) ---
+   Steam shows it as a dark panel over a darkened page. */
+
+/* AppDetailsOverlayTransitionGroup > div: the page dimmer behind the article.
+   Steam: near-black + blur(5px) brightness(.65). The enter / exit animation
+   classes keep their own opacity and filter. */
+._37MAYpIjl0IDA1xVhhsuX8 > div {
+    background-color: rgba(var(--miku-mist-rgb), 0.55) !important;
+}
+
+._37MAYpIjl0IDA1xVhhsuX8 > div:not(._2WEP32t2FdvHSRBiOZug83):not(._1YKr0tOiBRhfHVGVlD85Ak) {
+    backdrop-filter: blur(6px) saturate(1.1) !important;
+}
+
+/* PartnerEvent.InLibraryView: the article panel */
+._1KsYSVzmvIfRivBTcx-_GE._3_SEiDNs-lzwV7cTF6gcgt {
+    background: rgba(255, 255, 255, 0.92) !important;
+    color: var(--miku-text-2) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(var(--miku-deep-rgb), 0.18);
+}
+
+/* EventDetailTitleContainer (type, date, title) */
+._1KsYSVzmvIfRivBTcx-_GE ._3z2NYCkFizMu4fMvWTIBUG {
+    background: linear-gradient(to bottom, rgba(var(--miku-aqua-rgb), 0.35), rgba(var(--miku-aqua-rgb), 0)) !important;
+    border-bottom: 1px solid var(--glass-line);
+    border-radius: 12px 12px 0 0;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE .Udzrpqr8534T5DvVZveNP /* EventType (ニュース) */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._4LAnPYKRPeF-QDReu_VGm /* RightSideTitles (投稿：) */,
+._1KsYSVzmvIfRivBTcx-_GE .MBkkhT4wei3tWetnWbiqn /* ShortDateAndTime */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE .TqEPC9bhvVpZ1rb3Z8Mbd /* EventDetailTitle */ {
+    color: var(--miku-text) !important;
+}
+
+/* EventDetailsBody (the article text, any BBCode inside) */
+._1KsYSVzmvIfRivBTcx-_GE .A_A2B6fTn_MPLlGCmsLtd {
+    color: var(--miku-text) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE .A_A2B6fTn_MPLlGCmsLtd :is(h1, h2, h3, h4, b, strong, ._3cln317VYhwhE1fSeMCG48) {
+    color: var(--miku-text) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE .A_A2B6fTn_MPLlGCmsLtd a:not([class*="WidgetTag"]) {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Bottom bar: Container > VoteContainer / DiscussContainer / ShareContainer */
+._1KsYSVzmvIfRivBTcx-_GE .mKmrOjr9bGjKAolgp9NoD {
+    background: transparent !important;
+    border-top: 1px solid var(--glass-line);
+}
+
+._1KsYSVzmvIfRivBTcx-_GE :is(._3Kelh1-_v6xHfRjF68n7NB, ._16xC0mtOWoLbvSQbmo_ycv, ._3ctGqQID5-8adtd7HlZ3YM) {
+    background: rgba(var(--miku-aqua-rgb), 0.30) !important;
+    border-radius: 8px;
+    color: var(--miku-text-2) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._3csl-MPe-hKuT8hQpOqEG5 /* VoteCount */,
+._1KsYSVzmvIfRivBTcx-_GE .QQy4BCjcpjCfAvTKAqBq3 /* DiscussionCount */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._1ABCOz8DSrl-YJdh1xD-m0 /* Button (高評価 / ディスカッション / 共有) */ {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid var(--glass-line);
+    color: var(--miku-text) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._1ABCOz8DSrl-YJdh1xD-m0:hover {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._1ABCOz8DSrl-YJdh1xD-m0 :is(span, div) {
+    color: inherit !important;
+}
+
+/* VoteUpIcon / VoteDownIcon / ShareIcon / ChatBubble: Steam paints them
+   white directly, invisible on the light buttons */
+._1KsYSVzmvIfRivBTcx-_GE ._1ABCOz8DSrl-YJdh1xD-m0 svg,
+._1KsYSVzmvIfRivBTcx-_GE ._1ABCOz8DSrl-YJdh1xD-m0 svg * {
+    fill: currentColor !important;
+}
+
+/* EventCoverImageBackground: dark placeholder until the cover image loads */
+._1KsYSVzmvIfRivBTcx-_GE ._2-IygC3-t05_RYwPl6Fkgt {
+    background-color: rgba(var(--miku-aqua-rgb), 0.35) !important;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Store widget inside an article (StoreSaleWidgetContainer): dark gradient
+   with grey text in Steam; light glass card here. The discount box keeps
+   Steam's green so sales still read as sales. */
+._1KsYSVzmvIfRivBTcx-_GE ._2hhNOdcC6yLwL_rugP3YLf {
+    background: rgba(var(--miku-aqua-rgb), 0.28) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._3AsE5JhqLAiICKUYvZLpap /* StoreSaleWidgetShortDesc */ {
+    color: var(--miku-text-2) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._33yqka47vWurNqhnhLJb_m /* Tag */ {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid var(--glass-line);
+    color: var(--miku-teal-ink) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._1qvTFgmehUzbdYM9cw0eS7 /* StoreSaleWidgetRelease */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN /* StoreSalePriceWidgetContainer */ {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid var(--glass-line);
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN ._3fFFsvII7Y2KXNLDk_krOW /* StoreOriginalPrice */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN ._3j4dI1yA7cRfCvK8h406OB /* StoreSalePriceBox */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1KsYSVzmvIfRivBTcx-_GE ._2_KY_e11FV0ftXR2_7TMmP /* StoreSaleNewItem (新着) */ {
+    background: var(--miku-pink-soft) !important;
+    color: #5e1a35 !important;
+    font-weight: 600;
+}
+
+/* ControlSectionRightSide: CloseButton / ScrollButton (up, down, game art) */
+:is(._1_vCR1dPfyJ7_yukwDqblf, ._1t_97P9KMsEBaPq9y-6OUl) {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-color: var(--glass-line) !important;
+    color: var(--miku-text-2) !important;
+    box-shadow: 0 2px 8px rgba(var(--miku-deep-rgb), 0.15);
+}
+
+:is(._1_vCR1dPfyJ7_yukwDqblf, ._1t_97P9KMsEBaPq9y-6OUl):hover {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+}
+
+:is(._1_vCR1dPfyJ7_yukwDqblf, ._1t_97P9KMsEBaPq9y-6OUl) svg :is(line, polygon, path, polyline) {
+    stroke: currentColor !important;
+}
+
+:is(._1_vCR1dPfyJ7_yukwDqblf, ._1t_97P9KMsEBaPq9y-6OUl) svg :is(polygon, path):not([fill="none"]) {
+    fill: currentColor !important;
+}
+
+/* Patch notes / partner events are an Event inside an Event: only the outer one is a card */
+._1_cYNJSvS6IXs9vLTEYjy5 .UVeN0kaD3zv1feMj_mMw5 .UVeN0kaD3zv1feMj_mMw5 {
+    background: transparent !important;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* AppActivityDate (11月5日) sits on the veil between cards: darker grey
+   than other secondary text, the artwork behind it can be a mid pink */
+._1_cYNJSvS6IXs9vLTEYjy5 ._19LfMT7PFWg2xHOqNjR99q {
+    color: var(--miku-text-2) !important;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95), 0 0 2px rgba(var(--miku-mist-rgb), 0.9);
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1ujzuoxGhLunHZQqHAqRgg /* PartnerEventType */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2EyEa4GxazAthx5c83AUGO /* CommentsLabel */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ljAdVsP0faRHBhKgvOybK /* TimeStamp */,
+._1_cYNJSvS6IXs9vLTEYjy5 .BDa6lbTAdR4RwtqgRNUnO /* PlayedForTime */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .QCKBqF2k_sRLcXJ5qQIEl /* EventHeadline */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Cva_kor3lWBIoeu9cQxJq /* PartnerEventTextOnly_Title */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._39Y01uSRcLiDg5DneTTR0m /* Name */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .Gy1Y7lb4Y47vK8odzSru2 /* HeadlineGameName */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2gLHbXukQBdrIKhqEYVvOe /* Desc */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* --- Steam ワークショップ card ---
+   Steam paints both parts dark: WorkshopHightlight (trending item) and
+   Body.WorkshopContainer (the two buttons, dark grey + pattern image) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._1zmwcbn8AgDTiWuHGyMD2w {
+    background: rgba(var(--miku-aqua-rgb), 0.30) !important;
+    border-radius: 8px;
+    color: var(--miku-text-2) !important;
+}
+
+._1zmwcbn8AgDTiWuHGyMD2w ._1jkfJdGTyndLlXdB9WkfL3 /* FeaturedItemHeader (トレンドのアイテム) */,
+._1zmwcbn8AgDTiWuHGyMD2w .YE_jJPwp0fBbRm1vQHIIq /* FeaturedItemLink (詳細) */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+._1zmwcbn8AgDTiWuHGyMD2w ._1KR5XpPLCIid-SJBY4jFIp /* FeaturedItemName */ {
+    color: var(--miku-text) !important;
+}
+
+._1zmwcbn8AgDTiWuHGyMD2w ._3SzXrXnWa-W29h_4yF8Jwv /* FeaturedItemDesc */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1zmwcbn8AgDTiWuHGyMD2w .aZc8RQUeHL3YNHxrG4pXN /* FeaturedItemHideButton */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1zmwcbn8AgDTiWuHGyMD2w .aZc8RQUeHL3YNHxrG4pXN svg * {
+    fill: currentColor !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._176QJCynkEUSdR_-9btdAW /* Body.WorkshopContainer */ {
+    background: transparent !important;
+}
+
+/* Screenshot shared in the activity feed: already on a card */
+._1pdQdoLxwmuMZpXXNHI2Uo /* ScreenshotCarousel */ {
+    background: transparent !important;
+}
+
+._290DqV3rdr3Mjn-Nfyv4My ._3ljAdVsP0faRHBhKgvOybK /* ActiveScreenshot > TimeStamp */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* Right column: soundtrack / DLC items, recent playtime */
+._11iUUsCpGW7-08wUrrGpge .QDrH3LZtEjz3M1fiLS_f_ /* AdditionalItem > Title */ {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1xGH4bGLz6sI7erzB8VWff /* PlaytimeStatus */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* EventTimeSpan */
+._3OSZu24hLN7YKjqGi7I2Xp {
+    color: var(--miku-text-3) !important;
+}
+
+/* RatingBar: like / comment / reaction icons and counts */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ svg,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ path {
+    fill: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ {
+    color: var(--miku-text-3) !important;
 }
 
 /* Friend activity container - fill parent width */
@@ -543,145 +1182,262 @@ body._2LxgdMcpWJRjkxZKbmeEEb {
     flex: 1 1 auto !important;
 }
 
-/* Secondary text */
-._1_cYNJSvS6IXs9vLTEYjy5 ._19LfMT7PFWg2xHOqNjR99q,
-._1_cYNJSvS6IXs9vLTEYjy5 .QCKBqF2k_sRLcXJ5qQIEl,
-._1_cYNJSvS6IXs9vLTEYjy5 .Gy1Y7lb4Y47vK8odzSru2,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1ujzuoxGhLunHZQqHAqRgg,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2EyEa4GxazAthx5c83AUGO {
-    color: #cdcdcd !important;
+
+/* =====================================================================
+   6. Collections page
+   ===================================================================== */
+
+/* Header (あなたのコレクション) */
+._2Th-vimU76KOpmdy45yu52 ._3ONu7-h8EhRcUI72YoSVbD /* Label */ {
+    color: var(--miku-text) !important;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 2px 12px;
+    border-radius: 999px;
+    font-weight: 600;
 }
 
-/* Mid-gray text */
-._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F,
-._1_cYNJSvS6IXs9vLTEYjy5 ._39ZurKJQex6v69aXzvc_nj,
-._1_cYNJSvS6IXs9vLTEYjy5 .uoFNFZ7Hs5cF1IjP2fvPw,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2H1MiFt6wMYuJDB8kZElFs,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2_TE0KLOU7kWWxa9LS7iXA div,
-._1_cYNJSvS6IXs9vLTEYjy5 .BDa6lbTAdR4RwtqgRNUnO {
-    color: #e3e3e3 !important;
+._34I5HgBL6QP2CcuI4emtaM /* MoreInfoIcon */ {
+    background: var(--glass-strong) !important;
+    border-color: var(--miku-teal-ink) !important;
 }
 
-/* Popup buttons */
-._1_cYNJSvS6IXs9vLTEYjy5 button.DialogButton._3Cdin80d-hVsakHUZboheb {
-    color: #cfcfcf !important;
+._34I5HgBL6QP2CcuI4emtaM ._2890MptFADbe-IUQFQ8L1O {
+    color: var(--miku-teal-ink) !important;
 }
 
-/* SVG icon strokes */
-._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1GZdosVXnfrf69yU8DWASl svg polyline,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1GZdosVXnfrf69yU8DWASl svg path,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1UXbBdCvbg9tyZhc4owO4W svg polyline,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1aKegVl9_lSdNAyWYZQlr9 ._1UXbBdCvbg9tyZhc4owO4W svg path,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .MbTRimZpGCATmn39ae8RT,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1kiZKVbDe-9Ikootk57kpA .k-QNT9kzOEOvG0U_kGmwr {
-    stroke: rgba(255, 255, 255, .8);
+/* Collection.NewCollection tile (新しいコレクションを作成) */
+._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z {
+    background: var(--glass) !important;
+    backdrop-filter: blur(10px);
+    border: 2px dashed rgba(var(--miku-ink-rgb), 0.45) !important;
+    border-radius: 10px;
 }
 
-/* Like/comment/share icons */
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1OhPtd0sU2yzZwckCTGRNC svg,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1OhPtd0sU2yzZwckCTGRNC path,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1R6Oubrk1mRaGQf56EQwd4 svg,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1R6Oubrk1mRaGQf56EQwd4 path,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ .QL3AayCY6oJkK95jwGibN svg,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ .QL3AayCY6oJkK95jwGibN path,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._3grvnr9zzkvx6NoBOdmTnf,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._2RkIcXHXACX4EdBluR3nAH,
-._1_cYNJSvS6IXs9vLTEYjy5 ._1yWgPveQ73QeYCdLcs6oFQ ._1S3Q9rK5wn6PAIXII0mBz4,
-._1_cYNJSvS6IXs9vLTEYjy5 ._2Z3ghRCL5qh2cqXrrd9l8Z ._17u7kJzj4gno8unUOzRaz- svg {
-    fill: #cdcdcd !important;
-    color: #cdcdcd !important;
+._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z ._1J1LQ0vGtpM3n0xw7XwQM6 /* CollectionLabel */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
 }
 
-/* ===================================
-   Dialog / Modal - Miku Light Theme
-   =================================== */
-
-/* Dim overlay - lighten from full black */
-.ModalOverlayBackground {
-    background: rgba(100, 180, 200, 0.35) !important;
-    backdrop-filter: blur(6px) !important;
-    -webkit-backdrop-filter: blur(6px) !important;
+/* --- Inside one collection (/library/collection/...) ---
+   Container.OuterContainer: Steam paints a dark navy radial gradient over
+   everything. Same treatment as the game page: one thin blurred mist veil. */
+._3VQUewWB8g6Z5qB4C7dGFr._2sNr7PFYcJZWNkEMCDVVPR {
+    background: rgba(var(--miku-mist-rgb), 0.38) !important;
+    backdrop-filter: blur(12px) saturate(1.15);
+    color: var(--miku-text) !important;
 }
 
-/* Main dialog box - light blue background */
-.DialogContent,
-.DialogContent._DialogLayout {
-    background: rgba(232, 248, 252, 0.97) !important;
-    color: #000000 !important;
-    border: 1px solid rgba(57, 197, 187, 0.4) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 8px 32px rgba(57, 197, 187, 0.2) !important;
+/* Header: CollectionName (お気に入り) + SectionCount (25/164) + Rule */
+._2sNr7PFYcJZWNkEMCDVVPR ._2oJt3qYLAqr6xMjnpmBFLN {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+    text-shadow: var(--miku-halo);
 }
 
-/* All text inside dialog - black */
-.DialogContent *,
-.DialogContent._DialogLayout * {
-    color: #000000 !important;
+._2sNr7PFYcJZWNkEMCDVVPR ._3Xgxj6vaGiKSEal2iaSrYl {
+    color: var(--miku-text-2) !important;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95);
 }
 
-/* Dialog header/title */
-.DialogContent .DialogHeader,
-.DialogContent .DialogTitle {
-    color: #000000 !important;
-    border-bottom: 1px solid rgba(57, 197, 187, 0.3) !important;
+._2sNr7PFYcJZWNkEMCDVVPR :is(._1grg9gmk1v5ri4iOuDymaz, ._3pJqXMYgfG8Emi3vn6e2WV) /* Rule lines */ {
+    background: linear-gradient(to right, rgba(var(--miku-ink-rgb), 0.35), rgba(var(--miku-ink-rgb), 0)) !important;
 }
 
-/* Dialog body text */
-.DialogContent .DialogBody,
-.DialogContent .DialogBodyText {
-    color: #1a3a4a !important;
+/* Sort row: SortingDropDownLabel (並べ替え) + dropdown + ShowingReadyToPlay link */
+._2sNr7PFYcJZWNkEMCDVVPR ._1ljKTq3H58WbDZGNPfM0TY {
+    color: var(--miku-text-2) !important;
 }
 
-/* Primary button - Miku teal */
-.DialogButton._DialogLayout.Primary {
-    background: linear-gradient(135deg, #39C5BB, #2ba8a0) !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 8px !important;
-}
-
-.DialogButton._DialogLayout.Primary:hover {
-    background: linear-gradient(135deg, #2ba8a0, #1e8a84) !important;
-}
-
-/* Secondary button - light */
-.DialogButton._DialogLayout.Secondary {
-    background: rgba(57, 197, 187, 0.12) !important;
-    color: #000000 !important;
-    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
-    border-radius: 8px !important;
-}
-
-.DialogButton._DialogLayout.Secondary:hover {
-    background: rgba(57, 197, 187, 0.25) !important;
-}
-
-/* Checkbox - light style */
-.DialogCheckbox {
-    background: rgba(255, 255, 255, 0.6) !important;
-    border: 1.5px solid rgba(57, 197, 187, 0.5) !important;
-    border-radius: 4px !important;
-    color: #000000 !important;
-}
-
-.DialogCheckbox.Active {
-    background: rgba(57, 197, 187, 0.25) !important;
-    border-color: #39C5BB !important;
-}
-
-/* Input fields inside dialogs */
-.DialogContent input,
-.DialogContent textarea,
-.DialogContent ._DialogInputContainer {
+._2sNr7PFYcJZWNkEMCDVVPR ._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown {
     background: rgba(255, 255, 255, 0.85) !important;
-    color: #000000 !important;
-    border: 1px solid rgba(57, 197, 187, 0.4) !important;
-    border-radius: 6px !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 6px;
 }
 
-/* Exclude Millennium settings from dialog overrides */
-.MillenniumSettings .DialogContent,
-.MillenniumSettings .DialogContent * {
-    background: revert !important;
-    color: revert !important;
+._2sNr7PFYcJZWNkEMCDVVPR ._1tBzypb5E2AwNuBuVns9Hl :is(.DialogDropDown_CurrentDisplay, .DialogDropDown_Arrow) {
+    background: transparent !important;
+    color: var(--miku-text) !important;
+}
+
+._2sNr7PFYcJZWNkEMCDVVPR ._1tBzypb5E2AwNuBuVns9Hl .DialogDropDown_Arrow svg {
+    fill: currentColor !important;
+}
+
+._2sNr7PFYcJZWNkEMCDVVPR ._38IOu1p2yIVM7uP-dMWew6 {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95);
+}
+
+/* AppGridSectionLabel (100時間以上 / 今週 ...) */
+._2sNr7PFYcJZWNkEMCDVVPR ._2hvQbTq62AjXQS4tZqVepi {
+    color: var(--miku-text-2) !important;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95), 0 0 2px rgba(var(--miku-mist-rgb), 0.9);
+}
+
+
+/* =====================================================================
+   7. Downloads page
+   ===================================================================== */
+
+/* DownloadsPage - artwork across the whole page */
+._1bq4x9pa4-9RLY-dXWUZTp {
+    background: url(../imgs/downloadBG.jpg) no-repeat center center / cover !important;
+}
+
+/* ItemListWrapper */
+._1l0LmmqDUXH19SjfELddn7 {
+    background: transparent !important;
+}
+
+/* TopSection > Section ("now downloading" block, also when empty) */
+._373v1eWNyaPKhgnea9FZSt ._3Mbhnlk1Go2j8yCdjthzc7 {
+    background: var(--glass-soft) !important;
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-line);
+}
+
+/* ItemLists > Section (queue / finished lists) - let the artwork show */
+._1ugNiylO2vKXhirsGocAxa ._3Mbhnlk1Go2j8yCdjthzc7 {
+    background: transparent !important;
+}
+
+/* Speed stats in the top-right (ネットワーク / 最大 / ディスク使用量) */
+._373v1eWNyaPKhgnea9FZSt .eXF8xL2LUtzeWMbK-FSRz /* Figure */ {
+    color: var(--miku-text) !important;
+}
+
+._373v1eWNyaPKhgnea9FZSt ._5TdA4FjU9OYsTIaHzloD /* Stat */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* HeroAndLogo.Empty (blue gradient placeholder) */
+._3mZ2rKd2RECK4q4ufmsDYX {
+    background: linear-gradient(to right, rgba(var(--miku-teal-rgb), 0.55), rgba(var(--miku-teal-rgb), 0.10)) !important;
+}
+
+/* GraphAndStats (speed chart panel) */
+._3KDkLoCR8OM8xfdQysKn9t {
+    background: var(--glass) !important;
+}
+
+._3mdnpmV9S9u27eB5JFwFNk .eXF8xL2LUtzeWMbK-FSRz /* StatsPanel > Figure */,
+._3mdnpmV9S9u27eB5JFwFNk ._3BdWqJYvZfTohY-twD2i6Q /* Status */ {
+    color: var(--miku-text) !important;
+}
+
+._3mdnpmV9S9u27eB5JFwFNk ._5TdA4FjU9OYsTIaHzloD /* Stat */,
+._1iulCOMUxV6sBbqoKo_yXw /* LegendText */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* ActiveItemRightColumn (current download details) */
+._20JlDJD9-uoCjNLGp_8mY6 {
+    background: var(--glass) !important;
+    color: var(--miku-text) !important;
+}
+
+._373v1eWNyaPKhgnea9FZSt ._3a973VY2X3US_cZqA9ZgNF /* Label */,
+._373v1eWNyaPKhgnea9FZSt ._35T9nZ2RsVs8kf7OMPlaxe /* ThrottleValue */ {
+    color: var(--miku-text) !important;
+}
+
+/* SectionTitle (このあと / 完了 ...): downloadBG is a bright, busy sky, so the
+   title keeps a glass strip (no side bar) to stay readable */
+.qq2xItSXjpCsNrcxyPJtO {
+    background: var(--glass) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.qq2xItSXjpCsNrcxyPJtO .TK9wvF55dyA6RcOclozC8 /* Title */ {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+}
+
+.qq2xItSXjpCsNrcxyPJtO ._1CGnw50aAma6AYKF51Qzsm /* Count */,
+._117rQTHH1RIewY7sSlvg3Z /* AutoUpdateHours */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* EmptyTransfers text */
+._1zv2D9H37p5yuOJNsCemS3 ._1nCT-M7nZcoNzedbVzbXha {
+    color: var(--miku-text-2) !important;
+    background: var(--glass);
+    padding: 4px 12px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* SectionItem (each queued / finished download row) */
+._1VNuYHM6BPBOJspC6zPf5r {
+    background: var(--glass) !important;
+    border-radius: 8px;
+}
+
+._1VNuYHM6BPBOJspC6zPf5r:hover {
+    background: var(--glass-strong) !important;
+}
+
+._1VNuYHM6BPBOJspC6zPf5r ._35eOQ6EeVHNV5HGBrJ1-Vu /* Name */ {
+    color: var(--miku-text) !important;
+}
+
+._1SyggnJY6qbRSmbZpkK3-H /* SectionItemStatus */,
+.sv3ZHPWbrD7yjwx5Mi3u5 ._1dHjjSl-57o1KQsQ1m1HSA /* ProgressDetails > Value */ {
+    color: var(--miku-text-2) !important;
+}
+
+
+/* =====================================================================
+   8. Bottom bar
+   ===================================================================== */
+
+/* BottomBar */
+._3vCzSrrXZzZjVJFZNg9SGu {
+    background: var(--glass-tint) !important;
+    backdrop-filter: var(--glass-blur);
+    border-top: 1px solid var(--glass-line);
+}
+
+/* AddGameButton / DownloadStatus text and icons */
+._2foCkpRXhqq0UGVE50BWqj,
+._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k,
+._2foCkpRXhqq0UGVE50BWqj ._1KrJ3sFAqPBN9mfpaNTU5F,
+.ip-YZhijAMZcuRoXBGiye,
+.ip-YZhijAMZcuRoXBGiye ._3wJnTtcTLEp0R7eQj_mK8Y,
+.ip-YZhijAMZcuRoXBGiye ._1KrJ3sFAqPBN9mfpaNTU5F {
+    color: var(--miku-text-2) !important;
+}
+
+._2foCkpRXhqq0UGVE50BWqj:hover ._3OhUxFVlQYr9W5ThxstR8k,
+._2foCkpRXhqq0UGVE50BWqj:hover ._1KrJ3sFAqPBN9mfpaNTU5F,
+.ip-YZhijAMZcuRoXBGiye:hover ._3wJnTtcTLEp0R7eQj_mK8Y {
+    color: var(--miku-teal-ink) !important;
+}
+
+._2foCkpRXhqq0UGVE50BWqj ._3OhUxFVlQYr9W5ThxstR8k {
+    font-size: 15px;
+}
+
+/* FriendsButton (フレンド＆チャット) */
+._1TdaAqMFadi0UTqilrkelR {
+    background: var(--miku-teal-fill) !important;
+    border-radius: 10px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 8px rgba(var(--miku-ink-rgb), 0.30);
+}
+
+._1TdaAqMFadi0UTqilrkelR:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+._1TdaAqMFadi0UTqilrkelR ._3OhUxFVlQYr9W5ThxstR8k,
+._1TdaAqMFadi0UTqilrkelR ._1KrJ3sFAqPBN9mfpaNTU5F {
+    color: #ffffff !important;
+    font-weight: 600;
 }

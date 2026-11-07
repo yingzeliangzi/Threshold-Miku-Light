@@ -1,0 +1,298 @@
+/* =====================================================================
+   Threshold-Miku Light - Dialogs, settings rows and shared controls
+
+   Imported by steam.css (main window) and settings.css (Settings and
+   every other modal popup such as game Properties).
+   Hashed class names are labelled with Steam's readable name.
+   ===================================================================== */
+
+/* --- Dim overlay behind modals --- */
+.ModalOverlayBackground {
+    background: rgba(100, 180, 200, 0.35) !important;
+    backdrop-filter: blur(6px) !important;
+}
+
+/* --- Dialog box --- */
+.DialogContent,
+.DialogContent._DialogLayout {
+    background: rgba(var(--miku-mist-rgb), 0.97) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.4) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(var(--miku-deep-rgb), 0.22) !important;
+}
+
+/* All dialog text dark by default (Steam hard-codes light greys) */
+.DialogContent *,
+.DialogContent._DialogLayout * {
+    color: var(--miku-text) !important;
+}
+
+.DialogContent .DialogHeader,
+.DialogContent .DialogTitle {
+    color: var(--miku-text) !important;
+    border-bottom: 1px solid rgba(var(--miku-teal-rgb), 0.3) !important;
+}
+
+.DialogContent .DialogBody,
+.DialogContent .DialogBodyText,
+.DialogBodyText {
+    color: var(--miku-text-2) !important;
+}
+
+.DialogContent a,
+.DialogBody a {
+    color: var(--miku-teal-ink) !important;
+}
+
+.DialogSubHeader {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* --- Dropdowns --- */
+.DialogDropDown_CurrentDisplay {
+    color: var(--miku-text);
+}
+
+/* --- Buttons --- */
+.DialogButton._DialogLayout.Primary {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+}
+
+.DialogButton._DialogLayout.Primary:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+.DialogContent .DialogButton._DialogLayout.Primary,
+.DialogContent .DialogButton._DialogLayout.Primary * {
+    color: #ffffff !important;
+}
+
+.DialogButton._DialogLayout.Secondary {
+    background: rgba(255, 255, 255, 0.78) !important;
+    color: var(--miku-text) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.55) !important;
+    border-radius: 8px !important;
+}
+
+.DialogButton._DialogLayout.Secondary:hover {
+    background: var(--miku-teal-wash-strong) !important;
+}
+
+.DialogButton._DialogLayout:disabled,
+.DialogButton._DialogLayout.Disabled {
+    opacity: 0.55;
+}
+
+/* --- Checkbox --- */
+.DialogCheckbox {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1.5px solid rgba(var(--miku-ink-rgb), 0.5) !important;
+    border-radius: 4px !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+.DialogCheckbox.Active {
+    background: var(--miku-teal) !important;
+    border-color: var(--miku-teal-deep) !important;
+}
+
+/* --- Text inputs --- */
+.DialogContent input,
+.DialogContent textarea,
+.DialogContent ._DialogInputContainer {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.3) !important;
+    border-radius: 6px !important;
+}
+
+.DialogContent input::placeholder,
+.DialogContent textarea::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+/* --- Settings rows: Field.Background (Steam paints them #23262e) --- */
+.eKmEXJCm_lgme24Fp_HWt._2CCdODv0vfzOMrEBUzZwfI {
+    background: rgba(255, 255, 255, 0.80) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 4px rgba(var(--miku-deep-rgb), 0.08);
+}
+
+.eKmEXJCm_lgme24Fp_HWt._2CCdODv0vfzOMrEBUzZwfI:hover,
+.eKmEXJCm_lgme24Fp_HWt._2CCdODv0vfzOMrEBUzZwfI:focus-within {
+    background: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* FieldLabel / FieldDescription */
+._3jMlJm4PQCA8SfNlUR99Fo,
+._3jMlJm4PQCA8SfNlUR99Fo * {
+    color: var(--miku-text) !important;
+}
+
+._1W1to_azoBRG95oNAFpf9Q,
+._1W1to_azoBRG95oNAFpf9Q * {
+    color: var(--miku-text-3) !important;
+}
+
+/* --- Toggle switch --- */
+._9Ql-oVe_j8E-vsDdyVdWo ._2bl0iQ9xigbq4Zd1NI6NZl /* ToggleRail */ {
+    background: rgba(61, 82, 96, 0.28) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo.yLrDAetGoWx0GYqA6ShfS ._2bl0iQ9xigbq4Zd1NI6NZl /* .On */,
+._9Ql-oVe_j8E-vsDdyVdWo ._2bl0iQ9xigbq4Zd1NI6NZl::before /* the blue "on" fill */ {
+    background: var(--miku-teal) !important;
+}
+
+._9Ql-oVe_j8E-vsDdyVdWo ._1PQppcgkuXQAiFPar9AGi- /* ToggleSwitch (knob) */ {
+    background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.30);
+}
+
+/* --- Radio button group (e.g. 小 / 大 / 自動, push-to-talk modes) --- */
+._1ml4SNc3LIyBDHIf8ekVSw /* Group */ {
+    background: rgba(255, 255, 255, 0.70) !important;
+    border: 1px solid var(--glass-line);
+    box-shadow: none !important;
+}
+
+._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl /* Button */ {
+    background: transparent !important;
+}
+
+._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl:hover {
+    background: var(--miku-teal-wash) !important;
+}
+
+._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl._3-_jME_xsuvgT3Dvq4bw_q /* .Active */ {
+    background: var(--miku-teal-fill) !important;
+}
+
+.DialogContent ._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl._3-_jME_xsuvgT3Dvq4bw_q,
+.DialogContent ._1ml4SNc3LIyBDHIf8ekVSw .HijmccPB1BKyhOwhX1EVl._3-_jME_xsuvgT3Dvq4bw_q * {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* FakeContainer (info box, e.g. game update timing on Downloads page) */
+._3Vl2zkYPoCpw1q_1n28D3z {
+    background: rgba(255, 255, 255, 0.80) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* --- Game Recording page --- */
+._7EGqd8bdiXJBd2fj5Hh8r /* RecordingModeOption */ {
+    background: rgba(255, 255, 255, 0.80) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+._7EGqd8bdiXJBd2fj5Hh8r.MYyvJ6lNQZtM4MHwS-Y3g /* .Active */ {
+    background: var(--miku-teal-wash-strong) !important;
+    border-color: var(--miku-teal) !important;
+}
+
+._20ZzHxTmtWU8kWGA6YqWfa /* IntroContainer (first-run overlay) */ {
+    background: rgba(220, 240, 245, 0.75) !important;
+    backdrop-filter: blur(6px);
+}
+
+._1TV2TLk7RNa3PqD1_WKqfs /* SinglePageIntro */ {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(var(--miku-deep-rgb), 0.22);
+}
+
+._35OPW6SSVNT98PMn5YpdWe /* IconCircle */ {
+    background: var(--miku-teal) !important;
+}
+
+/* --- Settings buttons --- */
+/* SettingsDialogButton (プロフィールを表示 / フレンドを追加 ...) */
+._3epr8QYWw_FqFgMx38YEEm.DialogButton {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: var(--miku-teal-ink) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.55) !important;
+}
+
+._3epr8QYWw_FqFgMx38YEEm.DialogButton:hover {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
+}
+
+/* FatButton (big tiles on the account page) */
+.TEWmsM70ZLEOxLAjDMpcv.DialogButton {
+    background: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 10px rgba(var(--miku-deep-rgb), 0.10);
+}
+
+.TEWmsM70ZLEOxLAjDMpcv.DialogButton:hover {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-color: var(--miku-teal) !important;
+}
+
+.TEWmsM70ZLEOxLAjDMpcv.DialogButton svg {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* --- Install dialog: FolderSelector > FolderOption (install location) ---
+   Steam: dark grey rows, the selected (.Active) one Steam blue */
+.Oo5JPcEk_erKEYAzYp2nY {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 8px;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY:hover {
+    background: var(--miku-teal-wash) !important;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY.gkgG-dWgjpwS_aqlcMNTM /* .Active */ {
+    background: var(--miku-teal-wash-strong) !important;
+    border-color: var(--miku-teal) !important;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY ._2vs_5hKYSMZTn7dKHTim5D /* FolderName */ {
+    color: var(--miku-text) !important;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY.gkgG-dWgjpwS_aqlcMNTM ._2vs_5hKYSMZTn7dKHTim5D {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY ._3a3KjxO7NqnVAjxtVypiCk /* FreeSpace */ {
+    color: var(--miku-text-3) !important;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY ._1p727K-lt5u7dR3PbUTcNZ /* FolderFlag (drive icon) */ {
+    color: var(--miku-text-3) !important;
+}
+
+.Oo5JPcEk_erKEYAzYp2nY ._VEHWl9XgUCHDV7oGKSW4 /* FolderFlagStar (default drive) */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* .DialogContent * sets every element dark; let the icons follow their row instead */
+.Oo5JPcEk_erKEYAzYp2nY :is(._1p727K-lt5u7dR3PbUTcNZ, ._VEHWl9XgUCHDV7oGKSW4) :is(svg, svg path) {
+    color: inherit !important;
+    fill: currentColor !important;
+}
+
+/* Leave Millennium's own settings dialog alone */
+.MillenniumSettings .DialogContent,
+.MillenniumSettings .DialogContent * {
+    background: revert !important;
+    color: revert !important;
+}
+
+.MillenniumSettings .DialogDropDown_CurrentDisplay {
+    color: #fff;
+}

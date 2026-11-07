@@ -1,111 +1,100 @@
 @import url(../global.css);
 
-/* ===================================
-   Threshold-Miku Light - Context Menus
-   =================================== */
+/* =====================================================================
+   Threshold-Miku Light - Popup menus
+   (Steam / 表示 / フレンド ... root menus, right-click menus, tray menu,
+   account & notification menus). supernavs.css imports this file too.
+   ===================================================================== */
 
-.DialogInput_Wrapper>input.DialogInput {
-    background: rgb(0 0 0 / 62%);
+/* contextMenu (outer popup) */
+.PP7LM0Ow1K5qkR8WElLpt {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-.zhaKeChn9HPNSMtk0ami_ ._1e6tjguQEHdYIehM9aRmO5 {
-    background: #464d60;
+/* contextMenuContents / MenuPopup (the visible panel) */
+._2EstNjFIIZm_WUSKm5Wt7n,
+._3pofGqV0buiKAfMPEs3_82 {
+    background: rgba(248, 252, 253, 0.97) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.22) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 24px rgba(var(--miku-deep-rgb), 0.18) !important;
+    overflow: hidden !important;
+    padding: 4px 0 !important;
 }
 
-._3B8wRA4H7e_oSksYNqpSPv._1B1XTNsfuwOaDPAkkr8M42 {
-    color: #f3f7f8;
-}
-
-._26v9mHAi56x63OwY-jxett {
-    color: #666;
-}
-
+/* contextMenuItem / MenuItem */
+._1n7Wloe5jZ6fSuvV18NNWI,
+._2jXHP0742MyApMUVUM8IFn,
 .contextMenuItem {
-    color: var(--nav-text-color) !important;
+    color: var(--miku-text) !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px 22px !important;
 }
 
-/* Hide divider lines */
-._2EstNjFIIZm_WUSKm5Wt7n:has(hr) hr {
-    display: none;
+/* Hover / keyboard focus (.active) */
+._1n7Wloe5jZ6fSuvV18NNWI:hover,
+._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK,
+._2jXHP0742MyApMUVUM8IFn:hover {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
 }
 
-/* Remove padding */
-body.ContextMenuPopupBody ._2EstNjFIIZm_WUSKm5Wt7n {
-    padding: 0;
-}
-
-.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI {
-    border: none;
-    padding: 8px 22px 8px 22px;
-}
-
-/* First item */
-.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:first-of-type {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Last item */
-.PP7LM0Ow1K5qkR8WElLpt:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:last-of-type {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Menu item text */
-._2EstNjFIIZm_WUSKm5Wt7n ._2jXHP0742MyApMUVUM8IFn {
-    color: var(--text-color-dark) !important;
-}
-
-/* Hover effect (Miku accent blue) */
-._2EstNjFIIZm_WUSKm5Wt7n ._2jXHP0742MyApMUVUM8IFn:hover {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
-}
-
-/* Rounded corners */
-body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt {
+/* MenuItem.Disabled */
+._2jXHP0742MyApMUVUM8IFn.d8GPmAyQdRQwoHiPbc8Js,
+._1n7Wloe5jZ6fSuvV18NNWI.disabled {
+    color: var(--miku-text-3) !important;
     background: transparent !important;
 }
 
-body.ContextMenuPopupBody ._2EstNjFIIZm_WUSKm5Wt7n {
-    border-radius: 10px !important;
-    overflow: hidden !important;
+/* MenuSectionHeader */
+._2Bb4JC5n6anf32WgmTfeMP {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
 }
 
-/* Menu background (frosted glass) */
-body.ContextMenuPopupBody .PP7LM0Ow1K5qkR8WElLpt.visible ._2EstNjFIIZm_WUSKm5Wt7n {
-    background: rgba(241, 241, 241, 0.95) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    opacity: 1;
-    transform: translateY(0);
+/* Separators: ContextMenuSeparator / ContextMenuHRSeparator / Separator */
+.WUOrULWKkGLl3ZUQdDXg8,
+.IjIBR_wDDi2N77Oz4KAT4,
+._21GPYlKBCLsHQpTsHw_RL_,
+._2EstNjFIIZm_WUSKm5Wt7n hr {
+    border: none !important;
+    background: rgba(var(--miku-ink-rgb), 0.15) !important;
+    height: 1px !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 4px 14px !important;
 }
 
-/* System tray / minimized Steam menus */
-.DesktopUI .PP7LM0Ow1K5qkR8WElLpt,
-._3qIuY9S_vXm3IQS-uE9SRS .PP7LM0Ow1K5qkR8WElLpt {
-    background: rgba(241, 241, 241, 0.95) !important;
+/* SubMenu arrow */
+._114nFoGF7tZ4PpremDP2w0 {
+    color: var(--miku-text-3) !important;
+    fill: var(--miku-text-3);
 }
 
-/* Notification menu */
-.GreenEnvelopeMenu,
-.PP7LM0Ow1K5qkR8WElLpt {
-    background: rgba(241, 241, 241, 0.95) !important;
+/* Text inputs inside menus (e.g. rename) */
+.DialogInput_Wrapper > input.DialogInput {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--miku-text);
+    border: 1px solid var(--glass-line);
 }
 
-/* Menu items text */
-.DesktopUI ._1n7Wloe5jZ6fSuvV18NNWI,
-._3qIuY9S_vXm3IQS-uE9SRS ._1n7Wloe5jZ6fSuvV18NNWI {
-    color: var(--text-color-dark) !important;
+/* --- Notifications menu (bell) --- */
+/* StandardTemplateDesktop.Unread */
+._3B8wRA4H7e_oSksYNqpSPv._1B1XTNsfuwOaDPAkkr8M42 {
+    background: var(--miku-teal-wash) !important;
+    color: var(--miku-text) !important;
 }
 
-/* Hover on tray menus */
-.DesktopUI:has(._1n7Wloe5jZ6fSuvV18NNWI) ._1n7Wloe5jZ6fSuvV18NNWI:hover {
-    background: var(--miku-accent) !important;
-    color: #fff !important;
+/* StandardNotificationDescription */
+._26v9mHAi56x63OwY-jxett {
+    color: var(--miku-text-3) !important;
 }
 
-/* Hide separator in tray menus */
-.DesktopUI:has(._1n7Wloe5jZ6fSuvV18NNWI) .PP7LM0Ow1K5qkR8WElLpt hr {
-    display: none;
+/* --- Add non-Steam game dialog list (AddNonSteamGameDialogContent > GameList) --- */
+.zhaKeChn9HPNSMtk0ami_ ._1e6tjguQEHdYIehM9aRmO5 {
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--miku-text);
 }
