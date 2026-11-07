@@ -40,7 +40,7 @@ Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，�
 
 ### 安装步骤
 
-1. 下载本仓库，将 `Miku` 文件夹放入 Steam 皮肤目录：
+1. 从 [Releases](https://github.com/yingzeliangzi/Threshold-Miku-Light/releases/latest) 下载最新的 `Miku.zip`，解压得到 `Miku` 文件夹，放入 Steam 皮肤目录（已装旧版的直接覆盖）：
    ```
    Steam\steamui\skins\
    ```
