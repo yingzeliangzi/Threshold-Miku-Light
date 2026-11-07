@@ -1,270 +1,260 @@
 # Threshold-Miku Light
 
-> 一款以初音未来为主题的 Steam 亮色皮肤，支持 [SFP](https://github.com/PhantomGamers/SFP) 和 [Millennium](https://steambrew.app/)。
+**English** | [简体中文](README_zh.md) | [日本語](README_ja.md)
 
-### English
-
-A light Hatsune Miku skin for the Steam client: Miku teal (`#39C5BB`) accents and light frosted glass over anime artwork, with readable text on every page — library, game pages, collections, downloads, friends list & chat, settings, dialogs and menus. Pure CSS; no JavaScript injection needed.
-
-**Install**
-
-1. Download `Miku.zip` from [Releases](https://github.com/yingzeliangzi/Threshold-Miku-Light/releases/latest), extract it and put the `Miku` folder in `Steam\steamui\skins\`.
-2. **SFP**: Settings → Steam Skin → choose **Miku** and enable *Inject CSS*.
-   **Millennium**: choose **Threshold-Miku-Light** in Millennium's theme settings.
-3. Fully quit Steam and start it again.
-
-The screenshots below use the Japanese client; the skin works with any Steam language.
-Credits: inspired by [Threshold-Miku by Jack-Myth](https://github.com/Jack-Myth/Threshold-Miku), based on [blueArchiveSteamSkin by EugeneXXXie](https://github.com/EugeneXXXie/blueArchiveSteamSkin).
+> A light Steam skin themed after Hatsune Miku, for [SFP](https://github.com/PhantomGamers/SFP) and [Millennium](https://steambrew.app/).
 
 ---
 
-## 预览
+## Preview
 
-### 游戏库
+The screenshots use the Japanese Steam client; the skin works with any Steam language.
+
+### Library
 ![Library](screenshots/library.png)
 
-### 游戏详情
+### Game page
 ![Game](screenshots/game.png)
 
-### 好友列表 & 聊天
-| 好友列表 | 聊天窗口 |
+### Friends list & chat
+| Friends list | Chat window |
 |----------|----------|
 | ![Friends](screenshots/friends.png) | ![Chat](screenshots/chat.png) |
 
-### 设置页面
+### Settings
 ![Settings](screenshots/settings.png)
 
-### 下载页面
+### Downloads
 ![Download](screenshots/download.png)
 
 ---
 
-## 简介
+## About
 
-Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，以 **初音未来** 的经典青绿配色（`#39C5BB`）为主调，将 Steam 默认的深色 UI 改造为清新明亮的轻透明风格。皮肤覆盖游戏库、游戏详情、收藏夹、下载、好友列表、聊天窗口、设置页面和各种菜单，全部由 CSS 实现（不再需要 JavaScript 动态注入）。(转人工)
+Threshold-Miku Light is a light theme for the Steam client. Built around **Hatsune Miku**'s classic teal (`#39C5BB`), it turns Steam's default dark UI into a fresh, bright, lightly translucent look. The skin covers the library, game pages, collections, downloads, the friends list, chat windows, settings and all kinds of menus, entirely in CSS (no JavaScript injection needed anymore). (Connecting you to a human agent…)
 
 ---
 
-## 使用方法
+## How to use
 
-### 前置要求
+### Requirements
 
-- [SFP](https://github.com/PhantomGamers/SFP) — Steam 皮肤加载器（支持 CSS/JS 注入）
-- [Millennium](https://steambrew.app/) — 也可以用：`skin.json` 按 Millennium 的格式写了明确的加载规则，两边通用（我本人一直在用的是 SFP）
+- [SFP](https://github.com/PhantomGamers/SFP) — Steam skin loader (supports CSS/JS injection)
+- [Millennium](https://steambrew.app/) — works too: `skin.json` uses explicit loading rules in Millennium's format, so it works with both (I've always used SFP myself)
 
-### 安装步骤
+### Installation
 
-1. 从 [Releases](https://github.com/yingzeliangzi/Threshold-Miku-Light/releases/latest) 下载最新的 `Miku.zip`，解压得到 `Miku` 文件夹，放入 Steam 皮肤目录（已装旧版的直接覆盖）：
+1. Download the latest `Miku.zip` from [Releases](https://github.com/yingzeliangzi/Threshold-Miku-Light/releases/latest), extract it to get the `Miku` folder, and put it in Steam's skin folder (if you have an older version installed, just overwrite it):
    ```
    Steam\steamui\skins\
    ```
-2. 打开 SFP → Settings → Steam Skin → 选择 **Miku**（如果是 Millennium 则选择**Threshold-Miku-Light**)。
-3. 勾选 **注入CSS**（**注入Javascript** 可选，皮肤的 JS 文件目前是空的）。
-4. 完全退出 Steam（Steam → 退出）后重新打开。
+2. Open SFP → Settings → Steam Skin → choose **Miku** (for Millennium, choose **Threshold-Miku-Light**).
+3. Enable **Inject CSS** (**Inject JavaScript** is optional; the skin's JS files are currently empty).
+4. Fully quit Steam (Steam → Exit) and start it again.
 
-### 文件结构
+### File structure
 
 ```
 Miku/
-├── skin.json               # SFP / Millennium 共用：每个窗口加载哪个 CSS，以及主题库展示信息
-├── global.css              # 配色变量、字体、鼠标指针、滚动条
-├── libraryroot.custom.css  # 设置窗口和各种弹出对话框的入口（引用 settings.css）
+├── skin.json               # Shared by SFP / Millennium: which CSS each window loads, plus the theme gallery info
+├── global.css              # Color variables, font, mouse cursor, scrollbars
+├── libraryroot.custom.css  # Entry point for the settings window and other popup dialogs (imports settings.css)
 ├── css/
-│   ├── steam.css           # 主界面：顶栏、游戏库、游戏详情、收藏夹、下载、底栏
-│   ├── dialogs.css         # 对话框、设置行、开关、按钮（steam.css 和 settings.css 共用）
-│   ├── settings.css        # 设置窗口及其它弹出对话框
-│   ├── login.css           # 登录窗口：选择账户、正在登录
-│   ├── friends.custom.css  # 好友列表 & 聊天窗口
-│   ├── menus.css           # 所有弹出菜单（Steam/表示/右键菜单/通知/托盘）
-│   ├── supernavs.css       # 顶部导航悬停菜单（引用 menus.css）
-│   ├── webkit.css          # 全局 WebKit 样式
+│   ├── steam.css           # Main window: top bar, library, game pages, collections, downloads, bottom bar
+│   ├── dialogs.css         # Dialogs, setting rows, toggles, buttons (shared by steam.css and settings.css)
+│   ├── settings.css        # Settings window and other popup dialogs
+│   ├── login.css           # Sign-in window: account picker, signing in
+│   ├── friends.custom.css  # Friends list & chat windows
+│   ├── menus.css           # All popup menus (Steam / View / right-click menus / notifications / tray)
+│   ├── supernavs.css       # Hover menus of the top navigation (imports menus.css)
+│   ├── webkit.css          # Global WebKit styles
 │   └── store.steampowered.com.css
-├── js/                     # 目前为空（原来的内联样式注入已改为纯 CSS）
-├── tools/                  # 维护工具，见下方「维护」一节（不影响皮肤本身）
+├── js/                     # Currently empty (the old inline-style injection is now pure CSS)
+├── tools/                  # Maintenance tools, see "Maintenance" below (not part of the skin itself)
 ├── fonts/
-│   └── PingFang SC.ttc     # 全局字体
+│   └── PingFang SC.ttc     # Global font
 └── imgs/
-    ├── mainBG.jpg          # 游戏库主背景
-    ├── friendsBG.jpg       # 好友列表背景
-    ├── chatBG.jpg          # 聊天窗口背景
-    ├── loginBG.jpg         # 登录页背景
-    ├── settingsBG.jpg      # 设置页背景
-    ├── downloadBG.jpg      # 下载页背景
-    ├── musicBG.jpg         # 音乐页背景
-    └── cursor.png          # 自定义鼠标指针
+    ├── mainBG.jpg          # Library background
+    ├── friendsBG.jpg       # Friends list background
+    ├── chatBG.jpg          # Chat window background
+    ├── loginBG.jpg         # Login page background
+    ├── settingsBG.jpg      # Settings background
+    ├── downloadBG.jpg      # Downloads page background
+    ├── musicBG.jpg         # Music page background
+    └── cursor.png          # Custom mouse cursor
 ```
 
 ---
 
-## 美化内容一览
+## What's styled
 
-### 全局
-| 项目 | 说明 |
+### Global
+| Item | Details |
 |------|------|
-| 字体 | 全局替换为 **PingFang SC**，Fallback 为 Segoe UI / Microsoft YaHei (你们不觉得苹方很好看吗) |
-| 鼠标指针 | 自定义 PNG 指针 |
-| 滚动条 | 细化(6px)、圆角、半透明青色 |
-| 配色主调 | 初音官方色 `#39C5BB` 负责可点击 / 选中的东西，樱花粉只做少量点缀 |
-| 分区标题 | 统一为「文字 + 向右渐隐的细线」，不使用左侧色条（那种做法是典型的 AI 生成风格） |
-| 面板 | 接近纯白的毛玻璃（半透明白 + 模糊），文字为中性深色 `#1b2a33`，让背景图保持自己的颜色 |
+| Font | **PingFang SC** everywhere, falling back to Segoe UI / Microsoft YaHei (Don't you all think PingFang looks great?) |
+| Mouse cursor | Custom PNG cursor |
+| Scrollbars | Thin (6px), rounded, translucent teal |
+| Main colors | The official Miku color `#39C5BB` is for things you can click or that are selected; sakura pink is only a small accent |
+| Section headings | Always "text + a thin line fading out to the right"; no colored bars on the left (that's the typical AI-generated look) |
+| Panels | Near-white frosted glass (translucent white + blur) with neutral dark text `#1b2a33`, so the background art keeps its own colors |
 
-配色参考了 [colorany.com 的 Miku 配色](https://colorany.com/color-palettes/miku-color-palettes/)：
+The colors are based on the [Miku palettes on colorany.com](https://colorany.com/color-palettes/miku-color-palettes/):
 
-| 色值 | 用途 |
+| Color | Used for |
 |------|------|
-| `#39C5BB` | 图标、进度条、勾选框 |
-| `#26ada2` → `#12857c` | 按钮渐变（开始、好友、自己的聊天气泡、菜单悬停），白字仍看得清 |
-| `#0f7a73` | 青色文字（`#39C5BB` 在白底上对比度只有 2.1，不能直接当文字色） |
-| `#A2EFE8` | 悬停、选中的浅青高亮（来自 “Vibrant Miku Blues and Teal Harmony”） |
-| `#FFB2C8` | 樱花粉点缀：「ライブラリに新規追加」/「新着」角标、文字选中色 |
-| `#F2FBFA` | 毛玻璃、薄纱的底色（几乎是白色） |
-| `#1b2a33` / `#3d5260` / `#5b6f7b` | 正文 / 次要文字 / 说明文字 |
+| `#39C5BB` | Icons, progress bars, checkboxes |
+| `#26ada2` → `#12857c` | Button gradient (Play, Friends, your own chat bubbles, menu hover); white text stays readable on it |
+| `#0f7a73` | Teal text (`#39C5BB` only has a contrast of 2.1 on white, so it can't be used as a text color) |
+| `#A2EFE8` | Light aqua highlight for hover and selection (from "Vibrant Miku Blues and Teal Harmony") |
+| `#FFB2C8` | Sakura pink accent: the "New to Library" / "New" badges, text selection |
+| `#F2FBFA` | Base color of the frosted glass and veils (almost white) |
+| `#1b2a33` / `#3d5260` / `#5b6f7b` | Body text / secondary text / captions |
 
-所有颜色都在 `global.css` 的 `:root` 里定义，想换配色只改这里即可（其它 CSS 都通过 `var(--miku-...)` 或 `rgba(var(--miku-...-rgb), 透明度)` 引用）。
+All colors are defined in `:root` in `global.css`; to change the palette, only edit it there (every other CSS file refers to them through `var(--miku-...)` or `rgba(var(--miku-...-rgb), alpha)`).
 
-### 游戏库
-| 项目 | 说明 |
+### Library
+| Item | Details |
 |------|------|
-| 主背景 | `mainBG.jpg` 全页铺底，各面板透明叠加 |
-| 顶栏 / 底栏 | 浅色毛玻璃；账户名、余额、通知按钮改为浅底深字 |
-| 地址栏 | 商店 / 社区页面上方的网址栏改为浅色毛玻璃 + 深色网址和图标（原版为黑色） |
-| 左侧边栏 | 浅青色毛玻璃 |
-| 收藏夹标题行 | 深青色粗体名称 + 下方向右渐隐的细线 |
-| 游戏选中 | 圆角浅青底 + 深青色粗体 |
-| 游戏悬停 | 浅青高亮 |
-| 货架标题 | 文字加白色描边，直接压在背景图上也清楚；右侧是 Steam 自带的细线 |
-| 最近游戏 | 第一款游戏下方的游戏时长栏改为浅色玻璃 + 深色字；下载 / 开始按钮为初音青 |
-| 游戏时长标签 | 白色胶囊 + 深色字，深浅封面上都清楚 |
-| What's New | 已隐藏 (没有人会喜欢这个What's New吧!!!) |
+| Main background | `mainBG.jpg` covers the whole page, with transparent panels on top |
+| Top bar / bottom bar | Light frosted glass; account name, wallet balance and notification buttons are dark text on a light background |
+| Address bar | The URL bar above store / community pages is light frosted glass with a dark URL and icons (black in vanilla Steam) |
+| Left sidebar | Light aqua frosted glass |
+| Collection header rows | Dark teal bold name + a thin line underneath fading out to the right |
+| Selected game | Rounded light aqua background + dark teal bold text |
+| Game hover | Light aqua highlight |
+| Shelf titles | Text with a white outline, readable even right on top of the background art; the line on the right is Steam's own |
+| Recent games | The play-time bar under the first game is light glass with dark text; the Download / Play button is Miku teal |
+| Play-time labels | White pill + dark text, readable on both dark and light covers |
+| What's New | Hidden (Nobody actually likes this What's New thing, right!!!) |
 
-### 游戏详情
-| 项目 | 说明 |
+### Game page
+| Item | Details |
 |------|------|
-| 开始按钮 | 初音青渐变 + 白色粗体字 |
-| 信息栏 | 浅色毛玻璃，标签为深青色 |
-| 卡片 | 好友、实绩、DLC、创意工坊等都是浅色玻璃卡片；动态区每条动态（含发行商新闻）单独成卡 |
-| 新闻全文 | 点开新闻后的文章页：白色玻璃面板 + 深色正文，背后的遮罩改为浅色模糊；文中的商店卡片、点赞 / 投稿 / 共有按钮同样改为浅色 |
-| 安装按钮 | 未安装时的「インストール」为偏蓝的初音青，与「プレイ」区分 |
-| 整页底色 | 只有**一层** 38% 的模糊薄纱，背景图清晰可见；卡片再叠一层，卡片里不再叠第三层 |
+| Play button | Miku teal gradient + white bold text |
+| Info bar | Light frosted glass, dark teal labels |
+| Cards | Friends, achievements, DLC, Workshop etc. are all light glass cards; every post in the activity feed (including publisher news) is its own card |
+| Full news article | The article page you get after opening a news post: white glass panel + dark body text, with a light blur behind it instead of the dark overlay; the store cards and the Vote / Post / Share buttons inside are light too |
+| Install button | When the game isn't installed, "Install" is a bluer Miku teal so it's distinguishable from "Play" |
+| Page background | Only **one** 38% blurred veil, so the background art stays clearly visible; cards add one more layer, and nothing inside a card adds a third |
 
-### 收藏夹 / 下载
-| 项目 | 说明 |
+### Collections / Downloads
+| Item | Details |
 |------|------|
-| 收藏夹页 | 标题改为玻璃胶囊，「新建收藏」改为虚线玻璃卡片 |
-| 单个收藏夹 | 原版深蓝底改为和游戏详情一样的模糊薄纱，背景图可见；标题后为细线，排序下拉框为白色 |
-| 下载页 | `downloadBG.jpg` 铺满整页，顶部速度区为毛玻璃，下方队列透明露出背景图 |
+| Collections page | The title is a glass pill, "Create a new collection" is a dashed glass card |
+| Inside a collection | Vanilla Steam's dark blue background is replaced by the same blurred veil as the game page, so the background art shows; the title is followed by a thin line, and the sort dropdown is white |
+| Downloads page | `downloadBG.jpg` covers the whole page, the speed area at the top is frosted glass, and the queue below is transparent so the background shows through |
 
-### 好友列表
-| 项目 | 说明 |
+### Friends list
+| Item | Details |
 |------|------|
-| 背景 | `friendsBG.jpg` + 一层浅色薄纱 |
-| 好友条目 | 透明，悬停时出现圆角浅青高亮 |
-| 分组标题 | 深青色粗体 + 向右延伸的细线 |
-| 状态颜色 | 在线 / 游戏中 / 离线均使用在浅色底上可读的深色版本 |
-| 群组聊天栏 | 初音青渐变 |
+| Background | `friendsBG.jpg` + a light veil |
+| Friend entries | Transparent, with a rounded light aqua highlight on hover |
+| Group headers | Dark teal bold + a thin line extending to the right |
+| Status colors | Online / in-game / offline all use darker versions that are readable on a light background |
+| Group chats bar | Miku teal gradient |
 
-### 聊天窗口
-| 项目 | 说明 |
+### Chat window
+| Item | Details |
 |------|------|
-| 背景 | `chatBG.jpg` 独立背景，与好友列表分离 |
-| 消息气泡 | 他人消息：白色圆角气泡；自己消息：青绿渐变气泡 |
-| 发言人 | 名字和时间加白色描边（像字幕一样），不加底色也能在背景图上看清；名字按在线 / 游戏中状态着色 |
-| 标签栏 | 选中标签白底 + 青色底边 |
-| 工具栏按钮 | 表情、附件、语音按钮统一为白色圆角卡片 + 青绿图标 |
-| 输入框 | 白色半透明背景 + 青绿边框 |
+| Background | `chatBG.jpg`, separate from the friends list |
+| Message bubbles | Others' messages: white rounded bubbles; your own messages: teal gradient bubbles |
+| Speaker | Name and time get a white outline (like subtitles), readable on the background art without a backing box; names are colored by online / in-game status |
+| Tab bar | Selected tab: white background + teal underline |
+| Toolbar buttons | Emoji, attachment and voice buttons are white rounded cards + teal icons |
+| Input box | Translucent white background + teal border |
 
-### 设置页面 / 对话框
-| 项目 | 说明 |
+### Settings / Dialogs
+| Item | Details |
 |------|------|
-| 背景 | `settingsBG.jpg` 背景图 |
-| 设置项 | 白色半透明卡片 + 深色文字（原版为深灰卡片） |
-| 开关 / 单选按钮 | 打开状态为初音青 |
-| 对话框 | 浅蓝背景 + 深色字体 + 青绿按钮，遮罩层改为半透明毛玻璃 |
-| 安装对话框 | 安装位置列表为白色卡片，选中的磁盘为浅青底 + 青色边框 |
+| Background | `settingsBG.jpg` |
+| Setting rows | Translucent white cards + dark text (dark grey cards in vanilla Steam) |
+| Toggles / radio buttons | Miku teal when on |
+| Dialogs | Light blue background + dark text + teal buttons; the overlay behind them is translucent frosted glass |
+| Install dialog | The install location list is white cards; the selected drive has a light aqua background + teal border |
 
-### 登录窗口
-| 项目 | 说明 |
+### Sign-in window
+| Item | Details |
 |------|------|
-| 背景 | 与游戏库相同的背景图 + 浅色薄纱（原版为深色游戏封面墙） |
-| 选择账户 | 白色圆角头像框，悬停时青色描边；「…」更多按钮改为头像右上角的小圆点，不再挡住头像 |
-| 正在登录 | 状态文字、头像旁的昵称改为深色，在浅色背景上看得清 |
+| Background | The same background art as the library + a light veil (a dark wall of game covers in vanilla Steam) |
+| Account picker | White rounded avatar frames with a teal outline on hover; the "…" more-options button is a small dot at the avatar's top-right corner and no longer covers the avatar |
+| Signing in | The status text and the name next to the avatar are dark, readable on the light background |
 
-### 菜单
-| 项目 | 说明 |
+### Menus
+| Item | Details |
 |------|------|
-| 所有弹出菜单 | 浅色玻璃 + 圆角 + 细分隔线，悬停为初音青渐变 |
+| All popup menus | Light glass + rounded corners + thin separators, Miku teal gradient on hover |
 
 ---
 
-## 已修复的问题
+## Fixed issues
 
-- 库-左侧列表 收藏夹名称为白色字体，与底色混合看不清
-- 库-左侧列表 收藏夹名称的上面一款游戏底色被额外添加了底色（原因：旧 JS 把每个收藏夹的最后一款游戏 `LastInCollection` 当成选中项上色）
-- 库-左侧列表 选中的游戏没有高亮（原因：旧 JS 给每一行都加了 `background: transparent !important`）
-- 库-游戏详情 PLAY 为青色字体，与底色混合看不清
-- 库-游戏详情 右侧卡片、动态区、实绩进度等文字颜色
-- 库-游戏详情 白色底层叠太多（最多 4 层，接近不透明），背景图几乎看不见
-- 库-游戏详情 「i」信息按钮图标是空白的；「全部实绩已解锁」的奖章盖住文字（Steam 自身的样式冲突）
-- 库-游戏详情 创意工坊卡片为深色底，两个按钮的文字看不清；「回到顶部」按钮为 Steam 默认深蓝
-- 库-游戏详情 发行商新闻（带图片的新闻卡片）和「大型アップデート」卡片为深灰底 + 浅灰字，几乎看不见；大型更新左侧的蓝色标记条改为初音青
-- 库-游戏详情 点开新闻后整页变成 Steam 的深色样式；点赞 / 点踩 / 共有图标在浅色按钮上不可见
-- 库-左侧列表 收藏夹标题左边的折叠图标看不见
-- 库-主页内容区、下载页顶部的深色底块
-- 商店 / 社区 页面上方的地址栏为黑色底
-- 安装对话框 安装位置列表未选中的磁盘为深灰底 + 深色字，选中的为 Steam 蓝
-- 收藏夹 点进单个收藏夹后整页为深蓝底，排序下拉框看不清
-- 聊天窗口 对方的名字和时间直接压在背景图上看不清；标签栏发灰；日期分隔线文字看不清
-- 登录窗口 选择账户时「…」更多按钮盖住整个头像，点不到账户；「正在登录」和昵称为白字配浅色背景
-- 设置 / 游戏属性 左侧选中项的青色竖条改为圆角浅青底
-- 好友列表 点开搜索后的输入框为深灰外框 + 黑色内阴影，清空文字后依旧保持这个样子；之后「フレンド」标签会被挤成两行
-- 设置-所有页面 设置项为深灰卡片配黑色文字，完全看不清
-- 好友列表 每行叠加白色底块，杂乱
-- 菜单 灰底 + 亮蓝悬停，与主题不搭
+- Library – left list: collection names were white and blended into the background
+- Library – left list: the game above a collection name got an extra background color (cause: the old JS colored the last game of every collection, `LastInCollection`, as if it were selected)
+- Library – left list: the selected game wasn't highlighted (cause: the old JS added `background: transparent !important` to every row)
+- Library – game page: PLAY was teal text that blended into its background
+- Library – game page: text colors of the right-hand cards, the activity feed, achievement progress etc.
+- Library – game page: too many white layers stacked up (up to 4, almost opaque), so the background art was barely visible
+- Library – game page: the "i" info button icon was blank; the "all achievements unlocked" medal covered the text (a conflict in Steam's own styles)
+- Library – game page: the Workshop card had a dark background and its two buttons were unreadable; the "Scroll to top" button was Steam's default dark blue
+- Library – game page: publisher news (news cards with an image) and "Major Update" cards were dark grey with light grey text, almost invisible; the blue marker bar on the left of major updates is now Miku teal
+- Library – game page: opening a news post turned the whole page into Steam's dark style; the like / dislike / share icons were invisible on the light buttons
+- Library – left list: the collapse icon to the left of collection headers was invisible
+- Library – dark blocks in the home page content area and at the top of the downloads page
+- Store / community: the address bar above the pages was black
+- Install dialog: in the install location list, unselected drives were dark grey with dark text and the selected one was Steam blue
+- Collections: inside a single collection the whole page was dark blue and the sort dropdown was unreadable
+- Chat window: the other person's name and time sat right on the background art and were unreadable; the tab bar was greyish; the date divider text was unreadable
+- Sign-in window: when choosing an account, the "…" more-options button covered the whole avatar so the account couldn't be clicked; "Signing in" and the name were white text on a light background
+- Settings / game properties: the teal bar on the selected item in the left list is now a rounded light aqua background
+- Friends list: after opening search, the input box had a dark grey frame + a black inner shadow and stayed like that even after clearing the text; afterwards the "Friends" tab label got squeezed onto two lines
+- Settings – all pages: setting rows were dark grey cards with black text, completely unreadable
+- Friends list: every row had a white block on top, messy
+- Menus: grey background + bright blue hover, didn't fit the theme
 
-所有选择器都已对照当前 Steam 版本核对（352 个乱码 class 全部有效），并在 CSS 注释里标注了 Steam 源码中的可读名称。
+Every selector has been checked against the current Steam version (all 352 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
 
 ---
 
-## 维护：Steam 更新后
+## Maintenance: after a Steam update
 
-Steam 用 CSS Modules 打包界面，所以 class 名是 `_3x1HklzyDs4TEjACrRO2tB` 这样的乱码，而且每次大更新都可能变。但 Steam 的 JS 里仍然保存着「可读名 → 乱码」的对照表（比如 `Container → _3x1HklzyDs4TEjACrRO2tB`），`tools/` 里的工具就是通过 CEF 调试端口把它读出来。
+Steam bundles its UI with CSS Modules, so class names look like `_3x1HklzyDs4TEjACrRO2tB`, and they can change with every big update. But Steam's JS still holds the "readable name → hashed name" table (e.g. `Container → _3x1HklzyDs4TEjACrRO2tB`), and the tools in `tools/` read it out through the CEF debugging port.
 
-**准备**
+**Setup**
 
-1. 在 Steam 安装目录（`Steam\`）新建一个空文件 `.cef-enable-remote-debugging`，重启 Steam。此后 Steam 会在 `localhost:8080` 开放调试端口。
-2. 安装 [Node.js](https://nodejs.org/) 22+ 和 Python 3（对比度扫描还需要 `pip install pillow`）。
+1. Create an empty file named `.cef-enable-remote-debugging` in Steam's install folder (`Steam\`) and restart Steam. From then on Steam opens a debugging port on `localhost:8080`.
+2. Install [Node.js](https://nodejs.org/) 22+ and Python 3 (the contrast scan also needs `pip install pillow`).
 
-**Steam 更新后皮肤某些地方失效时**（在 `tools/` 目录下运行）
+**When parts of the skin break after a Steam update** (run in the `tools/` folder)
 
 ```bash
-python steamclass.py export            # 从运行中的 Steam 导出对照表
-python steamclass.py check             # 列出皮肤里已失效的 class
-python steamclass.py migrate           # 根据快照推算新 class 名（先预览）
-python steamclass.py migrate --write   # 确认无误后写入 css/ 和 js/
-python steamclass.py snapshot          # 记录新状态，供下次更新使用
+python steamclass.py export            # export the class table from the running Steam
+python steamclass.py check             # list classes in the skin that no longer exist
+python steamclass.py migrate           # work out the new class names from the snapshot (preview first)
+python steamclass.py migrate --write   # once it looks right, write them into css/ and js/
+python steamclass.py snapshot          # record the new state for the next update
 ```
 
-`migrate` 的原理：`selectors.snapshot.json` 记录了皮肤用到的每个 class 的可读名，以及它所在模块的其它 class 名。更新后，工具找到可读名相同、且同模块 class 名最相似的那个新模块，从而得到新乱码。
+How `migrate` works: `selectors.snapshot.json` records the readable name of every class the skin uses, plus the other class names in the same module. After an update, the tool finds the new module that has the same readable name and the most similar set of class names, which gives the new hashed name.
 
-> Steam 是按需加载界面代码的。如果 `check` 报告某些 class 缺失，先在 Steam 里打开相关页面（游戏详情、下载、设置等），再重新 `export`。
+> Steam loads UI code on demand. If `check` reports missing classes, first open the related pages in Steam (game page, downloads, settings etc.), then run `export` again.
 
-**查询与排查**
+**Lookup and troubleshooting**
 
 ```bash
-python steamclass.py hash _1LJqx_qFOC8199RBQO5kU8     # 乱码 -> 可读名（LibraryItemBoxSubscript）
-python steamclass.py name PlayButton                  # 可读名 -> 乱码
-python uicheck.py contrast "^Steam$"                  # 找出主窗口里对比度不足、看不清的文字
-python uicheck.py dark "^Steam$"                      # 找出浅色主题里的深色底块
-python uicheck.py outline "^Steam$" "._3vCzSrrXZzZjVJFZNg9SGu" 3   # 带可读名的 DOM 结构
-node cdp.mjs list                                     # 列出所有 Steam 窗口标题
-node cdp.mjs "^Steam$" reloadcss                      # 改完 CSS 后不重启 Steam 直接刷新
+python steamclass.py hash _1LJqx_qFOC8199RBQO5kU8     # hashed -> readable name (LibraryItemBoxSubscript)
+python steamclass.py name PlayButton                  # readable name -> hashed
+python uicheck.py contrast "^Steam$"                  # find low-contrast, hard-to-read text in the main window
+python uicheck.py dark "^Steam$"                      # find dark blocks in the light theme
+python uicheck.py outline "^Steam$" "._3vCzSrrXZzZjVJFZNg9SGu" 3   # DOM structure with readable names
+node cdp.mjs list                                     # list the titles of all Steam windows
+node cdp.mjs "^Steam$" reloadcss                      # reload the CSS after editing, without restarting Steam
 ```
 
-窗口参数是窗口标题的正则，例如主窗口 `^Steam$`、好友列表 `フレンドリスト`（英文客户端为 `Friends List`）、设置 `Steam設定`。截图类命令需要窗口处于显示状态（未最小化）。
+The window argument is a regex for the window title, e.g. the main window `^Steam$`, the friends list `Friends List` (`フレンドリスト` in the Japanese client), settings `Steam Settings` (`Steam設定` in the Japanese client). Screenshot commands need the window to be showing (not minimized).
 
 ---
 
-## 致谢
+## Credits
 
-- 灵感来源：[Threshold-Miku by Jack-Myth](https://github.com/Jack-Myth/Threshold-Miku) (在Steam更改为Chromium内核之前一直在使用的皮肤，时隔接近3年，特此还原)
-- 框架来源：[blueArchiveSteamSkin by EugeneXXXie](https://github.com/EugeneXXXie/blueArchiveSteamSkin)
+- Inspired by: [Threshold-Miku by Jack-Myth](https://github.com/Jack-Myth/Threshold-Miku) (the skin I always used before Steam switched to its Chromium-based UI; nearly 3 years later, here it is, recreated)
+- Based on: [blueArchiveSteamSkin by EugeneXXXie](https://github.com/EugeneXXXie/blueArchiveSteamSkin)
