@@ -55,6 +55,370 @@
     color: var(--miku-text);
 }
 
+/* The open list (DialogDropDownMenu) is not inside .DialogContent, so the
+   dialog rules above don't reach it: Steam paints it #373c44 and the
+   focused row #3e444d. Same glass as the context menus instead. */
+._30wJO3MC4x-I1OWpy1TAeE._DialogInputContainer /* DialogDropDownMenu */ {
+    background: rgba(var(--miku-mist-rgb), 0.97) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.35) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(var(--miku-deep-rgb), 0.18) !important;
+    backdrop-filter: blur(10px);
+}
+
+._30wJO3MC4x-I1OWpy1TAeE ._2oAiZidGyUxL-hfupFDQ2m /* DialogDropDownMenu_Item */ {
+    color: var(--miku-text) !important;
+    border-radius: 8px !important;
+}
+
+._30wJO3MC4x-I1OWpy1TAeE ._2oAiZidGyUxL-hfupFDQ2m:is(:hover, :focus) {
+    background: rgba(var(--miku-aqua-rgb), 0.55) !important;
+    color: var(--miku-text) !important;
+}
+
+/* Drive picker rows (Settings > Storage, install dialog):
+   InstallDropdownOption > icon + DriveName (+ default-drive star) + DriveSize.
+   Steam greys the other drives and turns the selected one white. */
+._3YelWui4gQvucX_bHwvl15 /* InstallDropdownOption */ {
+    background: transparent !important;
+}
+
+._3YelWui4gQvucX_bHwvl15 > svg,
+._3YelWui4gQvucX_bHwvl15 ._1rihlgVMF4Q_fFZDnXeVt5 /* DriveName */ {
+    color: var(--miku-text) !important;
+    text-decoration: none !important;
+}
+
+._3YelWui4gQvucX_bHwvl15 ._5bG9Iwr014pu3H1SPRwYh /* DriveSize */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* IsSelectedDropdownOption: teal and bold instead of a link underline */
+._3YelWui4gQvucX_bHwvl15._1TyV26CL6Wjd3gaJsh_rpr > svg,
+._3YelWui4gQvucX_bHwvl15._1TyV26CL6Wjd3gaJsh_rpr ._1rihlgVMF4Q_fFZDnXeVt5 {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* Default-drive star: Steam's yellow is too pale on white */
+._3YelWui4gQvucX_bHwvl15 ._1rihlgVMF4Q_fFZDnXeVt5 svg {
+    color: #c48a00 !important;
+}
+
+.uKeuMqJfqlpqWCHcUojnE /* AddFolderDropdownOption (ドライブを追加) */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+.uKeuMqJfqlpqWCHcUojnE svg {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* --- ButtonBox: Steam's newer button (Recordings & Screenshots toolbar).
+   .Secondary is slate #3d4450 with white icons, .Active / .Primary Steam blue. --- */
+._28eIRmQ229ntDIyQXTn3Ub /* ButtonBox */ {
+    border-radius: 8px !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub svg {
+    fill: currentColor !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy /* .Secondary */ {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.4), 0 1px 4px rgba(var(--miku-deep-rgb), 0.1) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy,
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy :is(svg, ._2X6Uf9dpYzWmrq3hGfefrI /* Text */) {
+    color: var(--miku-text-2) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy:is(:hover, .gpfocus) /* .Interactable */ {
+    background-color: #fff !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.8), 0 2px 6px rgba(var(--miku-deep-rgb), 0.14) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy:is(:hover, .gpfocus) :is(svg, ._2X6Uf9dpYzWmrq3hGfefrI) {
+    color: var(--miku-teal-ink) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni.QE3sHW9puNTAjiRDY71Xy:active {
+    background-color: rgba(var(--miku-aqua-rgb), 0.55) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._36CGU2t5Vavx0_9dwem6kb /* .Disabled */ {
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-ink-rgb), 0.15) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub.QE3sHW9puNTAjiRDY71Xy._36CGU2t5Vavx0_9dwem6kb svg {
+    color: var(--miku-text-3) !important;
+}
+
+/* IconButton.Active (the current view) and .Primary: Miku teal */
+._28eIRmQ229ntDIyQXTn3Ub._2T45kYJmyvQWyxytQeohuY._3JYigpIF46lZDATkhxHZmZ,
+._28eIRmQ229ntDIyQXTn3Ub._2kVw_wgJd5TfnNePlpwmN {
+    background: var(--miku-teal-fill) !important;
+    box-shadow: 0 2px 6px rgba(var(--miku-ink-rgb), 0.3) !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni._2T45kYJmyvQWyxytQeohuY._3JYigpIF46lZDATkhxHZmZ :is(svg, svg *, .OshLau78NSt9yYd3ifber),
+._28eIRmQ229ntDIyQXTn3Ub._2kVw_wgJd5TfnNePlpwmN,
+._28eIRmQ229ntDIyQXTn3Ub._2kVw_wgJd5TfnNePlpwmN :is(svg, ._2X6Uf9dpYzWmrq3hGfefrI) {
+    color: #fff !important;
+}
+
+._28eIRmQ229ntDIyQXTn3Ub._32Lfwcdolc3ByZWItfR3ni._2kVw_wgJd5TfnNePlpwmN:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+/* --- Recordings & Screenshots window (TopList) --- */
+
+/* StickyHeader / DesktopBottomGlass: dark #202228 glass that fades into
+   the grid, with a grey gradient border. Light glass, no border. */
+/* Even frosted panel: Steam's fade-out lower half turned the thumbnails
+   scrolling under it into a dark smear on the light theme */
+._1f9_BgoyE1cjqyeKD8dh9u .YzIcpcz4oFx-nndxro5jE {
+    background: rgba(var(--miku-mist-rgb), 0.9) !important;
+    backdrop-filter: blur(14px) saturate(1.1) !important;
+    border-color: transparent !important;
+    border-image: none !important;
+    box-shadow: 0 1px 0 rgba(var(--miku-ink-rgb), 0.12), 0 8px 16px -10px rgba(var(--miku-deep-rgb), 0.25) !important;
+}
+
+/* The bottom strip is empty; its blur smeared the dark thumbnails above it
+   into a grey band, so it is simply cleared */
+._1f9_BgoyE1cjqyeKD8dh9u ._162CJAH8jPwIYGGg5Q2YIc {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-color: transparent !important;
+    border-image: none !important;
+    box-shadow: none !important;
+}
+
+/* TopListTitle (録画とスクリーンショット): Steam blue, uppercase */
+._1f9_BgoyE1cjqyeKD8dh9u .YzIcpcz4oFx-nndxro5jE .hXJt8CFzzitOG3moJEGg- {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Game / media pickers (ComboboxSelectorContextMenu): a slate #3d4450 list
+   with a near-black search box. It opens outside .DialogContent, so the
+   text colours are set here too. */
+._29AJUo6aKT93gX24N5WFj_ {
+    background-color: rgba(var(--miku-mist-rgb), 0.97) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.35);
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(var(--miku-deep-rgb), 0.18) !important;
+    backdrop-filter: blur(10px);
+}
+
+._2tKr_CSDskG6HFUPMfBQrc /* ComboboxSelector */,
+._2tKr_CSDskG6HFUPMfBQrc :is(.G3_eozBlouid6uYGgY2Lf /* Option */, ._3DAQazNvMPYWuIE5MCN-BE /* OptionText */) {
+    color: var(--miku-text) !important;
+}
+
+._2tKr_CSDskG6HFUPMfBQrc .G3_eozBlouid6uYGgY2Lf {
+    border-radius: 8px !important;
+}
+
+._2tKr_CSDskG6HFUPMfBQrc .G3_eozBlouid6uYGgY2Lf:is(:hover, :focus, .gpfocus) {
+    background-color: rgba(var(--miku-aqua-rgb), 0.55) !important;
+}
+
+.DesktopUI ._3GbHFVMCkeB-Dv1uphs9Xo /* SearchBar */ {
+    background: transparent !important;
+    opacity: 1 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+._3GbHFVMCkeB-Dv1uphs9Xo ._3rd-7k8MaTd-1s1N1zlrbG ._2tNpad3vtsqKJArP-xArfx /* InputContainer > Input */ {
+    background-color: #fff !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.3) !important;
+    border-radius: 8px !important;
+}
+
+._3GbHFVMCkeB-Dv1uphs9Xo ._3rd-7k8MaTd-1s1N1zlrbG input::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+._3GbHFVMCkeB-Dv1uphs9Xo ._3rd-7k8MaTd-1s1N1zlrbG ._2tNpad3vtsqKJArP-xArfx:focus {
+    border-color: var(--miku-teal) !important;
+    box-shadow: 0 0 0 3px rgba(var(--miku-teal-rgb), 0.22) !important;
+}
+
+._17HUNixDThgFwFsLEDJ12K /* NoMatches */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* Screenshot viewer: FocusedScreenshotImageContainer is a black letterbox
+   with an 80px inner shadow; the side panel and caption box are #23262e */
+.IZLKpdf1TW21itUMICab8 {
+    background-color: rgba(var(--miku-deep-rgb), 0.07) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-ink-rgb), 0.08) !important;
+}
+
+._3aynTMg-fZH1PpSAzSVq2u /* FocusedScreenshots */,
+.QFVXM_1rWs04OyJDUaCom /* ExplainerBox */ {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    border-radius: 12px !important;
+}
+
+._2z545OkOmT3z-TvUBbkNl0 /* ExplainerBox Divider */ {
+    background-color: rgba(var(--miku-ink-rgb), 0.15) !important;
+}
+
+:is(.PNDAt1rt4GBfwzzelpFO0 /* NewCallout */, ._8qb2xNBusUCNIDKy-BgBF /* UploadedIcon */, .m1-1F-uygFDU5cdXSV1Jz ._1qABO0SwwMTGrwO3UvqE-g /* upload Label */) {
+    color: var(--miku-teal-ink) !important;
+}
+
+._3bqJjSW-9aJRlQejFL9lqs /* KeyboardKey */ {
+    background: #fff;
+    border-color: rgba(var(--miku-ink-rgb), 0.45) !important;
+    color: var(--miku-teal-ink) !important;
+    border-radius: 6px !important;
+}
+
+._-8fRT1eDDVo6CU2ehlzmG /* CaptionField */ {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.3) !important;
+    border-radius: 8px !important;
+}
+
+._-8fRT1eDDVo6CU2ehlzmG::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+/* UGCCount > UGCCountIcon (likes / comments / favourites): Steam blue. The
+   favourite star is two-tone with its own fills (#0056D6 / #1A9FFF). */
+/* (paths too: ".DialogContent *" would darken their currentColor) */
+.mZYRu1dN5Q9aQ1r3Cq_NE ._3qU1y0b7iBL_tHtWv97ff9,
+.mZYRu1dN5Q9aQ1r3Cq_NE ._3qU1y0b7iBL_tHtWv97ff9 * {
+    color: var(--miku-teal-ink) !important;
+}
+
+.mZYRu1dN5Q9aQ1r3Cq_NE ._3qU1y0b7iBL_tHtWv97ff9 {
+    fill: var(--miku-teal-ink) !important;
+}
+
+.mZYRu1dN5Q9aQ1r3Cq_NE ._3qU1y0b7iBL_tHtWv97ff9 path[fill="#0056D6"] {
+    fill: var(--miku-teal-ink) !important;
+}
+
+.mZYRu1dN5Q9aQ1r3Cq_NE ._3qU1y0b7iBL_tHtWv97ff9 path[fill="#1A9FFF"] {
+    fill: var(--miku-teal) !important;
+}
+
+._14IPqL5ydLg6NIV5q2LqPf /* UGCReaction */ {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* ScreenshotStack (the "+N" pile when several are selected) */
+._3qaqEMdxuioe_cF3lO5Scs :is(._3FW0zOOxCBqJGPav1c8hWf, ._3mULD4eVmgqeJry1G4l8wV, ._2jHpoK6XDXAeYSeRGQl3FC) {
+    border-color: #fff !important;
+    box-shadow: 0 2px 8px rgba(var(--miku-deep-rgb), 0.18);
+}
+
+/* Upload progress, loading skeletons, failed thumbnails */
+._10hh85J75faHJ8ChhjlzLl /* ProgressTrack */ {
+    background-color: rgba(var(--miku-ink-rgb), 0.15) !important;
+}
+
+._2Kwx2_3UQZVDF9eWFVuk06 /* Progress */ {
+    background-color: var(--miku-teal) !important;
+}
+
+._13LoHE22iGo7eWHNFp5f9L /* Skeleton */ {
+    background-color: rgba(var(--miku-aqua-rgb), 0.35) !important;
+}
+
+._3xXvCbPSIbZttSKUFZbFe- /* ErrorScreenshot */ {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+._2X6Uf9dpYzWmrq3hGfefrI._15Fj5nK4Zo29jNeQ_4mYP4 /* Text.Warning: yellow */ {
+    color: #a86b00 !important;
+}
+
+.hwP1MOTgigg-9XwJyhFTO /* CloudStorageImpact */,
+._2LUzrSm9sUE6ZGMS1cIE-c /* FilterText */ {
+    color: var(--miku-text-2) !important;
+}
+
+.atQY7rSyaNKh0d4H1V_U8 /* FilterDivider */ {
+    border-color: rgba(var(--miku-ink-rgb), 0.2) !important;
+}
+
+/* FloatingItemControls: dark glass bar over a thumbnail */
+._2JO6FoYf-a7P9DWgxnw1Dt {
+    background: linear-gradient(rgba(var(--miku-mist-rgb), 0.3) 0%, rgba(var(--miku-mist-rgb), 0.95) 90%) !important;
+}
+
+.VT4foks3c7PnmezrI6Jkm .DialogButton._1YCCffk57wIFq_yC8mr14P /* Tabs > Selected */ {
+    border-color: var(--miku-teal) !important;
+}
+
+._3aw8rnUVmbcILzeqlj7uuP ._1XMsukW7tjbY8BC341fPNa:hover /* PhaseFilterTag > Close */ {
+    background-color: rgba(var(--miku-aqua-rgb), 0.55) !important;
+}
+
+/* --- Session (timeline) view: PhaseListContainer is #0e141b --- */
+._2OsQkIMNf9Cnl4xfBXMApr {
+    background-color: transparent !important;
+}
+
+.uCBCZOATxD3vzPCGUgDEp /* PhaseGridItem */ {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 8px;
+}
+
+._39iQ4SVmUraaIzKiGXcZ_f /* BlankPhaseGridItem: striped */ {
+    background: repeating-linear-gradient(135deg,
+        rgba(var(--miku-aqua-rgb), 0.35), rgba(var(--miku-aqua-rgb), 0.35) 4px,
+        rgba(255, 255, 255, 0.45) 4px, rgba(255, 255, 255, 0.45) 8px) !important;
+    border-radius: 8px;
+}
+
+.LXSDTbESQvn-zKZCQ3wBF ._2ear7ibzGm0Ir71HLpaJra /* MediaListItem > OverflowItem */ {
+    background-color: rgba(var(--miku-aqua-rgb), 0.45) !important;
+}
+
+/* InputFilter (タグ): dark well with a black inner shadow */
+._36KTbApKz0VLY9Q6lGt4aH {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.4) !important;
+    border-radius: 8px !important;
+}
+
+/* (.DialogContent prefix: outranks the general ".DialogContent input" box below) */
+.DialogContent ._36KTbApKz0VLY9Q6lGt4aH input {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+._36KTbApKz0VLY9Q6lGt4aH input::placeholder {
+    color: var(--miku-text-3) !important;
+}
+
+._1rhLTraGkRDOPJslCL3i9C /* FilterOptionButton */ {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+._1rhLTraGkRDOPJslCL3i9C:hover,
+._1rhLTraGkRDOPJslCL3i9C._2_K-vDkSsSw6FxrfZL-ScT /* .Selected */ {
+    background-color: rgba(var(--miku-aqua-rgb), 0.55) !important;
+    border-color: var(--miku-teal) !important;
+}
+
+._2qm_fJcwhV6H_wMT8bvLQq ._3qs2GKynYkxCbVbV-u6wln /* ActiveTagContainer > ActiveLabel */ {
+    color: #2e7d1f !important;
+}
+
 /* --- Buttons --- */
 .DialogButton._DialogLayout.Primary {
     background: var(--miku-teal-fill) !important;

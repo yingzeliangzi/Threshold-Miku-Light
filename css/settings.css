@@ -102,11 +102,6 @@ body.ModalDialogBody {
     color: var(--miku-text-2) !important;
 }
 
-/* --- Storage page: drive picker --- */
-._3YelWui4gQvucX_bHwvl15 /* InstallDropdownOption */ {
-    background: rgba(255, 255, 255, 0.85) !important;
-}
-
 /* --- Window controls (minimize / maximize / close) --- */
 .title-bar-actions .title-area-icon {
     color: var(--miku-text-2);

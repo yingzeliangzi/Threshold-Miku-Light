@@ -2,7 +2,7 @@
     "name": "Threshold-Miku-Light",
     "author": "nasakura",
     "description": "A light, glassy Hatsune Miku theme for the Steam client: Miku teal accents, anime artwork backgrounds and readable text everywhere (library, game pages, downloads, friends & chat, settings, dialogs and menus).",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "tags": [
         "Miku",
         "Light",
@@ -20,7 +20,13 @@
     "UseDefaultPatches": false,
     "Patches": [
         {
-            "MatchRegexString": ".*http.*steam.*",
+            "MatchRegexString": "https://(?<=^https://)([A-Za-z0-9-]+\\.)*steampowered\\.com(?=/|$)",
+            "TargetCss": "./css/webkit.css",
+            "TargetJs": "./js/webkit.js"
+        },
+        {
+            "MatchRegexString": "https://(?<=^https://)steamcommunity\\.com(?=/|$)",
+            "TargetCss": "./css/webkit.css",
             "TargetJs": "./js/webkit.js"
         },
         {
@@ -40,6 +46,10 @@
         {
             "MatchRegexString": "Supernav$",
             "TargetCss": "./css/supernavs.css"
+        },
+        {
+            "MatchRegexString": "^(Sign in to Steam|Steamにサインイン|登录 Steam|登入 Steam|登录蒸汽平台|Steam 로그인|تسجيل الدخول إلى Steam|Iniciar a sessão no Steam|Вписване в Steam|Přihlášení do služby Steam|Log på Steam|Aanmelden bij Steam|Kirjaudu Steamiin|Se connecter à Steam|Bei Steam anmelden|Σύνδεση στο Steam|Bejelentkezés a Steambe|Login ke Steam|Accedi a Steam|Iniciar sesión en Steam|Daftar masuk ke Steam|Logg inn på Steam|Zaloguj się do Steam|Iniciar sessão no Steam|Conectează-te la Steam|Войти в Steam|Logga in på Steam|เข้าสู่ระบบ Steam|Steam'e Giriş Yap|Вхід до Steam|Đăng nhập vào Steam)$",
+            "TargetCss": "./libraryroot.custom.css"
         },
         {
             "MatchRegexString": ".ModalDialogPopup",

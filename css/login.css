@@ -9,13 +9,22 @@
     background: rgb(var(--miku-mist-rgb)) !important;
 }
 
-/* LoginAnimatedBackground: Steam pans a grid of game capsules here (60s).
-   Same pan, but over the library artwork under a light mist. */
+/* LoginAnimatedBackground: Steam pans a grid of game capsules here, corner
+   to corner over 60s. Here: the library artwork under a light mist, panned
+   along the top so it starts on her face and drifts across the hair. */
 ._3MJTdOkAxu5hiJ565avrpz {
     background-image:
         linear-gradient(rgba(var(--miku-mist-rgb), 0.55), rgba(var(--miku-mist-rgb), 0.55)),
         url(../imgs/mainBG.jpg) !important;
+    background-size: 160% auto !important;
+    background-position: 0% 0%;
+    --infiniteScroll: miku-login-pan 50s ease-in-out infinite alternate !important;
     filter: blur(2px) saturate(1.1);
+}
+
+@keyframes miku-login-pan {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 100% 35%; }
 }
 
 /* Login: base text colour of the whole window. Steam's light grey is made
@@ -48,21 +57,20 @@
     text-shadow: var(--miku-halo);
 }
 
-._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W {
-    background: rgba(255, 255, 255, 0.85) !important;
-    border: 1px solid var(--glass-line);
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(var(--miku-deep-rgb), 0.12);
-}
-
+/* No box behind avatar + name (desktop Steam has none either): the name
+   gets the same white outline as chat names so it reads on the artwork */
 ._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W ._2tyxJwWA7FRwarLgRU2dWa /* PersonaName */ {
     color: var(--miku-text) !important;
     font-weight: 600;
-    text-shadow: none;
+    text-shadow:
+        1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff,
+        1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+        0 0 6px rgba(255, 255, 255, 0.9);
 }
 
-._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W ._3YzgVE15q0lUY1uAwRQm1U /* Avatar */ {
-    border-radius: 8px;
+._1TR3CCCdSmI-0MXucYBuP2 ._6Z2AOU-R-8aK7KZevey0W ._3YzgVE15q0lUY1uAwRQm1U /* Avatar */ > img {
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(var(--miku-deep-rgb), 0.25);
 }
 
 /* LoginError: Steam's red, a shade darker for the light background */
@@ -169,4 +177,218 @@
 ._1cpxSyGwDz13Qlo95Kbo5H ._2tALpM7z8naXJ35Pp5fNAG /* FieldLeftColumn */ {
     color: var(--miku-text-2) !important;
     text-shadow: var(--miku-halo);
+}
+
+/* =====================================================================
+   Sign-in form: "+" (add account), password / QR code, Steam Guard code,
+   phone / email confirmation, errors. Root class Login (lat0M-...).
+   Steam draws all of it in dark greys with white text.
+   ===================================================================== */
+
+/* EmbeddedRoot: the dark gradient panel, now frosted glass over the art */
+.lat0M-V5X4uYd6Mpm1DJ1 ._2v9dClMg2Lmn8UVv6GUeJt {
+    background: rgba(var(--miku-mist-rgb), 0.8) !important;
+    backdrop-filter: blur(10px);
+    color: var(--miku-text-2) !important;
+}
+
+/* LogoContainer > BackArrow + HeaderLogo (white) */
+.lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._3NHpq7ZDgg4uYEzUF9RxaQ {
+    color: var(--miku-text-2) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._3NHpq7ZDgg4uYEzUF9RxaQ:hover {
+    color: var(--miku-teal-ink) !important;
+    opacity: 1;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._3v6WnuVNx1rJx0x_1AAyPp,
+.lat0M-V5X4uYd6Mpm1DJ1 ._3v6WnuVNx1rJx0x_1AAyPp * {
+    fill: var(--miku-text) !important;
+}
+
+/* FieldLabel (.Highlight = the active step, Steam blue) */
+.lat0M-V5X4uYd6Mpm1DJ1 .XrYgea66b38RASmbI3PJo {
+    color: var(--miku-text-2) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 .XrYgea66b38RASmbI3PJo._12zBmIktqPpcwJXItTb8f9,
+.lat0M-V5X4uYd6Mpm1DJ1 ._3wSeH3OorL-tMzwXL55smN ._2vrvETim46niDklOy_kH33 /* MessagingTag */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* TextInput (+ .Danger after a wrong password) */
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.3) !important;
+    border-radius: 8px !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx:hover {
+    background-color: #fff !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx:focus {
+    background-color: #fff !important;
+    border-color: var(--miku-teal) !important;
+    box-shadow: 0 0 0 3px rgba(var(--miku-teal-rgb), 0.22) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx._16BUa8w2l6LPH1otvXnwAR /* .Danger */ {
+    border-color: #c0392b !important;
+}
+
+/* CheckboxField > Checkbox + label (このアカウントを記憶する) */
+.lat0M-V5X4uYd6Mpm1DJ1 .LBS7IDpob52Sb4ZoKobh0 {
+    background-color: rgba(255, 255, 255, 0.92) !important;
+    border: 1.5px solid rgba(var(--miku-ink-rgb), 0.5);
+    border-radius: 4px !important;
+    color: var(--miku-teal-ink);
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._1Qku5jMXBi5-wawzqY1kzG:hover .LBS7IDpob52Sb4ZoKobh0 {
+    background-color: #fff !important;
+    border-color: var(--miku-teal);
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 .LBS7IDpob52Sb4ZoKobh0 svg * {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._1Qku5jMXBi5-wawzqY1kzG ._10bGilozn2bfCfiPfANMhC {
+    color: var(--miku-text-2) !important;
+}
+
+/* SubmitButton (ログイン) and GuestButton: Steam's blue gradient -> teal */
+.lat0M-V5X4uYd6Mpm1DJ1 :is(.DjSvCZoKKfoNSmarsEcTS, ._3t6QgWQmijDfZziPq3q3aQ) {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-shadow: var(--miku-text-shadow-on-accent);
+    box-shadow: 0 2px 8px rgba(var(--miku-ink-rgb), 0.25);
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 :is(.DjSvCZoKKfoNSmarsEcTS, ._3t6QgWQmijDfZziPq3q3aQ):hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 .DjSvCZoKKfoNSmarsEcTS._2NVQcOnbtdGIu9O-mB9-YE /* .Loading hides the label */ {
+    color: transparent !important;
+    text-shadow: none;
+}
+
+/* RefreshQuitButton / OfferOfflineButton / TryAgainButton: dark slate */
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._9Ig1o0jVRia2uf_FKR3rs, ._2Z68vjdOnUDA2ULQG41JVV, ._25eT23F0cV5lmT3tXAIA56) {
+    background: rgba(255, 255, 255, 0.85) !important;
+    color: var(--miku-text) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.55) !important;
+    border-radius: 8px !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._9Ig1o0jVRia2uf_FKR3rs, ._2Z68vjdOnUDA2ULQG41JVV, ._25eT23F0cV5lmT3tXAIA56):hover {
+    background: var(--miku-teal-wash-strong) !important;
+}
+
+/* QR side: QRBits keeps its white frame, rounded; links and messages */
+.lat0M-V5X4uYd6Mpm1DJ1 ._3BALYLTpJdiDaC7JKmeeFJ {
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(var(--miku-deep-rgb), 0.15);
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._3pxTSyPhDmjNqXUYDIITS- /* UseMobileAppForQR */, ._14ZzKYkQD-qXL4aLAaupwp /* MessagingSubtitle */, ._1MIDAnpFm2LhRX7Rvb3wlY /* QRHideLink */) {
+    color: var(--miku-text-2) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._3k-6J60Y5_Cs3sqk7SgbQU /* MessagingButton */, ._3wGxEd3F_T8M0LIA0M9o-g /* ScanQRButton */) {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    color: var(--miku-text) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 8px !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._3wGxEd3F_T8M0LIA0M9o-g:hover {
+    background-color: #fff !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._27u_PDLDTJ3mTS-4_TmJKk /* QRIcon */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* TextLink (ログインできません… / 無料アカウントを作成 / Steamモバイルアプリ) */
+.lat0M-V5X4uYd6Mpm1DJ1 ._1K431RbY14lkaFW6-XgSsC {
+    color: var(--miku-text-2) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._1K431RbY14lkaFW6-XgSsC:hover {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* EmbeddedRootFooter, AccountCreationPrompt, Text, InsecureComputer */
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._27aItUQsVlk-hSm7K9UCJt, ._3dwSWEGgHCaDxQqEDOqTtN, ._1zFEayEDjKnMPSCnM-lzqE, ._3onX-q5mCgAQyvYp-RXyQy) {
+    color: var(--miku-text-2) !important;
+}
+
+/* FormError */
+.lat0M-V5X4uYd6Mpm1DJ1 ._1W_6HXiG4JJ0By1qN_0fGZ {
+    color: #c0392b !important;
+}
+
+/* ConfirmCredntialsNag (sic): Steam-blue strip */
+.lat0M-V5X4uYd6Mpm1DJ1 ._2oMvaF46xYOE6Guy0xjCAl {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+    border-radius: 8px;
+}
+
+/* --- Steam Guard: ProtectingAccount (Label + AccountName + Description) --- */
+.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._1hKgiFuFaVR_Sq1Gj_gCnd,
+.lat0M-V5X4uYd6Mpm1DJ1 :is(.DdK_Fpa32ezl3qzyYJ85d, ._2Io_Jc8M4cRHn9cU4vHcqW, ._1YQZI88vD5NCUw4u35tB0m) ._1hKgiFuFaVR_Sq1Gj_gCnd {
+    color: var(--miku-text-2) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._31Vq4lzNWs4WikXVr9J4hz {
+    color: var(--miku-text) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._2o5mE8JpPFOyJ0HwX_y0y7 {
+    color: var(--miku-text-3) !important;
+    opacity: 1 !important;
+}
+
+/* AwaitingMobileConfText + icons ("confirm in the Steam app" / email) */
+.lat0M-V5X4uYd6Mpm1DJ1 ._3zQ9hnkyXJEv7nN0oBU56M ._2WgwHabhUV3cP6dHQPybw8 {
+    color: var(--miku-text) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._3WvDpj9Ng6SQliygcVqlJU, ._3qdu3-d2Nbudcqe-VBrC8r) {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* CodeInputField: 5-character Steam Guard code over underline segments */
+.lat0M-V5X4uYd6Mpm1DJ1 ._3FIQqsD10Zd2yrvusqjP_P ._1gZuGaPQVYkRx3GH4wzBN3 {
+    color: var(--miku-text) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._3FIQqsD10Zd2yrvusqjP_P ._8gteGheBcDqzR7sDIhoDN ._3l55OgBEuGxUa2TRX_q6X2 {
+    background-color: var(--miku-teal-ink) !important;
+    opacity: 0.45 !important;
+}
+
+/* Refresh / failure / waiting-for-token screens */
+.lat0M-V5X4uYd6Mpm1DJ1 :is(._3yMMwjOGjHdmMrJbYQyst3 /* RefreshTitle */, ._2EuR68sQbA8eP01DlIfu6O .g5L61o-ZrHHmwLEugLjLI /* PrimaryHeader */, ._1h8nX6TBOG2MHjtSFDK79v ._2o5mE8JpPFOyJ0HwX_y0y7),
+._1A8Mk6QeC0d7bvHDJIoW7o /* FailureTitle */ {
+    color: var(--miku-text) !important;
+}
+
+.lat0M-V5X4uYd6Mpm1DJ1 ._1b-mLIbA7lNlcrNICBrLu6 /* RefreshReason */,
+._3H-JHTYIWOo9uVrF0SXAX0 /* FailureDescription */ {
+    color: var(--miku-text-2) !important;
+}
+
+.J_2Q0Mk09u8np24KfSwHR /* MutedErrorReference */ {
+    color: var(--miku-text-3) !important;
 }

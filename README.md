@@ -63,11 +63,11 @@ Miku/
 │   ├── steam.css           # Main window: top bar, library, game pages, collections, downloads, bottom bar
 │   ├── dialogs.css         # Dialogs, setting rows, toggles, buttons (shared by steam.css and settings.css)
 │   ├── settings.css        # Settings window and other popup dialogs
-│   ├── login.css           # Sign-in window: account picker, signing in
+│   ├── login.css           # Sign-in window: account picker, sign-in form, signing in
 │   ├── friends.custom.css  # Friends list & chat windows
 │   ├── menus.css           # All popup menus (Steam / View / right-click menus / notifications / tray)
 │   ├── supernavs.css       # Hover menus of the top navigation (imports menus.css)
-│   ├── webkit.css          # Global WebKit styles
+│   ├── webkit.css          # Store / community web pages: transparent background + veil
 │   └── store.steampowered.com.css
 ├── js/                     # Currently empty (the old inline-style injection is now pure CSS)
 ├── tools/                  # Maintenance tools, see "Maintenance" below (not part of the skin itself)
@@ -117,7 +117,8 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 |------|------|
 | Main background | `mainBG.jpg` covers the whole page, with transparent panels on top |
 | Top bar / bottom bar | Light frosted glass; account name, wallet balance and notification buttons are dark text on a light background |
-| Address bar | The URL bar above store / community pages is light frosted glass with a dark URL and icons (black in vanilla Steam) |
+| Address bar | The URL bar above store / community pages is light frosted glass with a dark URL and icons (black in vanilla Steam); hovering the URL or reload button shows a white glass pill |
+| Store / community pages | Transparent instead of Steam's navy, so the background art shows through a deep-teal veil that keeps the white text readable (the veil strength is `--miku-web-veil` at the top of `css/webkit.css`) |
 | Left sidebar | Light aqua frosted glass |
 | Collection header rows | Dark teal bold name + a thin line underneath fading out to the right |
 | Selected game | Rounded light aqua background + dark teal bold text |
@@ -141,7 +142,8 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Item | Details |
 |------|------|
 | Collections page | The title is a glass pill, "Create a new collection" is a dashed glass card |
-| Inside a collection | Vanilla Steam's dark blue background is replaced by the same blurred veil as the game page, so the background art shows; the title is followed by a thin line, and the sort dropdown is white |
+| Inside a collection | Vanilla Steam's dark blue background is replaced by the same blurred veil as the game page, so the background art shows; the title is followed by a thin line, and the sort dropdown is white; section headers that stick to the top while scrolling are frosted glass |
+| Cover hover card | The details card shown when hovering a game cover is light mist tinted with the game's own colors, with rounded corners, dark text and a teal "Playtime" heading (dark slate in vanilla Steam) |
 | Downloads page | `downloadBG.jpg` covers the whole page, the speed area at the top is frosted glass, and the queue below is transparent so the background shows through |
 
 ### Friends list
@@ -171,12 +173,15 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Toggles / radio buttons | Miku teal when on |
 | Dialogs | Light blue background + dark text + teal buttons; the overlay behind them is translucent frosted glass |
 | Install dialog | The install location list is white cards; the selected drive has a light aqua background + teal border |
+| Dropdown lists | Light glass lists with an aqua highlight (dark grey in vanilla Steam), e.g. the drive picker in Settings → Storage |
+| Recordings & screenshots | Frosted light header with white glass buttons (the current view in teal); the game / media pickers, session view and screenshot viewer are light too (dark slate in vanilla Steam) |
 
 ### Sign-in window
 | Item | Details |
 |------|------|
-| Background | The same background art as the library + a light veil (a dark wall of game covers in vanilla Steam) |
+| Background | The same background art as the library + a light veil, slowly drifting from her face across the hair (a dark wall of game covers in vanilla Steam) |
 | Account picker | White rounded avatar frames with a teal outline on hover; the "…" more-options button is a small dot at the avatar's top-right corner and no longer covers the avatar |
+| Add account / sign-in form | Frosted glass instead of the dark panel: white rounded inputs with a teal focus ring, a teal sign-in button and the QR code on a rounded white card; the Steam Guard code and confirmation screens get the same colors |
 | Signing in | The status text and the name next to the avatar are dark, readable on the light background |
 
 ### Menus
@@ -201,17 +206,22 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Library – left list: the collapse icon to the left of collection headers was invisible
 - Library – dark blocks in the home page content area and at the top of the downloads page
 - Store / community: the address bar above the pages was black
+- Store / community: hovering the URL in the address bar turned it into a dark pill with unreadable text; the web pages got none of the skin's styles because their loading rule never matched under SFP
 - Install dialog: in the install location list, unselected drives were dark grey with dark text and the selected one was Steam blue
 - Collections: inside a single collection the whole page was dark blue and the sort dropdown was unreadable
+- Collections: hovering a game cover showed a dark slate details card; section headers turned into a dark band with unreadable text once they stuck to the top while scrolling
 - Chat window: the other person's name and time sat right on the background art and were unreadable; the tab bar was greyish; the date divider text was unreadable
 - Sign-in window: when choosing an account, the "…" more-options button covered the whole avatar so the account couldn't be clicked; "Signing in" and the name were white text on a light background
+- Sign-in window: the add-account form (account name / password / QR code) was entirely in Steam's dark style
+- Settings – Storage: the drive dropdown stayed a dark list, and the drive names were white text on white strips
+- Recordings & screenshots: the header, toolbar buttons, game picker and session view were in Steam's dark style, with the title and button text dark on dark; scrolled thumbnails smeared into a grey band under the header and footer
 - Settings / game properties: the teal bar on the selected item in the left list is now a rounded light aqua background
 - Friends list: after opening search, the input box had a dark grey frame + a black inner shadow and stayed like that even after clearing the text; afterwards the "Friends" tab label got squeezed onto two lines
 - Settings – all pages: setting rows were dark grey cards with black text, completely unreadable
 - Friends list: every row had a white block on top, messy
 - Menus: grey background + bright blue hover, didn't fit the theme
 
-Every selector has been checked against the current Steam version (all 352 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
+Every selector has been checked against the current Steam version (all 498 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
 
 ---
 

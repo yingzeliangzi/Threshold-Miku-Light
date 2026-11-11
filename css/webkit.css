@@ -1,9 +1,65 @@
 @import url(../global.css);
 
-/* ===================================
-   Threshold-Miku Light - WebKit
-   =================================== */
+/* =====================================================================
+   Threshold-Miku Light - Store and community web pages (Steam-WebKit)
 
-body.v6 {
-    background: none;
+   These pages are drawn on top of the main window, whose Miku artwork
+   shows through wherever a page is transparent. They are designed for a
+   dark backdrop (white and light-grey text), so instead of Steam's navy
+   background they get a deep-teal veil over the artwork: the art stays
+   visible and the text stays readable.
+   ===================================================================== */
+
+:root {
+    /* Strength of the veil over the artwork: 0 = none, 1 = solid */
+    --miku-web-veil: 0.6;
+}
+
+html,
+body,
+body.v6,
+body.v7 {
+    background: transparent !important;
+}
+
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: rgba(var(--miku-deep-rgb), var(--miku-web-veil));
+}
+
+/* Page wrappers that repaint Steam's navy (store and community) */
+.responsive_page_frame,
+.responsive_page_content,
+.responsive_page_template_content,
+.home_page_body_ctn,
+.home_ctn.tab_container,
+.page_content_ctn,
+body.v6 .page_content_ctn.dark,
+.pagecontent,
+.apphub_background,
+.game_page_background.game {
+    background: transparent !important;
+}
+
+/* Store game pages: the game's own blurred backdrop (inline style) */
+.game_page_background.game {
+    background-image: none !important;
+}
+
+/* Community: the compact footer pinned at the bottom left (privacy policy,
+   legal ...) is grey-blue text made for navy; lift it off the artwork */
+#footer.compact #footerText,
+#footer.compact #footerText a {
+    color: #c6d4df !important;
+    text-shadow: 0 1px 2px rgba(var(--miku-deep-rgb), 0.9), 0 0 8px rgba(var(--miku-deep-rgb), 0.8);
+}
+
+/* "Already in your library" / your review block: a grey-to-near-white
+   gradient that turned pale (and its grey text faint) over the artwork */
+.game_area_play_stats {
+    background: linear-gradient(135deg, rgba(var(--miku-deep-rgb), 0.6) 0%, rgba(var(--miku-deep-rgb), 0.4) 100%) !important;
 }
