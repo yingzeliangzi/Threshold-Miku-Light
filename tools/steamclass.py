@@ -52,7 +52,10 @@ def looks_hashed(token, known):
 
 
 def skin_hashes(known):
-    """Return {hash: [files]} for hashed-looking class names used in the skin."""
+    """Return {hash: [files]} for hashed-looking class names used in the skin.
+    Classes the snapshot already knows count too, so one whose module is not
+    loaded in this Steam session is neither missed nor dropped from it."""
+    known = set(known) | set(load_snapshot()['classes'])
     found = {}
     for f in SKIN_FILES:
         text = strip_comments(f.read_text(encoding='utf-8'))

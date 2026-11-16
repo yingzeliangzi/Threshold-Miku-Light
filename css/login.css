@@ -186,84 +186,84 @@
    ===================================================================== */
 
 /* EmbeddedRoot: the dark gradient panel, now frosted glass over the art */
-.lat0M-V5X4uYd6Mpm1DJ1 ._2v9dClMg2Lmn8UVv6GUeJt {
+._3EoMsOmqpdSZOFkxEPOqTw .TvElg4VsyN1GxOEpTVQc1 {
     background: rgba(var(--miku-mist-rgb), 0.8) !important;
     backdrop-filter: blur(10px);
     color: var(--miku-text-2) !important;
 }
 
 /* LogoContainer > BackArrow + HeaderLogo (white) */
-.lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._3NHpq7ZDgg4uYEzUF9RxaQ {
+._3EoMsOmqpdSZOFkxEPOqTw .oAWNw68bqhTRPJd84QL1Z ._17kS9-opjUu0_sWVRWR1g- {
     color: var(--miku-text-2) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._14exBrSFDthVqeknXgFh4X ._3NHpq7ZDgg4uYEzUF9RxaQ:hover {
+._3EoMsOmqpdSZOFkxEPOqTw .oAWNw68bqhTRPJd84QL1Z ._17kS9-opjUu0_sWVRWR1g-:hover {
     color: var(--miku-teal-ink) !important;
     opacity: 1;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._3v6WnuVNx1rJx0x_1AAyPp,
-.lat0M-V5X4uYd6Mpm1DJ1 ._3v6WnuVNx1rJx0x_1AAyPp * {
+._3EoMsOmqpdSZOFkxEPOqTw ._63TCBNFd_pkhljzxYXa6y,
+._3EoMsOmqpdSZOFkxEPOqTw ._63TCBNFd_pkhljzxYXa6y * {
     fill: var(--miku-text) !important;
 }
 
 /* FieldLabel (.Highlight = the active step, Steam blue) */
-.lat0M-V5X4uYd6Mpm1DJ1 .XrYgea66b38RASmbI3PJo {
+._3EoMsOmqpdSZOFkxEPOqTw ._3b5iWfynCg_r6hD9d08oXV {
     color: var(--miku-text-2) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 .XrYgea66b38RASmbI3PJo._12zBmIktqPpcwJXItTb8f9,
-.lat0M-V5X4uYd6Mpm1DJ1 ._3wSeH3OorL-tMzwXL55smN ._2vrvETim46niDklOy_kH33 /* MessagingTag */ {
+._3EoMsOmqpdSZOFkxEPOqTw ._3b5iWfynCg_r6hD9d08oXV._1zuuucB7YqhY_RMCWAJp6G,
+._3EoMsOmqpdSZOFkxEPOqTw .K_2Ai5_jvZtY4oUCBDwQR ._2EGclwCQC0ib8xDSUC_hHh /* MessagingTag */ {
     color: var(--miku-teal-ink) !important;
     font-weight: 600;
 }
 
 /* TextInput (+ .Danger after a wrong password) */
-.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx {
+._3EoMsOmqpdSZOFkxEPOqTw ._12BVjL3eO97hYIP0GX9FM4 {
     background-color: rgba(255, 255, 255, 0.92) !important;
     color: var(--miku-text) !important;
     border: 1px solid rgba(var(--miku-ink-rgb), 0.3) !important;
     border-radius: 8px !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx:hover {
+._3EoMsOmqpdSZOFkxEPOqTw ._12BVjL3eO97hYIP0GX9FM4:hover {
     background-color: #fff !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx:focus {
+._3EoMsOmqpdSZOFkxEPOqTw ._12BVjL3eO97hYIP0GX9FM4:focus {
     background-color: #fff !important;
     border-color: var(--miku-teal) !important;
     box-shadow: 0 0 0 3px rgba(var(--miku-teal-rgb), 0.22) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._2GBWeup5cttgbTw8FM3tfx._16BUa8w2l6LPH1otvXnwAR /* .Danger */ {
+._3EoMsOmqpdSZOFkxEPOqTw ._12BVjL3eO97hYIP0GX9FM4._3fknRtD-7H3DjZylCHp5Vk /* .Danger */ {
     border-color: #c0392b !important;
 }
 
 /* CheckboxField > Checkbox + label (このアカウントを記憶する) */
-.lat0M-V5X4uYd6Mpm1DJ1 .LBS7IDpob52Sb4ZoKobh0 {
+._3EoMsOmqpdSZOFkxEPOqTw ._2yqO16VrJmXTQtsz8EQTY9 {
     background-color: rgba(255, 255, 255, 0.92) !important;
     border: 1.5px solid rgba(var(--miku-ink-rgb), 0.5);
     border-radius: 4px !important;
     color: var(--miku-teal-ink);
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._1Qku5jMXBi5-wawzqY1kzG:hover .LBS7IDpob52Sb4ZoKobh0 {
+._3EoMsOmqpdSZOFkxEPOqTw ._2cCWZqqqazcW4NU2qo0MR9:hover ._2yqO16VrJmXTQtsz8EQTY9 {
     background-color: #fff !important;
     border-color: var(--miku-teal);
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 .LBS7IDpob52Sb4ZoKobh0 svg * {
+._3EoMsOmqpdSZOFkxEPOqTw ._2yqO16VrJmXTQtsz8EQTY9 svg * {
     fill: currentColor !important;
     stroke: currentColor !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._1Qku5jMXBi5-wawzqY1kzG ._10bGilozn2bfCfiPfANMhC {
+._3EoMsOmqpdSZOFkxEPOqTw ._2cCWZqqqazcW4NU2qo0MR9 ._2cqJp3NfMyZCwf9WMjNGp8 {
     color: var(--miku-text-2) !important;
 }
 
 /* SubmitButton (ログイン) and GuestButton: Steam's blue gradient -> teal */
-.lat0M-V5X4uYd6Mpm1DJ1 :is(.DjSvCZoKKfoNSmarsEcTS, ._3t6QgWQmijDfZziPq3q3aQ) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._3r0A-NOc7ara3PHSF3Irh, .JZ8d4WZvtm8Q8DiIiyNnN) {
     background: var(--miku-teal-fill) !important;
     color: #fff !important;
     border-radius: 8px !important;
@@ -272,123 +272,123 @@
     box-shadow: 0 2px 8px rgba(var(--miku-ink-rgb), 0.25);
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 :is(.DjSvCZoKKfoNSmarsEcTS, ._3t6QgWQmijDfZziPq3q3aQ):hover {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._3r0A-NOc7ara3PHSF3Irh, .JZ8d4WZvtm8Q8DiIiyNnN):hover {
     background: var(--miku-teal-fill-hover) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 .DjSvCZoKKfoNSmarsEcTS._2NVQcOnbtdGIu9O-mB9-YE /* .Loading hides the label */ {
+._3EoMsOmqpdSZOFkxEPOqTw ._3r0A-NOc7ara3PHSF3Irh._3MgO_F_9ZP02EzKnnt1nv6 /* .Loading hides the label */ {
     color: transparent !important;
     text-shadow: none;
 }
 
 /* RefreshQuitButton / OfferOfflineButton / TryAgainButton: dark slate */
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._9Ig1o0jVRia2uf_FKR3rs, ._2Z68vjdOnUDA2ULQG41JVV, ._25eT23F0cV5lmT3tXAIA56) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._3a20KLIkla_4hh7nOwjF0s, .LlCy5xHhJOBsK0dwvwFiZ, ._3_ywpZx7p0NUA6i6aDRhG0) {
     background: rgba(255, 255, 255, 0.85) !important;
     color: var(--miku-text) !important;
     border: 1.5px solid rgba(var(--miku-teal-rgb), 0.55) !important;
     border-radius: 8px !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._9Ig1o0jVRia2uf_FKR3rs, ._2Z68vjdOnUDA2ULQG41JVV, ._25eT23F0cV5lmT3tXAIA56):hover {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._3a20KLIkla_4hh7nOwjF0s, .LlCy5xHhJOBsK0dwvwFiZ, ._3_ywpZx7p0NUA6i6aDRhG0):hover {
     background: var(--miku-teal-wash-strong) !important;
 }
 
 /* QR side: QRBits keeps its white frame, rounded; links and messages */
-.lat0M-V5X4uYd6Mpm1DJ1 ._3BALYLTpJdiDaC7JKmeeFJ {
+._3EoMsOmqpdSZOFkxEPOqTw ._3BALYLTpJdiDaC7JKmeeFJ {
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(var(--miku-deep-rgb), 0.15);
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._3pxTSyPhDmjNqXUYDIITS- /* UseMobileAppForQR */, ._14ZzKYkQD-qXL4aLAaupwp /* MessagingSubtitle */, ._1MIDAnpFm2LhRX7Rvb3wlY /* QRHideLink */) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._2aPWIUqiibGsbbAQ2L9Tvb /* UseMobileAppForQR */, ._1awiHLJOivIyO1a6tHqeYu /* MessagingSubtitle */, .ufgzMhvhzcaI96Vtm8RCW /* QRHideLink */) {
     color: var(--miku-text-2) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._3k-6J60Y5_Cs3sqk7SgbQU /* MessagingButton */, ._3wGxEd3F_T8M0LIA0M9o-g /* ScanQRButton */) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._2FA-wGswb4_gH8XHPj6qhY /* MessagingButton */, ._32aFqErf7QAi0DQrXEFJxf /* ScanQRButton */) {
     background-color: rgba(255, 255, 255, 0.85) !important;
     color: var(--miku-text) !important;
     border: 1px solid var(--glass-line) !important;
     border-radius: 8px !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._3wGxEd3F_T8M0LIA0M9o-g:hover {
+._3EoMsOmqpdSZOFkxEPOqTw ._32aFqErf7QAi0DQrXEFJxf:hover {
     background-color: #fff !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._27u_PDLDTJ3mTS-4_TmJKk /* QRIcon */ {
+._3EoMsOmqpdSZOFkxEPOqTw ._2keix-vBIE1EfoFz0Kf2dY /* QRIcon */ {
     color: var(--miku-teal-ink) !important;
 }
 
 /* TextLink (ログインできません… / 無料アカウントを作成 / Steamモバイルアプリ) */
-.lat0M-V5X4uYd6Mpm1DJ1 ._1K431RbY14lkaFW6-XgSsC {
+._3EoMsOmqpdSZOFkxEPOqTw ._2GmYiBCtWUCWZ0JLymkz-n {
     color: var(--miku-text-2) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._1K431RbY14lkaFW6-XgSsC:hover {
+._3EoMsOmqpdSZOFkxEPOqTw ._2GmYiBCtWUCWZ0JLymkz-n:hover {
     color: var(--miku-teal-ink) !important;
 }
 
 /* EmbeddedRootFooter, AccountCreationPrompt, Text, InsecureComputer */
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._27aItUQsVlk-hSm7K9UCJt, ._3dwSWEGgHCaDxQqEDOqTtN, ._1zFEayEDjKnMPSCnM-lzqE, ._3onX-q5mCgAQyvYp-RXyQy) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._1xB7QcGIOGoU6PMrLiHHXk, ._35spav7NxktKwLc-_KJjrT, ._2ZSz3czzvBWnU9UFq5-qVl, .dah0Jp3JNsKqpoTyaKyTn) {
     color: var(--miku-text-2) !important;
 }
 
 /* FormError */
-.lat0M-V5X4uYd6Mpm1DJ1 ._1W_6HXiG4JJ0By1qN_0fGZ {
+._3EoMsOmqpdSZOFkxEPOqTw ._3QfTGN2Nik8ZpRND4qHypV {
     color: #c0392b !important;
 }
 
 /* ConfirmCredntialsNag (sic): Steam-blue strip */
-.lat0M-V5X4uYd6Mpm1DJ1 ._2oMvaF46xYOE6Guy0xjCAl {
+._3EoMsOmqpdSZOFkxEPOqTw ._1dKpPdS8HqvzBJKNpLpkFv {
     background: var(--miku-teal-fill) !important;
     color: #fff !important;
     border-radius: 8px;
 }
 
 /* --- Steam Guard: ProtectingAccount (Label + AccountName + Description) --- */
-.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._1hKgiFuFaVR_Sq1Gj_gCnd,
-.lat0M-V5X4uYd6Mpm1DJ1 :is(.DdK_Fpa32ezl3qzyYJ85d, ._2Io_Jc8M4cRHn9cU4vHcqW, ._1YQZI88vD5NCUw4u35tB0m) ._1hKgiFuFaVR_Sq1Gj_gCnd {
+._3EoMsOmqpdSZOFkxEPOqTw ._3YghC3pSEVXvRvcefF9imL ._1maTE41FBhseFUGoRndEZN,
+._3EoMsOmqpdSZOFkxEPOqTw :is(.oiJ1RKOjn4pU_HwQ7K_9J, ._33U5MpTzkUI1G-YrMwHjOa, ._2FF7DFRbKtCkOJb2cLhqbk) ._1maTE41FBhseFUGoRndEZN {
     color: var(--miku-text-2) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._31Vq4lzNWs4WikXVr9J4hz {
+._3EoMsOmqpdSZOFkxEPOqTw ._3YghC3pSEVXvRvcefF9imL ._2vGa9R21vKtCftqXaF-zlx {
     color: var(--miku-text) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._3JBYGcszFcaSNXHHSR3kCV ._2o5mE8JpPFOyJ0HwX_y0y7 {
+._3EoMsOmqpdSZOFkxEPOqTw ._3YghC3pSEVXvRvcefF9imL ._2B5YFPWgcdxOGNlMyi6lGQ {
     color: var(--miku-text-3) !important;
     opacity: 1 !important;
 }
 
 /* AwaitingMobileConfText + icons ("confirm in the Steam app" / email) */
-.lat0M-V5X4uYd6Mpm1DJ1 ._3zQ9hnkyXJEv7nN0oBU56M ._2WgwHabhUV3cP6dHQPybw8 {
+._3EoMsOmqpdSZOFkxEPOqTw ._1wyzmoizDxt1_jtJkEWuXa .D2wDvK5PPSMMovLI504J1 {
     color: var(--miku-text) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._3WvDpj9Ng6SQliygcVqlJU, ._3qdu3-d2Nbudcqe-VBrC8r) {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._1LQLTpv1Wc9Og_CjEDhwUz, ._1tKOM6kFMJ5bX02eJaVJuS) {
     color: var(--miku-teal-ink) !important;
 }
 
 /* CodeInputField: 5-character Steam Guard code over underline segments */
-.lat0M-V5X4uYd6Mpm1DJ1 ._3FIQqsD10Zd2yrvusqjP_P ._1gZuGaPQVYkRx3GH4wzBN3 {
+._3EoMsOmqpdSZOFkxEPOqTw ._353PGaprlCZrKXtPv3eWgd ._2CquAyPMwC5fXKV89pBW9n {
     color: var(--miku-text) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._3FIQqsD10Zd2yrvusqjP_P ._8gteGheBcDqzR7sDIhoDN ._3l55OgBEuGxUa2TRX_q6X2 {
+._3EoMsOmqpdSZOFkxEPOqTw ._353PGaprlCZrKXtPv3eWgd ._3No2U7WBgXNv3trBe35u2p ._6dEEAOmICYjdPXfyJVs42 {
     background-color: var(--miku-teal-ink) !important;
     opacity: 0.45 !important;
 }
 
 /* Refresh / failure / waiting-for-token screens */
-.lat0M-V5X4uYd6Mpm1DJ1 :is(._3yMMwjOGjHdmMrJbYQyst3 /* RefreshTitle */, ._2EuR68sQbA8eP01DlIfu6O .g5L61o-ZrHHmwLEugLjLI /* PrimaryHeader */, ._1h8nX6TBOG2MHjtSFDK79v ._2o5mE8JpPFOyJ0HwX_y0y7),
-._1A8Mk6QeC0d7bvHDJIoW7o /* FailureTitle */ {
+._3EoMsOmqpdSZOFkxEPOqTw :is(._3hZJzWdHW0dKM71CLaLgYH /* RefreshTitle */, .yJskfS6UJMuhCvWheUjae ._47Dg51SMNXg14ErliHkeA /* PrimaryHeader */, ._351-GDJL2cMGtsTx06k8N2 ._2B5YFPWgcdxOGNlMyi6lGQ),
+.ckyl8s69ac87iY9v9cBL /* FailureTitle */ {
     color: var(--miku-text) !important;
 }
 
-.lat0M-V5X4uYd6Mpm1DJ1 ._1b-mLIbA7lNlcrNICBrLu6 /* RefreshReason */,
-._3H-JHTYIWOo9uVrF0SXAX0 /* FailureDescription */ {
+._3EoMsOmqpdSZOFkxEPOqTw ._1-59VgMCyMukDhl3Qyl6w3 /* RefreshReason */,
+._3x7ANq5knLAC5UtPzq1u5k /* FailureDescription */ {
     color: var(--miku-text-2) !important;
 }
 
-.J_2Q0Mk09u8np24KfSwHR /* MutedErrorReference */ {
+._36ocUpHPapyxxRIWSdS1NO /* MutedErrorReference */ {
     color: var(--miku-text-3) !important;
 }

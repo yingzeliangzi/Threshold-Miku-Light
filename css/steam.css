@@ -272,6 +272,17 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text-3) !important;
 }
 
+/* Hovering the input: Steam paints it near-black with an inner shadow */
+._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS .DialogTextInputBase:hover {
+    background-color: rgba(255, 255, 255, 0.55) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.3) !important;
+}
+
+._20QAC4WMXm8qFE8waUT5oo ._12vo5L1hsNGdao6_ssuirS .DialogTextInputBase:focus {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.55) !important;
+}
+
 /* AdvancedSearchButton (filter icon next to search) */
 ._1TxHdzOt3OD9ikR3xIseKe {
     color: var(--miku-text-2) !important;
@@ -345,6 +356,18 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     border-radius: 8px;
     color: var(--miku-teal-ink) !important;
     font-weight: 600;
+}
+
+/* Hovering the selected game: Steam paints whatever child is under the
+   mouse navy (rgb(88,111,150)); keep the aqua fill, a touch stronger */
+._2-O4ZG0KrnSrzISHBKctFQ._1UBpAXP408Ez_L_mXhW5Q9:hover {
+    background: rgba(var(--miku-aqua-rgb), 0.95) !important;
+}
+
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ :hover,
+._1UBpAXP408Ez_L_mXhW5Q9 ._2-O4ZG0KrnSrzISHBKctFQ :hover,
+._1UBpAXP408Ez_L_mXhW5Q9._2-O4ZG0KrnSrzISHBKctFQ ._3cMVyOc-9F9Jvp3uKF7_xj {
+    background: transparent !important;
 }
 
 /* Sidebar dropdowns and buttons (advanced filter pane etc.) */
@@ -849,12 +872,6 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text) !important;
 }
 
-/* Highlight.AllAchieved: Steam's own "padding: 10px" on Highlight cancels the
-   room AllAchieved keeps for the ribbon medal, so the medal covers the text */
-._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._2YS0EBJmY2Rvs07zZ90UIJ {
-    padding-inline-start: 54px;
-}
-
 ._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._3jC8om-5Sci_dkUB-6VYiU /* summary text */ {
     color: var(--miku-text) !important;
 }
@@ -863,15 +880,14 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text-3) !important;
 }
 
-._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._3ns9185LizH61StaAXuAp6 /* progress track */ {
-    background: rgba(var(--miku-ink-rgb), 0.15) !important;
+/* ProgressRow > ProgressBar > track (utility classes, #060a0e) > Unlocked
+   fill (Steam blue). Steam's late-2026 layout; the medal now sits in the row */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._6MT2UJrz5bk1FX-saHB-i > div {
+    background-color: rgba(var(--miku-ink-rgb), 0.15) !important;
 }
 
-/* "+25" tile after the locked achievement icons: AdditionalItem.RemainderContainer */
-._1_cYNJSvS6IXs9vLTEYjy5 ._2aVnDeExEHiUFX0zwr_BTO.lZ2c49vTWJ60klQOY9l2K {
-    background: rgba(var(--miku-ink-rgb), 0.12) !important;
-    border: 1px solid var(--glass-line);
-    border-radius: 6px;
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG ._6MT2UJrz5bk1FX-saHB-i ._3WOeX9PHv29FSw4EKlG77h {
+    background-color: var(--miku-teal) !important;
 }
 
 ._1_cYNJSvS6IXs9vLTEYjy5 .lZ2c49vTWJ60klQOY9l2K ._1-H7tKj_QcGHLUbx5wVsGg /* RemainderText */,
@@ -897,9 +913,12 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     background: var(--miku-teal-fill-hover) !important;
 }
 
-/* EventBody (screenshot / news body inside activity cards): already on a card */
+/* EventBody (screenshot / news / review body inside activity cards): already
+   on a card. Steam also frames it with a square 12px shadow, which drew a
+   right-angled box inside the rounded card. */
 .NEMXhMlqXOCJwfgWlHXhT {
     background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Soundtrack details */
@@ -1124,42 +1143,42 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
 /* Store widget inside an article (StoreSaleWidgetContainer): dark gradient
    with grey text in Steam; light glass card here. The discount box keeps
    Steam's green so sales still read as sales. */
-._1KsYSVzmvIfRivBTcx-_GE ._2hhNOdcC6yLwL_rugP3YLf {
+._1KsYSVzmvIfRivBTcx-_GE .t75Je5tr-0U-BmJ9zl5ia {
     background: rgba(var(--miku-aqua-rgb), 0.28) !important;
     border: 1px solid var(--glass-line);
     border-radius: 10px;
     overflow: hidden;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._3AsE5JhqLAiICKUYvZLpap /* StoreSaleWidgetShortDesc */ {
+._1KsYSVzmvIfRivBTcx-_GE ._2VdeXQqeuqu2i4yjprISF- /* StoreSaleWidgetShortDesc */ {
     color: var(--miku-text-2) !important;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._33yqka47vWurNqhnhLJb_m /* Tag */ {
+._1KsYSVzmvIfRivBTcx-_GE ._22IRYeqPYSxG2vqNmALNsh /* Tag */ {
     background: rgba(255, 255, 255, 0.85) !important;
     border: 1px solid var(--glass-line);
     color: var(--miku-teal-ink) !important;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._1qvTFgmehUzbdYM9cw0eS7 /* StoreSaleWidgetRelease */ {
+._1KsYSVzmvIfRivBTcx-_GE ._3MahqhNDkJzVX6vf3ysCbc /* StoreSaleWidgetRelease */ {
     color: var(--miku-text-3) !important;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN /* StoreSalePriceWidgetContainer */ {
+._1KsYSVzmvIfRivBTcx-_GE ._1so1AGD_m_uIBFDEc1ImOu /* StoreSalePriceWidgetContainer */ {
     background: rgba(255, 255, 255, 0.9) !important;
     border: 1px solid var(--glass-line);
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN ._3fFFsvII7Y2KXNLDk_krOW /* StoreOriginalPrice */ {
+._1KsYSVzmvIfRivBTcx-_GE ._1so1AGD_m_uIBFDEc1ImOu ._1odBXcjq8-Q8SFXViJa7c6 /* StoreOriginalPrice */ {
     color: var(--miku-text-3) !important;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._2s-O5T3qJJYR2AUq4b9jIN ._3j4dI1yA7cRfCvK8h406OB /* StoreSalePriceBox */ {
+._1KsYSVzmvIfRivBTcx-_GE ._1so1AGD_m_uIBFDEc1ImOu .kauOU9QnW8Fs0QpxzTBph /* StoreSalePriceBox */ {
     color: var(--miku-teal-ink) !important;
     font-weight: 600;
 }
 
-._1KsYSVzmvIfRivBTcx-_GE ._2_KY_e11FV0ftXR2_7TMmP /* StoreSaleNewItem (新着) */ {
+._1KsYSVzmvIfRivBTcx-_GE .kT9bBl6aBZQ-0xiRlMWzc /* StoreSaleNewItem (新着) */ {
     background: var(--miku-pink-soft) !important;
     color: #5e1a35 !important;
     font-weight: 600;
@@ -1286,6 +1305,299 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text-3) !important;
 }
 
+/* --- Reviews: the "レビュー" card in the right column, and reviews in the
+   activity feed (your own and friends'). Steam gives the verdict strip a
+   dark grey gradient and keeps the verdict, review text and counts light
+   grey, made for its dark theme. */
+
+/* Right column: Container (Steam sets white text that the unclassed
+   children inherit, e.g. 詳細表示 and the like / comment icons) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ii4EUZ1oF_rrhxGNbOcXO {
+    color: var(--miku-text) !important;
+}
+
+/* Verdict strip (thumb, おすすめ, playtime): a light aqua layer.
+   Right column: Highlight.ReviewMetadata; feed: ReviewMetadata */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._2ID9U4dgdadY74FJ3YHhbB,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2ByGWwAeLjYzi1tvvrLIJq {
+    background: rgba(var(--miku-aqua-rgb), 0.38) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.22);
+    border-radius: 8px;
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2ByGWwAeLjYzi1tvvrLIJq {
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+
+/* ReviewDescription / ReviewDescriptionRecommended (おすすめ) */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2xqsVJC_WssHXEpRf5Ocxj,
+._1_cYNJSvS6IXs9vLTEYjy5 ._2txLP3SViQYE1uWpaFAiHD,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1zQfKpvh8tPQjRgzaTklOy {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+}
+
+/* PlayedForTime (レビュー時のプレイ時間) in the feed */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2r-N9f1W6yltOqoSt80m8_ {
+    color: var(--miku-text-2) !important;
+    font-weight: normal;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2ID9U4dgdadY74FJ3YHhbB .BDa6lbTAdR4RwtqgRNUnO {
+    color: var(--miku-text-2) !important;
+    font-weight: normal;
+}
+
+/* Review text: ReviewText / ReviewTextContainer (right column, feed),
+   RecommendationText (feed) */
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._3k8QEeaHvwc2EQBC7nteqS, ._1jdWxpdZEMzN3naR75fLCY, ._3ZTURoVnx3Ld8Hu5Ozd70v, ._3Jcr-Z5xp4fy3VmiMJYIIl, .M0CWY0Qv-A7dKlvdJ44wC) {
+    color: var(--miku-text) !important;
+}
+
+/* 詳細表示 (OverflowBox expand button), ReadMoreLink */
+._1_cYNJSvS6IXs9vLTEYjy5 ._17qc0iT2Uzbk8umX0qMOMJ .TextButton,
+._1_cYNJSvS6IXs9vLTEYjy5 ._3PXtjuR9BXT8eoTD1mYNT8 {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* Likes / comments under a review: CommentsLabel, CommentCount, icons.
+   Right column icons are svg (white), feed icons are white PNGs */
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._2EyEa4GxazAthx5c83AUGO, ._3t5NroT-JH_vw3mOui7IAP) {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._2FYBwhP98BAjYNtW0mlkR7, ._1VRbHxLijhTmcTQek51pUt) {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._2cFKqVak8vsZdvk9mKdum_, .szq-QUt-0soxUfoD65BC7),
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._2cFKqVak8vsZdvk9mKdum_, .szq-QUt-0soxUfoD65BC7) * {
+    color: var(--miku-text-3) !important;
+    fill: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._17u7kJzj4gno8unUOzRaz-:hover :is(._2EyEa4GxazAthx5c83AUGO, ._2FYBwhP98BAjYNtW0mlkR7),
+._1_cYNJSvS6IXs9vLTEYjy5 ._17u7kJzj4gno8unUOzRaz-:hover :is(._2cFKqVak8vsZdvk9mKdum_, .szq-QUt-0soxUfoD65BC7) * {
+    color: var(--miku-teal-ink) !important;
+    fill: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._1yGY_DN6vXqGsrB619meyS, ._2Xa07n4piP3UcfAlcX2Sym) {
+    filter: invert(0.62);
+}
+
+/* No review yet: InnerContainer ("このゲームを推薦しますか？") and the
+   thumbs VoteButtons, both near-black in Steam */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1dW9dwCqUNPVQZnj-WZMj_ {
+    background: rgba(var(--miku-aqua-rgb), 0.3) !important;
+    border-radius: 8px;
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3jaOUPXgTvdkXWXaHD0hq0 {
+    background: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.35);
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3jaOUPXgTvdkXWXaHD0hq0:hover {
+    background: rgba(var(--miku-aqua-rgb), 0.6) !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .wTCesdvNchS3DQ22NNDwe /* RecommendGame */ {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3RAZjAKj6G9cfAcjGWVjAx /* ChangedYourMind */ {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2dMi-HQygJER0QL_AaQNIj /* AdditionalPlaytimeReminder */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* --- Other activity-feed items with light grey text --- */
+
+/* Links in a headline (game name, other user) */
+._1_cYNJSvS6IXs9vLTEYjy5 .QCKBqF2k_sRLcXJ5qQIEl a /* EventHeadline a */,
+._1_cYNJSvS6IXs9vLTEYjy5 ._3698jU4IwAALpt9QeZPqqd /* WishlistLink */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* ActivityPublishedStatus (a status post) > StatusTime */
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ygGwhh7ez8rniqAnS8BeW {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ygGwhh7ez8rniqAnS8BeW a {
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ygGwhh7ez8rniqAnS8BeW .RYyD5fEHPeuLP7eKiYCce {
+    color: var(--miku-text-3) !important;
+}
+
+/* Shared screenshot / video: ScreenshotCaption, VideoTitle(Label); with a
+   caption Steam adds a dark gradient strip with Steam-blue text */
+._1_cYNJSvS6IXs9vLTEYjy5 ._23HTprMKEMzlqooblsDngK,
+._1_cYNJSvS6IXs9vLTEYjy5 ._1d0ijEIDvERoDLj_8CO6pH {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .bJ667ZKP4rRDSW6UkqLNx {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._23HTprMKEMzlqooblsDngK, ._1d0ijEIDvERoDLj_8CO6pH).tLc3yNucBVuLCkXDIvOzj /* HasCaption */ {
+    background-image: none !important;
+    background-color: rgba(var(--miku-aqua-rgb), 0.3) !important;
+    border-radius: 6px;
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .IYDCY3MhJV7rB4ftg78kA /* CaptionQuote */ {
+    color: rgba(var(--miku-teal-rgb), 0.7) !important;
+}
+
+/* Badge earned: BadgeName / BadgeLevel */
+._1_cYNJSvS6IXs9vLTEYjy5 .rmU5gSpGCyzzdzzL66_h {
+    color: var(--miku-text) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1p820T7Fx7HLM4wdPqJd3Z {
+    color: var(--miku-text-3) !important;
+}
+
+/* Game capsules in a feed carousel (StoreGameCapsule): dark card */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1OYOtnizQRw4vaYm_q8Oul {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 6px;
+    color: var(--miku-text) !important;
+}
+
+/* Text-only news: summary, subtitle, time, icon; DayPosted on big banners */
+._1_cYNJSvS6IXs9vLTEYjy5 :is(._2OrhETq9wuxc0cGgVsmjm8, ._3ZUP3RJr6PRn6IzODoxZDx, ._1WX1kNsKXbF3qneCHh4kTv) {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .ZzN4Se_gAvEeiHXFJBdVK /* PartnerEventTextOnly_Time */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._1-llQnFWxBo1kyWdkDFyXp svg path {
+    fill: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 .ElNfQSVSKeMaOVHygQ4Nh /* DayPosted */ {
+    color: var(--miku-text-3) !important;
+}
+
+/* "+5" tile after the achievement icons in the right column (all
+   achievements unlocked): white text on the light tile */
+._1_cYNJSvS6IXs9vLTEYjy5 ._3KfHV-wUo5sKXQAsJZO5Uw {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+/* The feed's "+5" (RemainderContainer > RemainderText) sits on a darkened,
+   blurred achievement icon instead: white */
+._1_cYNJSvS6IXs9vLTEYjy5 ._3rSv3w2J_INq58pcvME5iJ.lZ2c49vTWJ60klQOY9l2K ._1-H7tKj_QcGHLUbx5wVsGg {
+    color: #fff !important;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(var(--miku-deep-rgb), 0.8);
+}
+
+/* --- トレーディングカード card: Highlight.BadgeSection (badge, level, XP) is
+   Steam's dark grey gradient with light grey text; CardContainer (the frame
+   behind each uncollected card) is #394149 */
+._1_cYNJSvS6IXs9vLTEYjy5 ._38t1mljBjmJfqjpVzMT1CG._3g3jmTgyAQZeyo10abbOmV {
+    background: rgba(var(--miku-aqua-rgb), 0.38) !important;
+    border: 1px solid rgba(var(--miku-teal-rgb), 0.22);
+    border-radius: 8px;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._3ca2d1qaIzPNm79jqRbi0J /* BadgeName */ {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2PMlMbFfEmv1xThuy6Vgqv /* BadgeLevel (100経験値) */ {
+    color: var(--miku-text-3) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2H1MiFt6wMYuJDB8kZElFs /* CardsLeft */ {
+    color: var(--miku-text-2) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2DUDvAhXoEOSsd8GTIsKLY /* CardContainer */ {
+    background-color: rgba(var(--miku-ink-rgb), 0.14) !important;
+    border-radius: 4px;
+}
+
+/* --- コミュニティコンテンツ: SectionHeader.HeaderStyles paints a blue-violet
+   radial strip behind the heading; LoadContentButton is grey on grey */
+._1_cYNJSvS6IXs9vLTEYjy5 ._1Q2q_tQ9_Eq8YdEHNAHS3F._2lNdDLgjQdeBXmMlPO8lvq {
+    background: none !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2RSxEUPGL8Bj016q0Sp3Hx /* LoadContentButton */ {
+    background: rgba(255, 255, 255, 0.85) !important;
+    box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.35);
+    border-radius: 6px;
+    color: var(--miku-teal-ink) !important;
+}
+
+._1_cYNJSvS6IXs9vLTEYjy5 ._2RSxEUPGL8Bj016q0Sp3Hx:hover {
+    background: var(--miku-teal-fill) !important;
+    color: #fff !important;
+}
+
+/* --- ゲーム終了後の概要 (post-game summary at the top of the page) ---
+   SummaryCarouselContainer: Steam's dark translucent box; light glass
+   card here, like the other cards on the page */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2MKO5j24KqDdD-92hH5FXi {
+    background: rgba(255, 255, 255, 0.62) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px !important;
+    box-shadow: var(--glass-shadow);
+}
+
+/* BoxCarousel::after: a black inner shadow framing the box */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2MKO5j24KqDdD-92hH5FXi::after {
+    box-shadow: none !important;
+}
+
+/* HeaderPageControls > PageClickContainer: ‹ › × drawn in white */
+._1_cYNJSvS6IXs9vLTEYjy5 ._2o5c89vAnrXN8C60QTSMqO .bsNegRKT1Hbv4tqHrOk9- svg :is(polyline, line, path) {
+    stroke: var(--miku-teal-ink) !important;
+}
+
+/* GamePlaySummaryHeader: same as the other section headings */
+._1_cYNJSvS6IXs9vLTEYjy5 .P_gQ8X-yCsgXeXpP68KS0 {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(var(--miku-mist-rgb), 0.95), 0 0 2px rgba(var(--miku-mist-rgb), 0.9);
+}
+
+/* EventHeaderBlock (今日), achievement Stats (93.9%のプレイヤー…),
+   separators */
+._2MKO5j24KqDdD-92hH5FXi ._3ugJ_KPVlOd9oeYm-fYC_w {
+    color: var(--miku-text-2) !important;
+}
+
+._2MKO5j24KqDdD-92hH5FXi .VKo9pLPbwpF3xIzL8Wnou {
+    color: var(--miku-text-3) !important;
+}
+
+._2MKO5j24KqDdD-92hH5FXi :is(._1ms0i1dxwTqiqcXV59nenw:not(._1I8mXP1uH7vUUbbc6_-nHR), ._284XbL-B7aHiK4XgyI2DPS) {
+    background-color: rgba(var(--miku-teal-rgb), 0.3) !important;
+}
+
 /* Friend activity container - fill parent width */
 ._3cntzF30xAuwn1ARWJjvCb._1uS70KI6ZbUE94jUB27ioB {
     width: 100% !important;
@@ -1327,6 +1639,11 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
 ._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z ._1J1LQ0vGtpM3n0xw7XwQM6 /* CollectionLabel */ {
     color: var(--miku-teal-ink) !important;
     font-weight: 600;
+}
+
+/* Message (ここにドラッグしてホールドすると…, while dragging a game): white */
+._3IWn-2rn7x98o5fDd0rAxb._2_dwxMdH27kBf-gQ3Wrk7z ._1XmVtR1hMvJmgGg2ltacUl {
+    color: var(--miku-text-2) !important;
 }
 
 /* --- Inside one collection (/library/collection/...) ---
