@@ -29,7 +29,7 @@
 
 ## 简介
 
-Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，以 **初音未来** 的经典青绿配色（`#39C5BB`）为主调，将 Steam 默认的深色 UI 改造为清新明亮的轻透明风格。皮肤覆盖游戏库、游戏详情、收藏夹、下载、好友列表、聊天窗口、设置页面和各种菜单，全部由 CSS 实现（不再需要 JavaScript 动态注入）。(转人工)
+Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，以 **初音未来** 的经典青绿配色（`#39C5BB`）为主调，将 Steam 默认的深色 UI 改造为清新明亮的轻透明风格。皮肤覆盖游戏库、游戏详情、收藏夹、下载、好友列表、聊天窗口、设置页面和各种菜单，几乎全部由 CSS 实现（唯一的脚本只用来让第一次打开的商店 / 社区页面也显示背景）。(转人工)
 
 ---
 
@@ -47,7 +47,7 @@ Threshold-Miku Light 是一款适配 Steam 客户端的亮色系主题皮肤，�
    Steam\steamui\skins\
    ```
 2. 打开 SFP → Settings → Steam Skin → 选择 **Miku**（如果是 Millennium 则选择**Threshold-Miku-Light**)。
-3. 勾选 **注入CSS**（**注入Javascript** 可选，皮肤的 JS 文件目前是空的）。
+3. 勾选 **注入CSS** 和 **注入Javascript**（唯一的脚本让第一次打开的商店 / 社区页面也显示背景，其余全部是 CSS）。
 4. 完全退出 Steam（Steam → 退出）后重新打开。
 
 ### 文件结构

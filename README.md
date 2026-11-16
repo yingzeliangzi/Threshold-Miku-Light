@@ -31,7 +31,7 @@ The screenshots use the Japanese Steam client; the skin works with any Steam lan
 
 ## About
 
-Threshold-Miku Light is a light theme for the Steam client. Built around **Hatsune Miku**'s classic teal (`#39C5BB`), it turns Steam's default dark UI into a fresh, bright, lightly translucent look. The skin covers the library, game pages, collections, downloads, the friends list, chat windows, settings and all kinds of menus, entirely in CSS (no JavaScript injection needed anymore). (Connecting you to a human agent…)
+Threshold-Miku Light is a light theme for the Steam client. Built around **Hatsune Miku**'s classic teal (`#39C5BB`), it turns Steam's default dark UI into a fresh, bright, lightly translucent look. The skin covers the library, game pages, collections, downloads, the friends list, chat windows, settings and all kinds of menus, almost entirely in CSS (the one script only makes the background show on the first store / community page you open). (Connecting you to a human agent…)
 
 ---
 
@@ -49,7 +49,7 @@ Threshold-Miku Light is a light theme for the Steam client. Built around **Hatsu
    Steam\steamui\skins\
    ```
 2. Open SFP → Settings → Steam Skin → choose **Miku** (for Millennium, choose **Threshold-Miku-Light**).
-3. Enable **Inject CSS** (**Inject JavaScript** is optional; the skin's JS files are currently empty).
+3. Enable **Inject CSS** and **Inject JavaScript** (the one script makes the background show on the first store / community page you open; everything else is CSS).
 4. Fully quit Steam (Steam → Exit) and start it again.
 
 ### File structure
