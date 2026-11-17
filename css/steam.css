@@ -1723,9 +1723,26 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     background: url(../imgs/downloadBG.jpg) no-repeat center center / cover !important;
 }
 
-/* ItemListWrapper */
+/* ItemListWrapper: draws the glass sheet behind the list (see ItemLists below).
+   z-index 0 gives it its own stacking context, so the sheet (z-index -1) stays
+   above the page artwork and below the rows. */
 ._1l0LmmqDUXH19SjfELddn7 {
     background: transparent !important;
+    z-index: 0;
+}
+
+._1l0LmmqDUXH19SjfELddn7::before {
+    content: "";
+    position: absolute;
+    inset: 12px 16px 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--glass);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-bottom: none;
+    border-radius: 14px 14px 0 0;
+    box-shadow: var(--glass-shadow);
 }
 
 /* TopSection > Section ("now downloading" block, also when empty) */
@@ -1735,9 +1752,29 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     border-bottom: 1px solid var(--glass-line);
 }
 
-/* ItemLists > Section (queue / finished lists) - let the artwork show */
-._1ugNiylO2vKXhirsGocAxa ._3Mbhnlk1Go2j8yCdjthzc7 {
+/* ItemLists (queue / finished lists, the page's scroller) sit on one continuous
+   glass sheet. A separate strip per title and per row turned into a zebra of
+   white bands over the busy sky; on one sheet the sections are just headings.
+   No backdrop-filter / filter / transform here or on any ancestor: Steam drags
+   rows with position: fixed, and those properties would make the list (not the
+   window) the reference box, so the dragged row lands far from the pointer. The
+   blur lives on ItemListWrapper::before instead. */
+._1ugNiylO2vKXhirsGocAxa {
     background: transparent !important;
+    border-radius: 14px 14px 0 0;
+    margin: 12px 16px 0 !important;
+    height: calc(100% - 12px) !important;
+}
+
+._1ugNiylO2vKXhirsGocAxa > ._3Mbhnlk1Go2j8yCdjthzc7 /* Section */ {
+    background: transparent !important;
+    margin: 0 0 10px !important;
+    padding-top: 6px !important;
+}
+
+._1ugNiylO2vKXhirsGocAxa .OINnOU8K5HzPe2nzczpZi /* SectionItems */ {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Speed stats in the top-right (ネットワーク / 最大 / ディスク使用量) */
@@ -1780,19 +1817,21 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text) !important;
 }
 
-/* SectionTitle (このあと / 完了 ...): downloadBG is a bright, busy sky, so the
-   title keeps a glass strip (no side bar) to stay readable */
-.qq2xItSXjpCsNrcxyPJtO {
-    background: var(--glass) !important;
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
+/* SectionTitle (このあと / 予定 / 完了 ...): a teal heading on the sheet with the
+   usual hairline fading out to the right */
+._1ugNiylO2vKXhirsGocAxa .qq2xItSXjpCsNrcxyPJtO {
+    background: transparent !important;
+    padding: 0 18px !important;
 }
 
 .qq2xItSXjpCsNrcxyPJtO .TK9wvF55dyA6RcOclozC8 /* Title */ {
-    color: var(--miku-text) !important;
+    color: var(--miku-teal-ink) !important;
     font-weight: 600;
+}
+
+._1ugNiylO2vKXhirsGocAxa .qq2xItSXjpCsNrcxyPJtO ._1CTr1yKRkOXnJ4gSS1-1A3 /* Divider */ {
+    background: var(--miku-hairline) !important;
+    height: 1px !important;
 }
 
 .qq2xItSXjpCsNrcxyPJtO ._1CGnw50aAma6AYKF51Qzsm /* Count */,
@@ -1800,23 +1839,63 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     color: var(--miku-text-2) !important;
 }
 
-/* EmptyTransfers text */
-._1zv2D9H37p5yuOJNsCemS3 ._1nCT-M7nZcoNzedbVzbXha {
-    color: var(--miku-text-2) !important;
-    background: var(--glass);
-    padding: 4px 12px;
-    border-radius: 8px;
-    display: inline-block;
+/* EmptyTransfers ("no downloads waiting"): one quiet line instead of a tall box */
+._1ugNiylO2vKXhirsGocAxa ._1zv2D9H37p5yuOJNsCemS3 {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* SectionItem (each queued / finished download row) */
-._1VNuYHM6BPBOJspC6zPf5r {
-    background: var(--glass) !important;
-    border-radius: 8px;
+._1ugNiylO2vKXhirsGocAxa ._1zv2D9H37p5yuOJNsCemS3 ._1nCT-M7nZcoNzedbVzbXha {
+    background: none !important;
+    color: var(--miku-text-3) !important;
+    font-size: 13px;
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 6px 18px 4px !important;
 }
 
-._1VNuYHM6BPBOJspC6zPf5r:hover {
-    background: var(--glass-strong) !important;
+/* SectionItem (each queued / finished download row): no box of its own, a
+   soft aqua highlight on hover */
+._1ugNiylO2vKXhirsGocAxa ._1VNuYHM6BPBOJspC6zPf5r {
+    background: transparent !important;
+    border-radius: 10px !important;
+    margin: 0 8px !important;
+    padding-left: 10px !important;
+}
+
+._1ugNiylO2vKXhirsGocAxa ._1VNuYHM6BPBOJspC6zPf5r:hover {
+    background: rgba(var(--miku-aqua-rgb), 0.38) !important;
+}
+
+._1ugNiylO2vKXhirsGocAxa ._1VNuYHM6BPBOJspC6zPf5r ._2pjdgFqp04LlhgtFS0rQn_ /* capsule */ {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Dragging a row: the lifted row becomes a solid card (rows have no box of
+   their own), and the drop targets are outlined in teal instead of Steam blue
+   with a navy fill */
+._1ugNiylO2vKXhirsGocAxa ._1VNuYHM6BPBOJspC6zPf5r._3-SbBb63lDnu6LzKV-q3Cg /* Dragging */ {
+    background: rgba(255, 255, 255, 0.94) !important;
+    box-shadow: 0 10px 28px rgba(var(--miku-deep-rgb), 0.28), 0 0 0 1px rgba(var(--miku-teal-rgb), 0.45) !important;
+}
+
+._1ugNiylO2vKXhirsGocAxa ._1VNuYHM6BPBOJspC6zPf5r ._14DhZoqwtCm4l0yDeN6QZe /* DragHandle */ {
+    color: var(--miku-teal-ink) !important;
+}
+
+/* Drop targets: the lists below and the (hidden) Active list behind the speed
+   graph at the top, where a dropped game starts downloading right away */
+.OINnOU8K5HzPe2nzczpZi._2m6Q3ca-wXeLIVShFCO51T /* DropOption */ {
+    border-color: rgba(var(--miku-teal-rgb), 0.75) !important;
+    border-radius: 10px;
+}
+
+.OINnOU8K5HzPe2nzczpZi._2m6Q3ca-wXeLIVShFCO51T.d9VKGABvFZQGmdqtaicMo /* DragOver */ {
+    border-color: var(--miku-teal) !important;
+    background: rgba(var(--miku-aqua-rgb), 0.32) !important;
 }
 
 ._1VNuYHM6BPBOJspC6zPf5r ._35eOQ6EeVHNV5HGBrJ1-Vu /* Name */ {

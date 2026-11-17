@@ -148,7 +148,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Collections page | The title is a glass pill, "Create a new collection" is a dashed glass card |
 | Inside a collection | Vanilla Steam's dark blue background is replaced by the same blurred veil as the game page, so the background art shows; the title is followed by a thin line, and the sort dropdown is white; section headers that stick to the top while scrolling are frosted glass |
 | Cover hover card | The details card shown when hovering a game cover is light mist tinted with the game's own colors, with rounded corners, dark text and a teal "Playtime" heading (dark slate in vanilla Steam) |
-| Downloads page | `downloadBG.jpg` covers the whole page, the speed area at the top is frosted glass, and the queue below is transparent so the background shows through |
+| Downloads page | `downloadBG.jpg` covers the whole page, the speed area at the top is frosted glass, and the queue below sits on one continuous glass sheet with teal section headings (no separate box per row) |
 
 ### Friends list
 | Item | Details |
@@ -235,7 +235,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Friends list: every row had a white block on top, messy
 - Menus: grey background + bright blue hover, didn't fit the theme
 
-Every selector has been checked against the current Steam version (all 572 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
+Every selector has been checked against the current Steam version (all 579 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
 
 ---
 
