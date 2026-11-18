@@ -181,6 +181,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Recordings & screenshots | Frosted light header with white glass buttons (the current view in teal); the game / media pickers, session view and screenshot viewer are light too (dark slate in vanilla Steam); the card shown while hovering a screenshot is light, and the cloud on uploaded screenshots is white with a dark edge, visible on dark shots |
 | Product activation | In "Activation successful", the game's name is highlighted in teal |
 | Popup windows | Windows such as Recordings & screenshots or game Properties fill the window edge to edge with square corners, like the window itself; the thin line along their top is Miku teal |
+| Game Properties | The DLC list, the game versions & betas table and the Workshop list are light glass tables with aqua header rows; the selected version is teal. In Customization the logo sits on a light checkerboard with a thin dark outline, so white logos stay visible |
 
 ### Sign-in window
 | Item | Details |
@@ -230,12 +231,13 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Product activation: the activated game's name was no longer highlighted
 - Popup windows: a rounded panel inside the square window left a square corner behind each curve
 - Settings / game properties: the teal bar on the selected item in the left list is now a rounded light aqua background
+- Game properties: the DLC list, the game versions & betas table and the Workshop list were dark with dark text, completely unreadable; logos with white lettering disappeared on the light Customization page
 - Friends list: after opening search, the input box had a dark grey frame + a black inner shadow and stayed like that even after clearing the text; afterwards the "Friends" tab label got squeezed onto two lines
 - Settings – all pages: setting rows were dark grey cards with black text, completely unreadable
 - Friends list: every row had a white block on top, messy
 - Menus: grey background + bright blue hover, didn't fit the theme
 
-Every selector has been checked against the current Steam version (all 579 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
+Every selector has been checked against the current Steam version (all 606 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
 
 ---
 

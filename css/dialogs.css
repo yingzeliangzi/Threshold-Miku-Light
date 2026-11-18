@@ -724,6 +724,155 @@
     color: var(--miku-teal-ink) !important;
 }
 
+/* --- Game Properties (right-click a game > Properties) ---
+   Steam paints the DLC list, the game version / beta table and the Workshop
+   list #23262e / #2c303a with #3d4450 headers, and ".DialogContent *" turns
+   all their text dark, so nothing in them could be read. Light glass tables,
+   aqua header rows, teal for the selected version. */
+.DialogContent :is(._3sXdOJ9DEh5zdS54_ptwgW /* DlcGrid */, ._3jWpi0kJp_piNEvdMufMmy /* BetasTable */, ._3SPlcoJKzx2TM4WVMW9Xpt /* WorkshopItemRowsScroll */) {
+    background: rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 10px;
+    box-shadow: none !important;
+}
+
+.DialogContent :is(._3sXdOJ9DEh5zdS54_ptwgW, ._3jWpi0kJp_piNEvdMufMmy, ._3SPlcoJKzx2TM4WVMW9Xpt)::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--miku-teal-rgb), 0.45) !important;
+}
+
+.DialogContent :is(._3sXdOJ9DEh5zdS54_ptwgW, ._3jWpi0kJp_piNEvdMufMmy, ._3SPlcoJKzx2TM4WVMW9Xpt)::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--miku-teal-rgb), 0.7) !important;
+}
+
+/* Header rows: DlcHeader (sortable column titles), BetaHeaderRow, WorkshopHeader */
+.DialogContent :is(._1SKB0Xc7OpWlOlr-wSi8ho, .X3pN_ESh0aoxmm2nK65Hu, ._2TJyz1F52D-aTOe8RdwFIK) {
+    background: rgba(var(--miku-aqua-rgb), 0.55) !important;
+    font-weight: 600;
+}
+
+.DialogContent ._1SKB0Xc7OpWlOlr-wSi8ho:hover {
+    background: rgba(var(--miku-aqua-rgb), 0.85) !important;
+}
+
+.DialogContent .X3pN_ESh0aoxmm2nK65Hu /* BetaHeaderRow (sits above BetasTable) */ {
+    border-radius: 10px;
+    border: none !important;
+}
+
+/* DLC rows: name links teal on hover, date and size a step softer */
+.DialogContent ._3sXdOJ9DEh5zdS54_ptwgW .bP2Ipgau61tQ0ZGNU5LM /* Name */:hover,
+.DialogContent ._3sXdOJ9DEh5zdS54_ptwgW .bP2Ipgau61tQ0ZGNU5LM:hover * {
+    color: var(--miku-teal-ink) !important;
+}
+
+.DialogContent ._3sXdOJ9DEh5zdS54_ptwgW :is(.dR1gzt2Xg4CjsE9T0Q4Lc /* Added */, ._2tvvLzzndDzD9b0ORuVNjk /* SizeDisk */) {
+    color: var(--miku-text-2) !important;
+}
+
+/* Version rows (BetaRow: OddRow / EvenRow / Selected) */
+.DialogContent ._3jWpi0kJp_piNEvdMufMmy ._1LCoWsUrJmZHr7SVX0luaG {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(var(--miku-ink-rgb), 0.08) !important;
+}
+
+.DialogContent ._3jWpi0kJp_piNEvdMufMmy ._1LCoWsUrJmZHr7SVX0luaG._231y-BrqpRH85PNLgfseSR /* EvenRow */ {
+    background: rgba(var(--miku-aqua-rgb), 0.14) !important;
+}
+
+.DialogContent ._3jWpi0kJp_piNEvdMufMmy ._1LCoWsUrJmZHr7SVX0luaG:hover {
+    background: rgba(var(--miku-aqua-rgb), 0.32) !important;
+}
+
+.DialogContent ._3jWpi0kJp_piNEvdMufMmy ._1LCoWsUrJmZHr7SVX0luaG.dB7T-kfL2b2b0jd9Zg9fa /* Selected */ {
+    background: rgba(var(--miku-aqua-rgb), 0.5) !important;
+}
+
+.DialogContent ._3jWpi0kJp_piNEvdMufMmy ._1LCoWsUrJmZHr7SVX0luaG.dB7T-kfL2b2b0jd9Zg9fa ._2d_FE9TOpHt1FsYhLEpjCp /* BetaRadioButton */ {
+    border-left-color: var(--miku-teal) !important;
+}
+
+.DialogContent ._2d_FE9TOpHt1FsYhLEpjCp input {
+    accent-color: var(--miku-teal-ink);
+}
+
+.DialogContent ._1LCoWsUrJmZHr7SVX0luaG.dB7T-kfL2b2b0jd9Zg9fa .a19KifKnB2YZP_hYoFsar /* NameText */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 600;
+}
+
+.DialogContent ._1LCoWsUrJmZHr7SVX0luaG :is(._3OwCSCZC5BPFq4X7PLVzKp /* DescText */, ._3FgV6oQH8JCN-J9BPCCs14 /* BetaLastUpdated */),
+.DialogContent .TlSg5YiFT0KKv6hj9YlKm /* DefaultOptionText */ {
+    color: var(--miku-text-2) !important;
+}
+
+/* Workshop rows */
+.DialogContent ._3SPlcoJKzx2TM4WVMW9Xpt .pht3SaejGcAJEjNG8d6nd /* WorkshopItemRow */ {
+    background: transparent !important;
+    border-bottom: 1px solid rgba(var(--miku-ink-rgb), 0.08);
+}
+
+.DialogContent ._3SPlcoJKzx2TM4WVMW9Xpt .pht3SaejGcAJEjNG8d6nd._2xFFnTn_oVln8SzeVQVvZ /* IsDragging */ {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 6px 18px rgba(var(--miku-deep-rgb), 0.25) !important;
+}
+
+.DialogContent ._3SPlcoJKzx2TM4WVMW9Xpt ._1Apujm9YkB1MT7tiEHslUE /* PreviewArt */ {
+    background-color: rgba(var(--miku-ink-rgb), 0.10) !important;
+}
+
+.DialogContent ._3SPlcoJKzx2TM4WVMW9Xpt ._2AQozUFcCfBh1F-oJjSTzj /* WorkshopItemAuthorSnapshot */ {
+    background-color: rgba(var(--miku-aqua-rgb), 0.45) !important;
+}
+
+.DialogContent ._3SPlcoJKzx2TM4WVMW9Xpt ._2AQozUFcCfBh1F-oJjSTzj._109YF7t1pD9IURC8Yr7a6K /* UsedAuthorSnapshot */ {
+    background-color: rgba(var(--miku-teal-rgb), 0.45) !important;
+}
+
+/* Privacy > the DLC privacy expand button (PrefDetailsToggle): a .Small
+   DialogButton, which the Secondary button style above doesn't cover, so it
+   stayed Steam's #3d4450 square */
+.DialogContent .Htkkt1r5GiHi-0US69HQ_.DialogButton {
+    background: rgba(255, 255, 255, 0.78) !important;
+    border: 1.5px solid rgba(var(--miku-teal-rgb), 0.55) !important;
+    border-radius: 8px !important;
+}
+
+.DialogContent .Htkkt1r5GiHi-0US69HQ_.DialogButton:hover {
+    background: var(--miku-teal-wash-strong) !important;
+}
+
+.DialogContent .Htkkt1r5GiHi-0US69HQ_ svg :is(path, polygon, polyline, line) {
+    fill: var(--miku-teal-ink) !important;
+}
+
+/* Controller > Steam Input status grid: grey rgba(59,63,72,.2) box */
+.DialogContent ._3lj3-GDYOlcoIFB3fFo1ko /* SteamInputStatusGrid */ {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 10px;
+}
+
+/* Customization > Logo: logos are transparent PNGs, many with white lettering
+   made for the dark hero art, so on the light dialog they disappeared. A soft
+   checkerboard (the usual "transparent" sign) sits behind the logo and a thin
+   dark outline keeps light logos legible; dark logos look as before. */
+.DialogContent ._1FVCHX9qE_3k4o1H8yYRod.OrlARf9Hm_q0bVt_Wh18d /* Artwork.Logo */ {
+    background-color: #e6ecef;
+    background-image:
+        linear-gradient(45deg, #cfd9de 25%, transparent 25%, transparent 75%, #cfd9de 75%),
+        linear-gradient(45deg, #cfd9de 25%, transparent 25%, transparent 75%, #cfd9de 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    border: 1px solid var(--glass-line);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+
+.DialogContent ._1FVCHX9qE_3k4o1H8yYRod.OrlARf9Hm_q0bVt_Wh18d img._2PkdSkPEHTZqCS7c0Tx25X /* Image */ {
+    filter: drop-shadow(0 0 1px rgba(var(--miku-deep-rgb), 0.75)) drop-shadow(0 1px 3px rgba(var(--miku-deep-rgb), 0.45));
+}
+
 /* Leave Millennium's own settings dialog alone */
 .MillenniumSettings .DialogContent,
 .MillenniumSettings .DialogContent * {
