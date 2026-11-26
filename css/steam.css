@@ -183,6 +183,84 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
 }
 
 
+/* --- Right-click menus inside the main window ---
+   The game list's right-click menu (and its 追加 / 削除 / 管理 submenus)
+   opens inside the Steam window rather than as its own popup, so it never
+   gets menus.css and stayed Steam's dark slate. Same light glass here. */
+
+/* contextMenu (the visible box here; LibraryContextMenu etc.) */
+.PP7LM0Ow1K5qkR8WElLpt {
+    background: rgba(248, 252, 253, 0.97) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--miku-ink-rgb), 0.22) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 24px rgba(var(--miku-deep-rgb), 0.18) !important;
+    color: var(--miku-text) !important;
+    padding: 0 !important; /* Steam's 4px on top of ours left a wide margin */
+}
+
+/* contextMenuContents */
+.PP7LM0Ow1K5qkR8WElLpt ._2EstNjFIIZm_WUSKm5Wt7n {
+    background: transparent !important;
+    padding: 3px 0 !important;
+}
+
+/* contextMenuItem: rounded, inset 3px so the hover fill follows the box's
+   rounded corners (10px box radius - 3px = 7px) */
+.PP7LM0Ow1K5qkR8WElLpt ._1n7Wloe5jZ6fSuvV18NNWI {
+    color: var(--miku-text) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 7px !important;
+    margin: 0 3px !important;
+}
+
+/* Hover / keyboard focus: light aqua + teal text, so it doesn't look like
+   the solid teal Play item */
+.PP7LM0Ow1K5qkR8WElLpt ._1n7Wloe5jZ6fSuvV18NNWI:hover,
+.PP7LM0Ow1K5qkR8WElLpt ._1n7Wloe5jZ6fSuvV18NNWI._18z-3vkWndCBO5WJgFldRK /* .active */ {
+    background: rgba(var(--miku-aqua-rgb), 0.6) !important;
+    color: var(--miku-teal-ink) !important;
+}
+
+/* ContextMenuAction.Play: Steam's green gradient, teal like the Play button */
+.PP7LM0Ow1K5qkR8WElLpt .Z5iAXBkRFGnwpXsO8ANTl.Play {
+    background: var(--miku-teal-fill) !important;
+    color: #ffffff !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt .Z5iAXBkRFGnwpXsO8ANTl.Play:hover {
+    background: var(--miku-teal-fill-hover) !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt ._1n7Wloe5jZ6fSuvV18NNWI.disabled {
+    color: var(--miku-text-3) !important;
+    background: transparent !important;
+}
+
+/* Separators: ContextMenuSeparator / ContextMenuHRSeparator */
+.PP7LM0Ow1K5qkR8WElLpt .WUOrULWKkGLl3ZUQdDXg8,
+.PP7LM0Ow1K5qkR8WElLpt .IjIBR_wDDi2N77Oz4KAT4,
+.PP7LM0Ow1K5qkR8WElLpt hr {
+    border: none !important;
+    background: rgba(var(--miku-ink-rgb), 0.15) !important;
+    height: 1px !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 4px 14px !important;
+}
+
+/* SubMenu arrow */
+.PP7LM0Ow1K5qkR8WElLpt ._114nFoGF7tZ4PpremDP2w0 {
+    color: var(--miku-text-3) !important;
+    fill: var(--miku-text-3) !important;
+}
+
+.PP7LM0Ow1K5qkR8WElLpt ._1n7Wloe5jZ6fSuvV18NNWI:hover ._114nFoGF7tZ4PpremDP2w0 {
+    color: var(--miku-teal-ink) !important;
+    fill: var(--miku-teal-ink) !important;
+}
+
 /* =====================================================================
    3. Library sidebar (game list)
    ===================================================================== */
@@ -333,6 +411,13 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
 
 ._2-O4ZG0KrnSrzISHBKctFQ._5YTBr7WwIfzVU_3nUtAph /* .Uninstalled */ {
     color: var(--miku-text-3) !important;
+}
+
+/* Installed games in Miku teal, so they stand apart from the grey
+   uninstalled ones at a glance (Running / Updating below still win) */
+._2-O4ZG0KrnSrzISHBKctFQ._2ws8DONH9fxQjPXEmRpujE /* .Installed */ {
+    color: var(--miku-teal-ink) !important;
+    font-weight: 500;
 }
 
 ._2-O4ZG0KrnSrzISHBKctFQ._10GdoB3tQXXGFToQ3yY_SK /* .Running */ {
@@ -826,6 +911,15 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
 /* ...except the activity column: it is only a list, each post and event
    inside is its own card, so the column itself stays clear */
 ._1_cYNJSvS6IXs9vLTEYjy5 ._31ptFGGMZrSQc5BCX1e5lm:has(._1JlC29Ic6L-QvL-39X_d-X, .UVeN0kaD3zv1feMj_mMw5) {
+    background: transparent !important;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* ...and Community Content (CommunityContentContainer): until it is loaded
+   it only holds the "View community content" button, which sat on a long
+   empty strip */
+._1_cYNJSvS6IXs9vLTEYjy5 .A6G1leLXs7Vqw45hoXg-l ._31ptFGGMZrSQc5BCX1e5lm {
     background: transparent !important;
     border-color: transparent;
     box-shadow: none;
@@ -1550,6 +1644,11 @@ body._2LxgdMcpWJRjkxZKbmeEEb /* v6 */ {
     box-shadow: inset 0 0 0 1px rgba(var(--miku-teal-rgb), 0.35);
     border-radius: 6px;
     color: var(--miku-teal-ink) !important;
+}
+
+/* No strip behind it any more: line its left edge up with the heading */
+._1_cYNJSvS6IXs9vLTEYjy5 .A6G1leLXs7Vqw45hoXg-l ._2RSxEUPGL8Bj016q0Sp3Hx {
+    margin-left: 9px !important;
 }
 
 ._1_cYNJSvS6IXs9vLTEYjy5 ._2RSxEUPGL8Bj016q0Sp3Hx:hover {

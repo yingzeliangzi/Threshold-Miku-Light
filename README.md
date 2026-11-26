@@ -124,6 +124,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Collection header rows | Dark teal bold name + a thin line underneath fading out to the right |
 | Selected game | Rounded light aqua background + dark teal bold text; stays aqua while hovered |
 | Game hover | Light aqua highlight |
+| Installed games | Names of installed games are Miku teal, games that aren't installed stay grey, so you can tell them apart at a glance |
 | Shelf titles | Text with a white outline, readable even right on top of the background art; the line on the right is Steam's own |
 | Recent games | The play-time bar under the first game is light glass with dark text; the Download / Play button is Miku teal |
 | Play-time labels | White pill + dark text, readable on both dark and light covers |
@@ -134,7 +135,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 |------|------|
 | Play button | Miku teal gradient + white bold text |
 | Info bar | Light frosted glass, dark teal labels |
-| Cards | Friends, achievements, DLC, Workshop etc. are all light glass cards; every post in the activity feed (including publisher news) is its own card |
+| Cards | Friends, achievements, DLC, Workshop etc. are all light glass cards; every post in the activity feed (including publisher news) is its own card; the "View community content" button at the bottom sits on the background with no strip behind it |
 | Reviews | Your review card and reviews in the activity feed (yours and friends'): the verdict strip (Recommended, hours at review time) is a light aqua layer instead of Steam's dark grey; the review text, likes and comment counts are dark |
 | Activity feed | Status posts, shared screenshots / videos, badges and text-only news use dark text on the light cards, with no square box nested inside the rounded card |
 | Post-game summary / trading cards | The summary at the top of the page is a light glass card; the trading-card badge strip and the achievement progress bar are aqua / teal (dark in vanilla Steam) |
@@ -155,8 +156,9 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 |------|------|
 | Background | `friendsBG.jpg` + a light veil |
 | Friend entries | Transparent, with a rounded light aqua highlight on hover |
+| Avatars | Discord style: round avatars with a status dot cut into the corner (online teal, in-game green, away an amber crescent, offline a hollow grey ring) instead of Steam's thin side bar; avatar frames are hidden. Also on your own avatar, chat tabs and the chat speaker line |
 | Group headers | Dark teal bold + a thin line extending to the right |
-| Status colors | Online / in-game / offline all use darker versions that are readable on a light background |
+| Status colors | Online / in-game / offline all use darker versions that are readable on a light background; the glow behind your own avatar follows your status (teal / green / amber); away friends' name and status line turn amber at full strength (Steam fades them to half) |
 | Group chats bar | Miku teal gradient |
 
 ### Chat window
@@ -164,7 +166,9 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 |------|------|
 | Background | `chatBG.jpg`, separate from the friends list |
 | Message bubbles | Others' messages: white rounded bubbles; your own messages: teal gradient bubbles |
-| Speaker | Name and time get a white outline (like subtitles), readable on the background art without a backing box; names are colored by online / in-game status |
+| Message hover | A soft white band instead of Steam's dark row; the react / more buttons that appear are a small white card with teal icons |
+| Emoticon / sticker card | The card shown while hovering an emoticon or sticker is white, with its name in dark text and the game it comes from in teal |
+| Speaker | Round avatar with a status dot; name and time get a white outline (like subtitles), readable on the background art without a backing box; names are colored by online / in-game status |
 | Tab bar | Selected tab: white background + teal underline |
 | Toolbar buttons | Emoji, attachment and voice buttons are white rounded cards + teal icons |
 | Input box | Translucent white background + teal border |
@@ -195,6 +199,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 | Item | Details |
 |------|------|
 | All popup menus | Light glass + rounded corners + thin separators, Miku teal gradient on hover |
+| Right-click menu in the library | The game list's right-click menu and its Add / Remove / Manage submenus use the same light glass, with a light aqua hover; "Play" stays solid Miku teal like the Play button |
 
 ---
 
@@ -222,6 +227,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Collections: inside a single collection the whole page was dark blue and the sort dropdown was unreadable
 - Collections: hovering a game cover showed a dark slate details card; section headers turned into a dark band with unreadable text once they stuck to the top while scrolling
 - Chat window: the other person's name and time sat right on the background art and were unreadable; the tab bar was greyish; the date divider text was unreadable
+- Chat window: hovering a message turned the row Steam's dark grey; the card shown while hovering an emoticon or sticker was dark, and its name and game line could be black on it
 - Sign-in window: when choosing an account, the "…" more-options button covered the whole avatar so the account couldn't be clicked; "Signing in" and the name were white text on a light background
 - Sign-in window: the add-account form (account name / password / QR code) was entirely in Steam's dark style
 - Sign-in window: a Steam update renamed the sign-in form's classes, so it fell back to Steam's dark style; updated to the new names
@@ -230,6 +236,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Recordings & screenshots: the card shown while hovering a screenshot was dark slate with unreadable text; the cloud on uploaded screenshots was dark and lost on dark shots
 - Product activation: the activated game's name was no longer highlighted
 - Popup windows: a rounded panel inside the square window left a square corner behind each curve
+- Library – left list: the right-click menu on a game (and its submenus) stayed Steam's dark slate, because it opens inside the main window instead of as a popup
 - Settings / game properties: the teal bar on the selected item in the left list is now a rounded light aqua background
 - Game properties: the DLC list, the game versions & betas table and the Workshop list were dark with dark text, completely unreadable; logos with white lettering disappeared on the light Customization page
 - Friends list: after opening search, the input box had a dark grey frame + a black inner shadow and stayed like that even after clearing the text; afterwards the "Friends" tab label got squeezed onto two lines
@@ -237,7 +244,7 @@ All colors are defined in `:root` in `global.css`; to change the palette, only e
 - Friends list: every row had a white block on top, messy
 - Menus: grey background + bright blue hover, didn't fit the theme
 
-Every selector has been checked against the current Steam version (all 606 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
+Every selector has been checked against the current Steam version (all 617 hashed classes are valid), and the CSS comments note the readable names from Steam's source.
 
 ---
 
@@ -284,3 +291,4 @@ The window argument is a regex for the window title, e.g. the main window `^Stea
 
 - Inspired by: [Threshold-Miku by Jack-Myth](https://github.com/Jack-Myth/Threshold-Miku) (the skin I always used before Steam switched to its Chromium-based UI; nearly 3 years later, here it is, recreated)
 - Based on: [blueArchiveSteamSkin by EugeneXXXie](https://github.com/EugeneXXXie/blueArchiveSteamSkin)
+- Friends list avatars: the Discord-style round avatars and status dots are inspired by [Steam Friends / Chat Skin by LaserFlash](https://github.com/LaserFlash/steam-chat-skin) (re-implemented here for the current Steam UI and the Miku colours; no code copied)

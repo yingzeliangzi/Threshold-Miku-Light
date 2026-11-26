@@ -18,12 +18,37 @@ body.fullheight {
     background: linear-gradient(to bottom, rgba(250, 254, 255, 0.95), rgba(232, 246, 249, 0.92)) !important;
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--glass-line);
+    /* Steam's dark 1px inset shadow drew a grey line down the left and
+       along the top of the header */
+    box-shadow: none !important;
 }
 
-/* Soft glow behind the avatar - Miku teal instead of Steam blue */
+/* Your avatar: Steam's dark drop shadow offset to the lower right, softened
+   for the round avatar */
+.currentUserAvatar img.avatar {
+    box-shadow: 0 1px 5px rgba(var(--miku-deep-rgb), 0.18) !important;
+}
+
+/* Soft glow behind your avatar, tinted by your status (online teal,
+   in-game green, away amber; Steam hides it while offline) */
 .statusHeaderGlow {
-    opacity: 0.25;
-    filter: hue-rotate(-30deg);
+    opacity: 0.6;
+}
+
+.currentUserContainer .statusHeaderGlow stop:first-child {
+    stop-color: rgba(var(--miku-teal-rgb), 0.42) !important;
+}
+
+.currentUserContainer.ingame .statusHeaderGlow stop:first-child {
+    stop-color: rgba(124, 196, 0, 0.38) !important;
+}
+
+.currentUserContainer.awayOrSnooze .statusHeaderGlow stop:first-child {
+    stop-color: rgba(240, 160, 32, 0.38) !important;
+}
+
+.currentUserContainer .statusHeaderGlow stop:last-child {
+    stop-color: rgba(var(--miku-teal-rgb), 0) !important;
 }
 
 /* Current user name / status */
@@ -238,9 +263,26 @@ body.fullheight {
     color: var(--miku-text-3) !important;
 }
 
-/* Away / snooze friends a little faded */
-.friend.awayOrSnooze .labelHolder {
-    opacity: 0.8;
+/* Away / snooze friends: name, nickname mark, status line (game or 退席中)
+   and the little "zzz" turn amber, like the crescent on their avatar.
+   A deep amber, since bright yellow can't be read on the light list. */
+.friend.awayOrSnooze .nOdcT-MoOaXGePXLyPe0H /* playerName */,
+.friend.awayOrSnooze ._3XEmWmfQy7gbYJ4KJ1N9tp /* playerNicknameBracket */,
+.friend.awayOrSnooze ._2Ri005Wg_uXDTa71kdRbcN /* richPresenceLabel */,
+.friend.awayOrSnooze ._2Ri005Wg_uXDTa71kdRbcN a,
+.friend.awayOrSnooze ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN /* gameName */,
+.friend.awayOrSnooze ._1cB0qtF0paHWWyj1XNcnbG._2Ri005Wg_uXDTa71kdRbcN a {
+    color: var(--status-away-text) !important;
+}
+
+.friend.awayOrSnooze ._2n0EiKMGRP-r_BI5tDtttu /* SnoozeZ */ {
+    color: var(--status-away) !important;
+}
+
+/* Steam also fades away friends' text to 50%; the amber says it already */
+.friend.awayOrSnooze .labelHolder,
+.friend.awayOrSnooze .playerNameQuickAccessContainer {
+    opacity: 1 !important;
 }
 
 /* Nickname "*" (playerNicknameBracket) */
@@ -252,6 +294,113 @@ body.fullheight {
 /* Context menu arrow next to names */
 .friend .ContextMenuButton svg {
     fill: var(--miku-text-3) !important;
+}
+
+/* --- Avatars: round, with a status dot instead of Steam's side bar ---
+   Discord-style look (round avatars, status dot cut out of the avatar's
+   corner, no avatar frames) inspired by LaserFlash's Steam Friends / Chat
+   skin, https://github.com/LaserFlash/steam-chat-skin. Written here from
+   scratch for the current Steam classes and the Miku colours.
+   The dot's ring takes the colour of what is behind the avatar
+   (--avatar-ring), so it looks cut out of the avatar. */
+:root {
+    --status-online: #2fb8ae;
+    --status-ingame: #6fb300;
+    --status-away: #f0a020;
+    --status-away-text: #a86a00;
+    --status-offline: #8d9ca6;
+    --status-watching: #9c8fd4;
+    --avatar-ring: #f1fafa;
+}
+
+.friend:hover,
+.friend.ContextMenuOpen {
+    --avatar-ring: #c6f2ed;
+}
+
+.currentUserContainer {
+    --avatar-ring: #eef8fa;
+}
+
+/* AvatarFrame (animated / seasonal frames): hidden, the round avatar is the frame */
+.avatarHolder .avatarFrame {
+    display: none !important;
+}
+
+.avatarHolder {
+    position: relative;
+}
+
+.avatarHolder img.avatar {
+    border-radius: 50% !important;
+    border-color: transparent !important;
+}
+
+/* Chat speaker line: Steam's extra status bar beside the avatar (the dot
+   on the avatar shows the status now) */
+.speaker .speakerStatus {
+    display: none !important;
+}
+
+/* ...which also spaced the name off the avatar */
+.speaker .speakerAvatar {
+    margin-inline-end: 7px !important;
+}
+
+/* avatarStatus: Steam's 2px coloured bar beside (or under) the avatar,
+   turned into a dot on the avatar's bottom-right corner */
+.avatarHolder .avatarStatus {
+    display: block !important;
+    position: absolute !important;
+    top: auto !important;
+    left: auto !important;
+    right: -1px !important;
+    bottom: -1px !important;
+    inset-inline-end: -1px !important;
+    width: 34% !important;
+    min-width: 8px !important;
+    max-width: 15px !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 0 2px var(--avatar-ring) !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 4 !important;
+}
+
+.online .avatarHolder .avatarStatus,
+.avatarHolder.online .avatarStatus {
+    background: var(--status-online) !important;
+}
+
+.watchingbroadcast .avatarHolder .avatarStatus,
+.avatarHolder.watchingbroadcast .avatarStatus {
+    background: var(--status-watching) !important;
+}
+
+.ingame .avatarHolder .avatarStatus,
+.avatarHolder.ingame .avatarStatus {
+    background: var(--status-ingame) !important;
+}
+
+/* Offline: a hollow grey ring */
+.offline .avatarHolder .avatarStatus,
+.avatarHolder.offline .avatarStatus {
+    background:
+        radial-gradient(circle, var(--avatar-ring) 0 30%, transparent 33%),
+        var(--status-offline) !important;
+}
+
+/* Away / snooze: an amber crescent moon */
+.awayOrSnooze .avatarHolder .avatarStatus,
+.avatarHolder.awayOrSnooze .avatarStatus {
+    background:
+        radial-gradient(circle at 18% 18%, var(--avatar-ring) 0 38%, transparent 41%),
+        var(--status-away) !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -395,6 +544,61 @@ body.fullheight {
 
 .msg.isCurrentUser.ChatMessageErrorSending {
     background: none;
+}
+
+/* Hovering a message (MsgWithAddons): Steam paints the whole row dark
+   (rgb(41,44,52)); a soft white wash on the chat artwork instead */
+._3qYm9oxf8MdyvQDJgbfCrF:hover {
+    background-color: rgba(255, 255, 255, 0.32) !important;
+    border-radius: 8px;
+}
+
+/* Addons: the small react / more toolbar on the hovered message */
+._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(var(--miku-deep-rgb), 0.18) !important;
+}
+
+/* Addons > Emoticon (the buttons) */
+._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG ._2ovvDFSsxzUoYuqzJsxecQ {
+    color: var(--miku-teal-ink) !important;
+    opacity: 0.75;
+    border-radius: 50%;
+}
+
+._3qYm9oxf8MdyvQDJgbfCrF ._10OzYaCdn7cgVMec9ozEJG ._2ovvDFSsxzUoYuqzJsxecQ:hover {
+    color: var(--miku-teal-ink) !important;
+    fill: var(--miku-teal-ink) !important;
+    background: rgba(var(--miku-aqua-rgb), 0.55);
+    opacity: 1;
+}
+
+/* EmoticonHover: the card shown while hovering an emoticon or sticker
+   (its name, and the game it comes from). It sits inside the message
+   bubble and took the bubble's text colour (white in own teal bubbles,
+   dark in friends') on Steam's dark card; give it its own light card */
+.W_hPU2JmhTx3oUqDN9ADo {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border: 1px solid var(--glass-line);
+    border-radius: 10px !important;
+    box-shadow: 0 6px 20px rgba(var(--miku-deep-rgb), 0.22) !important;
+    color: var(--miku-text) !important;
+    text-shadow: none !important;
+}
+
+/* Info > Name */
+.W_hPU2JmhTx3oUqDN9ADo ._29D_0UxbftoceIAKZktndo ._3zUR2KWg7TNWOQx2nDFyoh {
+    color: var(--miku-text) !important;
+    font-weight: 600;
+}
+
+/* Info > AppName (doubled class so it beats the white link colour in own bubbles) */
+.W_hPU2JmhTx3oUqDN9ADo.W_hPU2JmhTx3oUqDN9ADo ._29D_0UxbftoceIAKZktndo ._2JWWOJGZuX70xQcA2QaBg,
+.W_hPU2JmhTx3oUqDN9ADo.W_hPU2JmhTx3oUqDN9ADo ._29D_0UxbftoceIAKZktndo ._2JWWOJGZuX70xQcA2QaBg * {
+    color: var(--miku-teal-ink) !important;
+    text-decoration: none;
 }
 
 /* Speaker line above messages (name, time) sits straight on the chat
